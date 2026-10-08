@@ -1,7 +1,76 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>eSIM 상품 찾기 | 여행심플</title><meta name="description" content="여행 국가와 기간에 맞는 eSIM 상품을 확인하세요."><link rel="stylesheet" href="assets/style.css"></head><body>
-<header><div class="wrap nav"><a class="logo" href="/">여행심플</a><nav><a href="countries.html">국가별 eSIM</a><a href="install.html">설치방법</a><a href="contact.html">문의</a></nav></div></header>
-<main class="wrap page"><div class="result-head"><div><span class="eyebrow">eSIM SEARCH</span><h1 id="title">일본 eSIM</h1><p id="subtitle">5일 여행에 맞는 상품을 확인하세요.</p></div><a class="back" href="/">← 다시 검색</a></div>
-<div id="status" class="status">상품 정보를 불러오는 중입니다.</div><div id="products" class="product-grid"></div>
-<section class="notice"><h2>상품 안내</h2><p>이 페이지는 eSIM 상품 정보를 비교·안내하고 구매 페이지로 연결하기 위한 서비스입니다. 가격, 데이터, 이용기간 등 최종 조건은 구매 페이지에서 확인하세요.</p></section></main>
-<footer><div class="wrap"><strong>여행심플</strong><div><a href="privacy.html">개인정보처리방침</a><a href="terms.html">이용약관</a><a href="contact.html">문의</a></div></div></footer>
-<script src="assets/esim.js"></script></body></html>
+
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>eSIM 상품 찾기 | 여행심플</title>
+  <meta name="description" content="여행 국가와 기간에 맞는 eSIM 상품을 비교하세요.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="/">여행심플</a>
+      <nav>
+        <a href="countries.html">국가별 eSIM</a>
+        <a href="install.html">설치방법</a>
+        <a href="contact.html">문의</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap page">
+    <div class="result-head">
+      <div>
+        <span class="eyebrow">ESIM SEARCH</span>
+        <h1 id="title">일본 eSIM</h1>
+        <p id="subtitle">여행 기간에 맞는 상품을 확인하세요.</p>
+      </div>
+      <a class="back" href="/">← 다시 검색</a>
+    </div>
+
+    <section class="filter-panel">
+      <div class="filter-field">
+        <label for="sort">상품 정렬</label>
+        <select id="sort">
+          <option value="recommended">추천순</option>
+          <option value="price-asc">최저가순</option>
+          <option value="price-desc">최고가순</option>
+        </select>
+      </div>
+
+      <label class="filter-check">
+        <input type="checkbox" id="unlimited">
+        무제한 데이터만
+      </label>
+
+      <label class="filter-check">
+        <input type="checkbox" id="hotspot">
+        핫스팟 가능 상품만
+      </label>
+    </section>
+
+    <div id="status" class="status">상품 정보를 불러오는 중입니다.</div>
+    <div id="products" class="product-grid"></div>
+
+    <section class="notice">
+      <h2>상품 안내</h2>
+      <p>상품 정보와 가격은 실시간 판매 데이터에 따라 달라질 수 있습니다. 데이터 제공 조건, 이용기간 및 최종 가격은 구매 페이지에서 확인하세요.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>여행심플</strong>
+      <div>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="terms.html">이용약관</a>
+        <a href="contact.html">문의</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/esim.js"></script>
+</body>
+</html>
