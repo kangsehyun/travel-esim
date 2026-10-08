@@ -1,4 +1,4 @@
-```javascript
+javascript
 const names = {
   JP: '일본',
   TW: '대만',
