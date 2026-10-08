@@ -55,7 +55,7 @@ days + '일 여행에 맞는 실제 판매 상품을 비교하세요.';
 function render() {
 let items = allItems.slice();
 
-```
+
 if (unlimitedCheck.checked) {
   items = items.filter(function (p) {
     return p.isUnlimited === true;
@@ -136,14 +136,14 @@ items.forEach(function (p, i) {
 
   box.appendChild(article);
 });
-```
+
 
 }
 
 async function load() {
 const currentRequest = ++requestNumber;
 
-```
+
 updateHeading();
 status.textContent = '실시간 eSIM 상품을 불러오는 중입니다...';
 box.innerHTML = '';
@@ -175,7 +175,7 @@ try {
   box.textContent =
     '오류가 발생했습니다. 브라우저 Console의 오류 메시지를 확인해주세요.';
 }
-```
+
 
 }
 
