@@ -179,7 +179,7 @@ try {
 
 }
 
-<WritingBlock id="72518" variant="document">function searchProducts() {
+function searchProducts() {
   country = countrySelect.value;
   days = Number(daysSelect.value);
 
