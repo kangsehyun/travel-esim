@@ -179,19 +179,16 @@ try {
 
 }
 
-function searchProducts() {
-country = countrySelect.value;
-days = Number(daysSelect.value);
+<WritingBlock id="72518" variant="document">function searchProducts() {
+  country = countrySelect.value;
+  days = Number(daysSelect.value);
 
-```
-const nextUrl = new URL(window.location.href);
-nextUrl.searchParams.set('country', country);
-nextUrl.searchParams.set('days', String(days));
+  const nextUrl = new URL(window.location.href);
+  nextUrl.searchParams.set('country', country);
+  nextUrl.searchParams.set('days', String(days));
 
-window.history.replaceState({}, '', nextUrl.toString());
-load();
-```
-
+  window.history.replaceState({}, '', nextUrl.toString());
+  load();
 }
 
 countrySelect.addEventListener('change', searchProducts);
@@ -202,4 +199,4 @@ unlimitedCheck.addEventListener('change', render);
 hotspotCheck.addEventListener('change', render);
 
 load();
-}
+}</WritingBlock>
