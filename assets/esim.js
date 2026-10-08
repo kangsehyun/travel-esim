@@ -1,4 +1,4 @@
-
+```javascript
 const names = {
   JP: '일본',
   TW: '대만',
@@ -21,7 +21,6 @@ const unlimitedCheck = document.getElementById('unlimited');
 const hotspotCheck = document.getElementById('hotspot');
 const countrySelect = document.getElementById('search-country');
 const daysSelect = document.getElementById('search-days');
-const searchButton = document.getElementById('search-esim');
 
 let allItems = [];
 
@@ -119,7 +118,7 @@ async function load() {
   }
 }
 
-searchButton.addEventListener('click', () => {
+function searchProducts() {
   country = countrySelect.value;
   days = Number(daysSelect.value);
 
@@ -129,10 +128,14 @@ searchButton.addEventListener('click', () => {
   history.replaceState({}, '', nextUrl);
 
   load();
-});
+}
+
+countrySelect.addEventListener('change', searchProducts);
+daysSelect.addEventListener('change', searchProducts);
 
 sortSelect.addEventListener('change', render);
 unlimitedCheck.addEventListener('change', render);
 hotspotCheck.addEventListener('change', render);
 
 load();
+```
