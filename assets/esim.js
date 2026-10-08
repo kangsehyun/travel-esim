@@ -8,22 +8,32 @@ const names = {
 };
 
 const params = new URLSearchParams(location.search);
-const country = (params.get('country') || 'JP').toUpperCase();
-const days = Number(params.get('days') || 5);
+let country = (params.get('country') || 'JP').toUpperCase();
+let days = Number(params.get('days') || 5);
 
-document.getElementById('title').textContent =
-  `${names[country] || country} eSIM`;
-
-document.getElementById('subtitle').textContent =
-  `${days}일 여행에 맞는 실제 판매 상품을 비교하세요.`;
-
+const title = document.getElementById('title');
+const subtitle = document.getElementById('subtitle');
 const status = document.getElementById('status');
 const box = document.getElementById('products');
+
 const sortSelect = document.getElementById('sort');
 const unlimitedCheck = document.getElementById('unlimited');
 const hotspotCheck = document.getElementById('hotspot');
+const countrySelect = document.getElementById('search-country');
+const daysSelect = document.getElementById('search-days');
+const searchButton = document.getElementById('search-esim');
 
 let allItems = [];
+
+countrySelect.value = names[country] ? country : 'JP';
+daysSelect.value = [1, 3, 5, 7, 10, 15, 30].includes(days)
+  ? String(days)
+  : '5';
+
+function updateHeading() {
+  title.textContent = `${names[country] || country} eSIM`;
+  subtitle.textContent = `${days}일 여행에 맞는 실제 판매 상품을 비교하세요.`;
+}
 
 function esc(value) {
   return String(value ?? '').replace(/[&<>'"]/g, c => ({
@@ -52,12 +62,10 @@ function render() {
     items.sort((a, b) => b.priceKrw - a.priceKrw);
   }
 
-  status.textContent =
-    `조건에 맞는 상품 ${items.length}개`;
+  status.textContent = `조건에 맞는 상품 ${items.length}개`;
 
   if (items.length === 0) {
-    box.innerHTML =
-      '<p>조건에 맞는 상품이 없습니다. 필터를 변경해보세요.</p>';
+    box.innerHTML = '<p>조건에 맞는 상품이 없습니다. 필터를 변경해보세요.</p>';
     return;
   }
 
@@ -80,13 +88,14 @@ function render() {
          href="${esc(p.url)}"
          target="_blank"
          rel="noopener noreferrer">
-         구매 페이지 보기
+        구매 페이지 보기
       </a>
     </article>
   `).join('');
 }
 
 async function load() {
+  updateHeading();
   status.textContent = '실시간 eSIM 상품을 불러오는 중입니다...';
   box.innerHTML = '';
 
@@ -105,10 +114,22 @@ async function load() {
     render();
   } catch (error) {
     console.error(error);
-    status.textContent =
-      '상품을 불러오지 못했습니다. 잠시 후 다시 시도해주세요.';
+    allItems = [];
+    status.textContent = '상품을 불러오지 못했습니다. 잠시 후 다시 시도해주세요.';
   }
 }
+
+searchButton.addEventListener('click', () => {
+  country = countrySelect.value;
+  days = Number(daysSelect.value);
+
+  const nextUrl = new URL(location.href);
+  nextUrl.searchParams.set('country', country);
+  nextUrl.searchParams.set('days', String(days));
+  history.replaceState({}, '', nextUrl);
+
+  load();
+});
 
 sortSelect.addEventListener('change', render);
 unlimitedCheck.addEventListener('change', render);
