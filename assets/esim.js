@@ -7,7 +7,7 @@ const names = {
   US: '미국'
 };
 
-const params = new URLSearchParams(location.search);
+const params = new URLSearchParams(window.location.search);
 let country = (params.get('country') || 'JP').toUpperCase();
 let days = Number(params.get('days') || 5);
 
@@ -23,98 +23,130 @@ const countrySelect = document.getElementById('search-country');
 const daysSelect = document.getElementById('search-days');
 
 let allItems = [];
+let requestNumber = 0;
 
 countrySelect.value = names[country] ? country : 'JP';
-daysSelect.value = [1, 3, 5, 7, 10, 15, 30].includes(days)
-  ? String(days)
-  : '5';
+
+if (![1, 3, 5, 7, 10, 15, 30].includes(days)) {
+  days = 5;
+}
+
+daysSelect.value = String(days);
 
 function updateHeading() {
-  title.textContent = `${names[country] || country} eSIM`;
-  subtitle.textContent = `${days}일 여행에 맞는 실제 판매 상품을 비교하세요.`;
+  title.textContent = (names[country] || country) + ' eSIM';
+  subtitle.textContent =
+    days + '일 여행에 맞는 실제 판매 상품을 비교하세요.';
 }
 
 function esc(value) {
-  return String(value ?? '').replace(/[&<>'"]/g, c => ({
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    "'": '&#39;',
-    '"': '&quot;'
-  })[c]);
+  return String(value == null ? '' : value).replace(/[&<>'"]/g, function (c) {
+    return {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      "'": '&#39;',
+      '"': '&quot;'
+    }[c];
+  });
 }
 
 function render() {
-  let items = [...allItems];
+  let items = allItems.slice();
 
   if (unlimitedCheck.checked) {
-    items = items.filter(p => p.isUnlimited === true);
+    items = items.filter(function (p) {
+      return p.isUnlimited === true;
+    });
   }
 
   if (hotspotCheck.checked) {
-    items = items.filter(p => p.hotspot === true);
+    items = items.filter(function (p) {
+      return p.hotspot === true;
+    });
   }
 
   if (sortSelect.value === 'price-asc') {
-    items.sort((a, b) => a.priceKrw - b.priceKrw);
+    items.sort(function (a, b) {
+      return Number(a.priceKrw || 0) - Number(b.priceKrw || 0);
+    });
   } else if (sortSelect.value === 'price-desc') {
-    items.sort((a, b) => b.priceKrw - a.priceKrw);
+    items.sort(function (a, b) {
+      return Number(b.priceKrw || 0) - Number(a.priceKrw || 0);
+    });
   }
 
-  status.textContent = `조건에 맞는 상품 ${items.length}개`;
+  status.textContent = '조건에 맞는 상품 ' + items.length + '개';
 
   if (items.length === 0) {
-    box.innerHTML = '<p>조건에 맞는 상품이 없습니다. 필터를 변경해보세요.</p>';
+    box.innerHTML =
+      '<p>조건에 맞는 상품이 없습니다. 필터를 변경해보세요.</p>';
     return;
   }
 
-  box.innerHTML = items.map((p, i) => `
-    <article class="product-card">
-      <span class="eyebrow">${i < 3 ? '추천 상품' : 'eSIM'}</span>
-      <h3>${esc(p.title)}</h3>
-      <p class="meta">
-        데이터: ${esc(p.dataAmount)}<br>
-        이용기간: ${esc(p.validityDays)}일<br>
-        통신망: ${esc(p.networkType || '-')} ·
-        ${p.isLocalNetwork ? '현지망' : '로밍'}<br>
-        핫스팟: ${p.hotspot ? '가능' : '불가'}<br>
-        제공사: ${esc(p.provider || '-')}
-      </p>
-      <strong class="price">
-        ${Number(p.priceKrw || 0).toLocaleString('ko-KR')}원
-      </strong>
-      <a class="buy"
-         href="${esc(p.url)}"
-         target="_blank"
-         rel="noopener noreferrer">
-        구매 페이지 보기
-      </a>
-    </article>
-  `).join('');
+  box.innerHTML = items.map(function (p, i) {
+    return `
+      <article class="product-card">
+        <span class="eyebrow">${i < 3 ? '추천 상품' : 'eSIM'}</span>
+        <h3>${esc(p.title)}</h3>
+        <p class="meta">
+          데이터: ${esc(p.dataAmount)}<br>
+          이용기간: ${esc(p.validityDays)}일<br>
+          통신망: ${esc(p.networkType || '-')} ·
+          ${p.isLocalNetwork ? '현지망' : '로밍'}<br>
+          핫스팟: ${p.hotspot ? '가능' : '불가'}<br>
+          제공사: ${esc(p.provider || '-')}
+        </p>
+        <strong class="price">
+          ${Number(p.priceKrw || 0).toLocaleString('ko-KR')}원
+        </strong>
+        <a class="buy"
+           href="${esc(p.url)}"
+           target="_blank"
+           rel="noopener noreferrer">
+          구매 페이지 보기
+        </a>
+      </article>
+    `;
+  }).join('');
 }
 
 async function load() {
+  const currentRequest = ++requestNumber;
+
   updateHeading();
   status.textContent = '실시간 eSIM 상품을 불러오는 중입니다...';
   box.innerHTML = '';
 
   try {
     const response = await fetch(
-      `/api/esims?country=${encodeURIComponent(country)}&days=${encodeURIComponent(days)}`
+      '/api/esims?country=' +
+      encodeURIComponent(country) +
+      '&days=' +
+      encodeURIComponent(days)
     );
 
     const data = await response.json();
 
+    if (currentRequest !== requestNumber) {
+      return;
+    }
+
     if (!response.ok || data.success === false) {
-      throw new Error(data.error || `API 오류 ${response.status}`);
+      throw new Error(data.error || 'API 오류 ' + response.status);
     }
 
     allItems = Array.isArray(data.items) ? data.items : [];
     render();
   } catch (error) {
-    console.error(error);
+    if (currentRequest !== requestNumber) {
+      return;
+    }
+
+    console.error('eSIM 상품 로딩 오류:', error);
     allItems = [];
-    status.textContent = '상품을 불러오지 못했습니다. 잠시 후 다시 시도해주세요.';
+    status.textContent =
+      '상품을 불러오지 못했습니다. 페이지를 새로고침해주세요.';
   }
 }
 
@@ -122,10 +154,11 @@ function searchProducts() {
   country = countrySelect.value;
   days = Number(daysSelect.value);
 
-  const nextUrl = new URL(location.href);
+  const nextUrl = new URL(window.location.href);
   nextUrl.searchParams.set('country', country);
   nextUrl.searchParams.set('days', String(days));
-  history.replaceState({}, '', nextUrl);
+
+  window.history.replaceState({}, '', nextUrl.toString());
 
   load();
 }
