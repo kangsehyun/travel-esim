@@ -30,6 +30,34 @@
       <a class="back" href="/">← 다시 검색</a>
     </div>
 
+    <section class="filter-panel search-panel">
+  <div class="filter-field">
+    <label for="search-country">여행 국가</label>
+    <select id="search-country">
+      <option value="JP">일본</option>
+      <option value="TW">대만</option>
+      <option value="VN">베트남</option>
+      <option value="TH">태국</option>
+      <option value="US">미국</option>
+    </select>
+  </div>
+
+  <div class="filter-field">
+    <label for="search-days">여행 기간</label>
+    <select id="search-days">
+      <option value="1">1일</option>
+      <option value="3">3일</option>
+      <option value="5" selected>5일</option>
+      <option value="7">7일</option>
+      <option value="10">10일</option>
+      <option value="15">15일</option>
+      <option value="30">30일</option>
+    </select>
+  </div>
+
+  <button type="button" id="search-esim">상품 검색</button>
+</section>
+
     <section class="filter-panel">
       <div class="filter-field">
         <label for="sort">상품 정렬</label>
