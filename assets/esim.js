@@ -199,4 +199,4 @@ unlimitedCheck.addEventListener('change', render);
 hotspotCheck.addEventListener('change', render);
 
 load();
-}</WritingBlock>
+}
