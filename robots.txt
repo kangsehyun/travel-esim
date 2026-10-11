@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://YOUR-SITE.pages.dev/sitemap.xml
+
+Sitemap: https://travel-esim.rkdalstjd8921-cfa.workers.dev/sitemap.xml
