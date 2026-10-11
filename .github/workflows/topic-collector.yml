@@ -1,1 +1,35 @@
+```yaml
+name: Daily Travel Topic Collector
 
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect-topics:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 저장소 내려받기
+        uses: actions/checkout@v4
+
+      - name: Python 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 주제 수집 스크립트 실행
+        run: python scripts/collect_topics.py
+
+      - name: 수집 결과 저장
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add drafts/
+          git diff --cached --quiet || git commit -m "Add daily travel topic drafts"
+          git push
+```
