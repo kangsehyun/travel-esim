@@ -11,6 +11,7 @@ permissions:
 jobs:
   collect-topics:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -23,10 +24,15 @@ jobs:
       - name: Collect travel topics
         run: python scripts/collect_topics.py
 
-      - name: Save collected topics
+      - name: Generate AI article draft
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python scripts/generate_articles.py
+
+      - name: Save topic and article drafts
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add drafts/
-          git diff --cached --quiet || git commit -m "Add daily travel topic drafts"
+          git diff --cached --quiet || git commit -m "Collect topics and generate article draft"
           git push
