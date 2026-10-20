@@ -9,9 +9,9 @@ from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 try:
-    from source_evidence import collect_evidence, check_claims
+    from source_evidence import collect_evidence, check_claims, allowed_url
 except ModuleNotFoundError:
-    from scripts.source_evidence import collect_evidence, check_claims
+    from scripts.source_evidence import collect_evidence, check_claims, allowed_url
 
 KST = timezone(timedelta(hours=9))
 TODAY = datetime.now(KST).strftime("%Y-%m-%d")
@@ -31,6 +31,7 @@ MAX_REQUESTS_PER_DAY = 1
 MAX_REQUESTS_PER_MONTH = 31
 MAX_INPUT_CHARS = 16000
 MAX_OUTPUT_TOKENS = 3500
+MAX_EVIDENCE_CANDIDATES = 3
 LEDGER_FILE = ARTICLES_DIR / "generation_ledger.json"
 HISTORY_FILE = ARTICLES_DIR / "topic_history.json"
 
@@ -288,11 +289,8 @@ def call_openai(topic):
         with urllib.request.urlopen(request, timeout=120) as response:
             result = json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as error:
-        details = error.read().decode("utf-8", errors="replace")
-        raise RuntimeError(
-            f"OpenAI API 요청 실패: HTTP {error.code}. "
-            f"세부 정보: {details[:1000]}"
-        ) from error
+        # Provider error bodies may echo request data; keep them out of logs.
+        raise RuntimeError(f"OpenAI API 요청 실패: HTTP {error.code}") from error
     except urllib.error.URLError as error:
         raise RuntimeError(
             f"OpenAI API 연결 실패: {error.reason}"
@@ -425,7 +423,31 @@ def save_article(topic, article):
     return output_file
 
 
-def main():
+def write_run_report(status, **details):
+    """Last attempt for this KST date; contains no API error bodies or keys."""
+    report = {
+        "date": TODAY,
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "status": status,
+        "publication_hold": True,
+        **details,
+    }
+    write_json(ARTICLES_DIR / f"run-{TODAY}.json", report)
+
+
+def usable_sources(evidence):
+    # A detailed source is a prerequisite, not a semantic fact-check verdict.
+    if not isinstance(evidence, dict) or not isinstance(evidence.get("sources"), list):
+        return []
+    return [row for row in evidence["sources"]
+            if isinstance(row, dict)
+            and row.get("role") in {"topic_candidate", "device_guidance"}
+            and isinstance(row.get("url"), str) and allowed_url(row["url"])
+            and isinstance(row.get("excerpt"), str)
+            and len(row["excerpt"].strip()) >= 120]
+
+
+def run_pipeline():
     topics, source_file = read_latest_topics()
     used = load_used_topics()
     history = read_json(HISTORY_FILE, [])
@@ -450,6 +472,7 @@ def main():
     if not candidates:
         print("새로 작성할 주제가 없습니다.")
         print(f"확인한 주제 파일: {source_file}")
+        write_run_report("skipped_no_new_topics")
         return
 
     # 한 번의 실행에서 API 비용이 과도하게 발생하지 않도록 1개만 작성
@@ -458,20 +481,42 @@ def main():
     offset = datetime.now(KST).toordinal() % len(countries)
     order = countries[offset:] + countries[:offset]
     candidates.sort(key=lambda topic: order.index(topic["country"]) if topic["country"] in order else len(order))
-    topic = candidates[0]
     if not API_KEY:
         raise RuntimeError("OPENAI_API_KEY가 없습니다.")
+
+    # Try a bounded number of free source lookups before reserving a paid call.
+    attempts = []
+    topic = None
+    for candidate in candidates[:MAX_EVIDENCE_CANDIDATES]:
+        evidence = collect_evidence(candidate)
+        eligible = usable_sources(evidence)
+        attempts.append({
+            "title": candidate["title"][:500],
+            "source_url": candidate["url"][:2000],
+            "source_count": len(evidence.get("sources", [])),
+            "eligible_source_count": len(eligible),
+            "error_count": len(evidence.get("errors", [])),
+        })
+        if eligible:
+            topic = {**candidate, "evidence": evidence}
+            break
+    if topic is None:
+        print("구체적인 공식 자료가 없어 유료 AI 생성을 보류합니다.")
+        write_run_report("skipped_insufficient_evidence", source_attempts=attempts)
+        return
+    if len(create_prompt(topic)) > MAX_INPUT_CHARS:
+        print("입력 자료 길이 한도로 유료 AI 생성을 보류합니다.")
+        write_run_report("skipped_input_limit", source_attempts=attempts)
+        return
     if reserve_request() is None:
         print("일일 또는 월간 API 요청 한도에 도달하여 생성을 건너뜁니다.")
+        write_run_report("skipped_request_limit", source_attempts=attempts)
         return
 
     print(f"주제 파일: {source_file}")
     print(f"선택한 주제: {topic['title']}")
-    print("AI 글 작성 시작")
-
-    print("공식 출처 자료 수집 시작 (검색·검증용 추가 AI 호출 없음)")
-    topic["evidence"] = collect_evidence(topic)
-    print(f"공식 자료: {len(topic['evidence']['sources'])}개 / 연결 실패: {len(topic['evidence']['errors'])}개")
+    print("AI 글 작성 시작 (자료 확보는 사실 검증 완료를 뜻하지 않음)")
+    write_run_report("generating", source_attempts=attempts)
     article = call_openai(topic)
     output_file = save_article(topic, article)
 
@@ -483,6 +528,21 @@ def main():
     print("글 초안 작성 완료")
     print(f"저장 위치: {output_file}")
     print("상태: draft (사이트에 자동 게시하지 않음)")
+    review = read_json(output_file.with_suffix(".review.json"), {})
+    write_run_report("generated", draft_file=output_file.name,
+                     review_file=output_file.with_suffix(".review.json").name,
+                     verification_status=review.get("verification_status", "insufficient_evidence"),
+                     source_attempts=attempts)
+
+
+def main():
+    write_run_report("started")
+    try:
+        run_pipeline()
+    except Exception as error:
+        # Do not persist provider exception messages: they may contain secrets.
+        write_run_report("failed", error_type=type(error).__name__)
+        raise
 
 
 if __name__ == "__main__":
