@@ -139,3 +139,7 @@ Apple의 iPhone eSIM 설치 문서도 후보로 추가합니다.
 수집 단계나 테스트 단계에서 먼저 실패하면 위 상태 파일이 없을 수 있고, 저장소 push에 실패하면 최신 상태가 반영되지 않을 수 있습니다. 파일 부재만으로 성공·실패를 단정하지 않습니다. GitHub 예약 실행은 지연·누락 가능성이 있어 매일 같은 시각의 생성이나 매일 1편을 보장하지 않습니다. 채팅 전달 작업은 그날 파일과 실행 상태를 읽고 새 초안이 없으면 사유를 알리며, 이전 글을 새 글로 재전달하거나 임의 유료 재생성을 하지 않습니다.
 
 호출 한도는 기존 기록 기반 일일 1회·월 31회, 고정 모델 및 토큰 한도를 유지합니다. 실제 금액의 결제 차단 장치가 아니며 다른 앱·키에서 발생하는 API 비용까지 제한하지 않습니다. 이번 검증은 네트워크/API를 모의 처리한 테스트만 실행했으며, 실제 유료 글 생성 워크플로를 실행하지 않았습니다.
+
+## Custom domain (2026-10-20)
+
+Public site: https://travelsimple-esim.com . Both custom domains are managed by Wrangler. GET/HEAD pages on the old workers.dev host and www redirect permanently to the apex, preserving paths and queries. Existing API URLs remain available. All requests run through the Worker to apply host redirects before static assets; this counts toward the Workers request allowance. Historical drafts retain their original links.
