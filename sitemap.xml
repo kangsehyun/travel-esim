@@ -2,9 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://travel-esim.rkdalstjd8921-cfa.workers.dev/</loc>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
-    <loc>https://travel-esim.rkdalstjd8921-cfa.workers.dev/countries.html</loc>
+    <loc>https://travel-esim.rkdalstjd8921-cfa.workers.dev/countries</loc>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://travel-esim.rkdalstjd8921-cfa.workers.dev/esim.html</loc>

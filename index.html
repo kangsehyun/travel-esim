@@ -8,10 +8,15 @@
 <title>여행심플 | 해외여행 eSIM 비교</title>
 <meta name="description" content="일본, 대만, 베트남, 태국, 미국 여행 eSIM 상품을 여행 기간과 데이터 사용량에 맞춰 비교하세요. 국가별 eSIM 선택 가이드와 설치 방법을 확인할 수 있습니다.">
 <link rel="canonical" href="https://travel-esim.rkdalstjd8921-cfa.workers.dev/">
+<meta property="og:title" content="여행심플 | 해외여행 eSIM 비교">
+<meta property="og:description" content="여행 국가와 3~30일 일정에 맞는 eSIM 상품과 국가별 선택 가이드를 확인하세요.">
+<meta property="og:url" content="https://travel-esim.rkdalstjd8921-cfa.workers.dev/">
+<meta property="og:type" content="website">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/discovery.css">
 <script defer src="/assets/analytics.js"></script>
 </head>
-<body>
+<body class="discovery-home">
 <header>
   <div class="wrap nav">
     <a class="logo" href="/">여행심플</a>
@@ -30,26 +35,29 @@
     <h1>해외여행 eSIM,<br>쉽게 비교하세요.</h1>
     <p>여행 국가와 기간에 맞춰 필요한 데이터 상품을 찾을 수 있도록 도와드립니다.</p>
 
-    <div class="search-card">
-      <label>여행 국가</label>
-      <select id="country">
-        <option value="JP">🇯🇵 일본</option>
-        <option value="TW">🇹🇼 대만</option>
-        <option value="VN">🇻🇳 베트남</option>
-        <option value="TH">🇹🇭 태국</option>
-        <option value="US">🇺🇸 미국</option>
+    <form id="esim-search" class="search-card" action="esim.html" method="get" aria-label="여행 조건으로 상품 찾기">
+      <label for="country">여행 국가</label>
+      <select id="country" name="country">
+        <option value="JP">일본</option>
+        <option value="TW">대만</option>
+        <option value="VN">베트남</option>
+        <option value="TH">태국</option>
+        <option value="US">미국</option>
       </select>
-
-      <label>여행 기간</label>
-      <div class="days">
-        <button data-days="3">3일</button>
-        <button data-days="5" class="active">5일</button>
-        <button data-days="7">7일</button>
-        <button data-days="10">10일</button>
-      </div>
-
-      <button id="find" class="primary">eSIM 상품 찾아보기 →</button>
-    </div>
+      <fieldset class="trip-periods"><legend>여행 기간</legend><div class="trip-day-options">
+        <label><input type="radio" name="days" value="3"><span>3일</span></label>
+        <label><input type="radio" name="days" value="5" checked><span>5일</span></label>
+        <label><input type="radio" name="days" value="7"><span>7일</span></label>
+        <label><input type="radio" name="days" value="10"><span>10일</span></label>
+        <label><input type="radio" name="days" value="15"><span>15일</span></label>
+        <label><input type="radio" name="days" value="30"><span>30일</span></label>
+      </div></fieldset>
+      <p id="selection-summary" class="trip-summary" aria-live="polite">선택한 국가와 기간으로 조회합니다.</p>
+      <button id="find" class="primary" type="submit">선택한 조건으로 상품 비교하기 →</button>
+      <a id="selected-country-guide" class="trip-guide-link" href="japan-esim.html">먼저 일본 eSIM 선택 기준 보기 →</a>
+      <p class="trip-search-note">표시 가격과 실제 결제 조건은 다를 수 있습니다. 지원 기기·데이터·핫스팟·이용 시작 조건을 구매 전에 확인하세요.</p>
+    </form>
+    <p class="trip-affiliate">구매 링크를 통해 구매하면 여행심플이 제휴 수수료를 받을 수 있습니다. 실제 판매·결제는 연결된 판매처에서 진행됩니다.</p>
   </div>
 </section>
 
@@ -75,46 +83,47 @@
 </section>
 
 <section class="wrap section">
-  <h2>인기 여행지 eSIM 가이드</h2>
+  <h2>여행지별 eSIM 가이드</h2>
+  <p class="trip-section-intro">처음이라면 선택 가이드를, 조건을 정했다면 상품 비교를 이용하세요. 상품 링크에는 위에서 선택한 여행 기간이 반영됩니다.</p>
   <div class="grid">
     <article>
       <b>🇯🇵 JAPAN</b>
       <h3>일본 eSIM 비교 가이드</h3>
       <p>일본 여행 기간과 데이터 사용량에 맞는 eSIM 선택 방법을 알아보세요.</p>
-      <p><a href="japan-esim.html">일본 eSIM 선택 가이드 보기 →</a></p>
-      <p><a href="esim.html?country=JP&amp;days=5">일본 eSIM 상품 비교하기 →</a></p>
+      <p><a class="trip-guide-link" href="japan-esim.html">일본 eSIM 선택 가이드 보기 →</a></p>
+      <p><a class="trip-product-link" data-trip-country="JP" href="esim.html?country=JP&amp;days=5">일본 5일 상품 비교 →</a></p>
     </article>
 
     <article>
       <b>🇹🇼 TAIWAN</b>
       <h3>대만 eSIM 비교 가이드</h3>
       <p>대만 여행에 필요한 데이터 용량, 사용 기간, 개통 조건과 eSIM 선택 방법을 확인하세요.</p>
-      <p><a href="taiwan-esim.html">대만 eSIM 선택 가이드 보기 →</a></p>
-      <p><a href="esim.html?country=TW&amp;days=5">대만 eSIM 상품 비교하기 →</a></p>
+      <p><a class="trip-guide-link" href="taiwan-esim.html">대만 eSIM 선택 가이드 보기 →</a></p>
+      <p><a class="trip-product-link" data-trip-country="TW" href="esim.html?country=TW&amp;days=5">대만 5일 상품 비교 →</a></p>
     </article>
 
    <article>
     <b>🇻🇳 VIETNAM</b>
     <h3>베트남 eSIM 비교 가이드</h3>
-    <p>다낭, 하노이, 호치민 여행에 맞는 데이터 용량과 사용 기간, eSIM 선택 기준을 확인하세요.</p>
-    <p><a href="vietnam-esim.html">베트남 eSIM 선택 가이드 보기 →</a></p>
-    <p><a href="esim.html?country=VN&amp;days=5">베트남 eSIM 상품 비교하기 →</a></p>
+    <p>다낭, 하노이, 호찌민 여행에 맞는 데이터 용량과 사용 기간, eSIM 선택 기준을 확인하세요.</p>
+    <p><a class="trip-guide-link" href="vietnam-esim.html">베트남 eSIM 선택 가이드 보기 →</a></p>
+    <p><a class="trip-product-link" data-trip-country="VN" href="esim.html?country=VN&amp;days=5">베트남 5일 상품 비교 →</a></p>
    </article>
 
     <article>
   <b>🇹🇭 THAILAND</b>
   <h3>태국 eSIM 비교 가이드</h3>
   <p>방콕, 푸켓, 치앙마이 여행에 맞는 데이터 용량과 사용 기간, eSIM 선택 기준을 확인하세요.</p>
-  <p><a href="thailand-esim.html">태국 eSIM 선택 가이드 보기 →</a></p>
-  <p><a href="esim.html?country=TH&amp;days=5">태국 eSIM 상품 비교하기 →</a></p>
+  <p><a class="trip-guide-link" href="thailand-esim.html">태국 eSIM 선택 가이드 보기 →</a></p>
+  <p><a class="trip-product-link" data-trip-country="TH" href="esim.html?country=TH&amp;days=5">태국 5일 상품 비교 →</a></p>
  </article>
 
       <article>
       <b>🇺🇸 USA</b>
       <h3>미국 eSIM 비교 가이드</h3>
       <p>뉴욕, 로스앤젤레스, 라스베이거스 여행에 맞는 데이터 용량과 사용 기간, eSIM 선택 기준을 확인하세요.</p>
-      <p><a href="usa-esim.html">미국 eSIM 선택 가이드 보기 →</a></p>
-      <p><a href="esim.html?country=US&amp;days=5">미국 eSIM 상품 비교하기 →</a></p>
+      <p><a class="trip-guide-link" href="usa-esim.html">미국 eSIM 선택 가이드 보기 →</a></p>
+      <p><a class="trip-product-link" data-trip-country="US" href="esim.html?country=US&amp;days=5">미국 5일 상품 비교 →</a></p>
     </article>
 
     
@@ -148,6 +157,6 @@
   </div>
 </footer>
 
-<script src="assets/app.js"></script>
+<script defer src="assets/app.js"></script>
 </body>
 </html>
