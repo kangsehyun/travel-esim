@@ -2,12 +2,13 @@
 (function () {
   'use strict';
   const id = 'G-1RLBXT6L9D';
-  const consentKey = 'travelsimple-analytics-consent-v1';
+  const consentKey = 'travelsimple-analytics-consent-v2';
+  const noticeVersion = '2026-10-20';
   let enabled = false;
   let initialized = false;
   let panel;
-  function choice() { try { return localStorage.getItem(consentKey); } catch (_) { return null; } }
-  function save(value) { try { localStorage.setItem(consentKey, value); } catch (_) {} }
+  function choice() { try { const record = JSON.parse(localStorage.getItem(consentKey)); return record && record.version === noticeVersion && ['granted', 'denied'].includes(record.choice) ? record.choice : null; } catch (_) { return null; } }
+  function save(value) { try { localStorage.setItem(consentKey, JSON.stringify({choice: value, version: noticeVersion, at: new Date().toISOString()})); } catch (_) {} }
   function pageUrl() {
     const url = new URL(location.pathname, location.origin);
     const params = new URLSearchParams(location.search);
@@ -52,21 +53,30 @@
   }
   function render() {
     const style = document.createElement('style');
-    style.textContent = '.ts-analytics-panel{position:fixed;bottom:56px;left:12px;right:12px;max-width:620px;margin:auto;padding:18px;background:#fff;color:#172033;border:1px solid #cbd5e1;border-radius:12px;box-shadow:0 4px 24px #0002;z-index:1000;font:14px/1.6 Arial,sans-serif}.ts-analytics-panel[hidden]{display:none}.ts-analytics-panel button,.ts-analytics-settings{cursor:pointer;padding:8px 14px;border:1px solid #64748b;border-radius:6px;background:#fff;color:#172033;margin:4px}.ts-analytics-settings{position:fixed;bottom:8px;right:8px;z-index:999;font-size:12px}.ts-analytics-panel a{color:#1d4ed8;text-decoration:underline}';
+    style.textContent = '.ts-analytics-panel{position:fixed;bottom:56px;left:12px;right:12px;max-width:620px;max-height:70vh;overflow:auto;margin:auto;padding:18px;background:#fff;color:#172033;border:1px solid #cbd5e1;border-radius:12px;box-shadow:0 4px 24px #0002;z-index:1000;font:14px/1.6 Arial,sans-serif}.ts-analytics-panel[hidden]{display:none}.ts-analytics-panel button,.ts-analytics-settings{cursor:pointer;padding:8px 14px;border:1px solid #64748b;border-radius:6px;background:#fff;color:#172033;margin:4px}.ts-analytics-settings{position:fixed;bottom:8px;right:8px;z-index:999;font-size:12px}.ts-analytics-panel a{color:#1d4ed8;text-decoration:underline}.ts-analytics-panel label{display:block;margin:10px 0}.ts-analytics-panel button:disabled{cursor:not-allowed;opacity:.5}';
     document.head.appendChild(style);
     panel = document.createElement('section');
     panel.className = 'ts-analytics-panel';
     panel.setAttribute('aria-label', '방문 통계 설정');
     const text = document.createElement('p');
-    text.textContent = '방문 통계를 허용하면 Google Analytics로 방문 경로와 상품 링크 클릭을 분석합니다. 거부해도 상품 비교를 이용할 수 있습니다.';
+    text.textContent = '방문 통계는 선택 사항입니다. 두 동의 항목을 각각 확인한 뒤 허용해 주세요. 거부해도 상품 비교를 이용할 수 있습니다. 만 14세 미만은 통계를 허용하지 말아 주세요.';
     const privacy = document.createElement('a'); privacy.href = '/privacy.html'; privacy.textContent = '개인정보처리방침';
-    const yes = document.createElement('button'); yes.type = 'button'; yes.textContent = '통계 허용'; yes.addEventListener('click', function () { choose('granted'); });
-    const no = document.createElement('button'); no.type = 'button'; no.textContent = '거부'; no.addEventListener('click', function () { choose('denied'); });
-    panel.append(text, privacy, yes, no);
+    const collectionLabel = document.createElement('label');
+    const collection = document.createElement('input'); collection.type = 'checkbox';
+    collectionLabel.append(collection, ' [선택] 방문·유입·기기 정보, 쿠키 식별자, 스크롤·링크 클릭의 통계 수집·이용에 동의합니다. 목적: 서비스 개선. 사용자·이벤트 데이터 보관 설정: 각 2개월(집계 보고서 제외).');
+    const overseasLabel = document.createElement('label');
+    const overseas = document.createElement('input'); overseas.type = 'checkbox';
+    overseasLabel.append(overseas, ' [선택] 위 통계·통신 정보를 Google LLC에 국외 처리하는 데 동의합니다. 미국 등 Google 데이터센터 소재 국가로 동의 후 이용 시 암호화 전송되며, 통계 분석에 사용됩니다. 국가 목록·연락처·삭제 기준은 아래 방침 4항을 확인하세요.');
+    const yes = document.createElement('button'); yes.type = 'button'; yes.textContent = '통계 허용'; yes.disabled = true;
+    const update = function () { yes.disabled = !(collection.checked && overseas.checked); };
+    collection.addEventListener('change', update); overseas.addEventListener('change', update);
+    yes.addEventListener('click', function () { if (collection.checked && overseas.checked) choose('granted'); });
+    const no = document.createElement('button'); no.type = 'button'; no.textContent = '거부'; no.addEventListener('click', function () { collection.checked = false; overseas.checked = false; update(); choose('denied'); });
+    panel.append(text, collectionLabel, overseasLabel, privacy, yes, no);
     panel.hidden = choice() === 'granted' || choice() === 'denied';
     const settings = document.createElement('button'); settings.type = 'button'; settings.className = 'ts-analytics-settings'; settings.textContent = '통계 설정'; settings.addEventListener('click', function () { panel.hidden = !panel.hidden; if (!panel.hidden) no.focus(); });
     document.body.append(panel, settings);
-    if (choice() === 'granted') start();
+    if (choice() === 'granted') start(); else stop();
   }
   document.addEventListener('click', function (event) {
     const link = event.target.closest && event.target.closest('.product-card a.buy');

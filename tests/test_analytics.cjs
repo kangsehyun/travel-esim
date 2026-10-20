@@ -2,9 +2,11 @@ const assert = require('node:assert/strict');
 const vm = require('node:vm');
 const fs = require('node:fs');
 const code = fs.readFileSync('assets/analytics.js', 'utf8');
-function setup(stored = null) {
+function setup(stored = null, legacy = null) {
   const nodes = [], scripts = [], events = {};
-  const storage = new Map(stored ? [['travelsimple-analytics-consent-v1', stored]] : []);
+  const storage = new Map();
+  if (stored) storage.set('travelsimple-analytics-consent-v2', typeof stored === 'string' ? JSON.stringify({choice: stored, version: '2026-10-20'}) : JSON.stringify(stored));
+  if (legacy) storage.set('travelsimple-analytics-consent-v1', legacy);
   function element(tag) { const e = {tag, children: [], handlers: {}, setAttribute() {}, addEventListener(n,f) {this.handlers[n]=f;}, append(...items){this.children.push(...items);}, focus(){}}; nodes.push(e); return e; }
   const document = {readyState:'complete',referrer:'https://newtravelinformation.tistory.com/1?email=private@example.com',cookie:'',createElement:element,head:{appendChild(e){if(e.tag==='script')scripts.push(e);}},body:{append(){}},addEventListener(n,f){events[n]=f;}};
   const context = {document,location:{origin:'https://travel-esim.rkdalstjd8921-cfa.workers.dev',hostname:'travel-esim.rkdalstjd8921-cfa.workers.dev',pathname:'/esim.html',search:'?country=JP&days=5&utm_source=tistory&utm_medium=blog&utm_campaign=post-1&email=private@example.com&key=secret'},localStorage:{getItem(k){return storage.get(k)||null;},setItem(k,v){storage.set(k,v);}},URL,URLSearchParams,Date};
@@ -12,14 +14,19 @@ function setup(stored = null) {
   vm.runInNewContext(code,context);
   const clickButton = label => nodes.find(e=>e.textContent===label).handlers.click();
   const clickProduct = href => events.click({target:{closest(){return {href};}}});
-  return {context,scripts,clickButton,clickProduct};
+  const checks = nodes.filter(e=>e.tag==='input');
+  const agree = index => {checks[index].checked=true;checks[index].handlers.change();};
+  return {context,scripts,clickButton,clickProduct,agree,storage,nodes};
 }
 const a=setup();
 assert.equal(a.scripts.length,0);
 a.clickProduct('https://www.esimoa.com/ko/plans/jp/test?ref=partner');
 assert.equal(a.context.dataLayer,undefined);
-a.clickButton('통계 허용');
+a.clickButton('통계 허용'); assert.equal(a.scripts.length,0);
+a.agree(0); a.clickButton('통계 허용'); assert.equal(a.scripts.length,0);
+a.agree(1); a.clickButton('통계 허용');
 assert.equal(a.scripts.length,1);
+assert.equal(JSON.parse(a.storage.get('travelsimple-analytics-consent-v2')).version,'2026-10-20');
 const args=()=>a.context.dataLayer.map(x=>Array.from(x));
 const config=args().find(x=>x[0]==='config')[2];
 assert(!config.page_location.includes('secret'));
@@ -31,9 +38,11 @@ assert.equal(args().filter(x=>x[0]==='event'&&x[1]==='esim_purchase_click').leng
 a.clickButton('거부');
 a.clickProduct('https://www.esimoa.com/ko/plans/jp/test?ref=partner');
 assert.equal(args().filter(x=>x[0]==='event').length,1);
-a.clickButton('통계 허용');assert.equal(a.scripts.length,1);
+a.agree(0);a.agree(1);a.clickButton('통계 허용');assert.equal(a.scripts.length,1);
 assert.equal(args().filter(x=>x[0]==='config').length,1);
 const b=setup('denied');assert.equal(b.scripts.length,0);
 const c=setup('granted');assert.equal(c.scripts.length,1);
 c.clickProduct('javascript:alert(1)');assert(!c.context.dataLayer.some(x=>x[0]==='event'));
-console.log('Analytics consent, sanitized attribution, purchase-click and re-consent checks: PASS');
+assert.equal(setup(null,'granted').scripts.length,0);
+assert.equal(setup({choice:'granted',version:'old'}).scripts.length,0);
+console.log('Analytics separate consent, legacy rejection, sanitized attribution and withdrawal checks: PASS');
