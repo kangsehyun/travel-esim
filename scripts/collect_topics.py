@@ -6,6 +6,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from email.utils import parsedate_to_datetime
+import html
 
 # 한국 시간 기준 날짜
 KST = timezone(timedelta(hours=9))
@@ -47,19 +48,19 @@ RSS_FEEDS = [
 KEYWORDS = {
     "일본": [
         "일본", "Japan", "도쿄", "오사카", "후쿠오카",
-        "삿포로", "오키나와", "eSIM"
+        "삿포로", "오키나와"
     ],
     "대만": [
-        "대만", "Taiwan", "타이베이", "가오슝", "eSIM"
+        "대만", "Taiwan", "타이베이", "가오슝"
     ],
     "베트남": [
-        "베트남", "Vietnam", "다낭", "하노이", "호치민", "eSIM"
+        "베트남", "Vietnam", "다낭", "하노이", "호치민"
     ],
     "태국": [
-        "태국", "Thailand", "방콕", "푸켓", "치앙마이", "eSIM"
+        "태국", "Thailand", "방콕", "푸켓", "치앙마이"
     ],
     "미국": [
-        "미국", "USA", "United States", "뉴욕", "로스앤젤레스", "eSIM"
+        "미국", "USA", "United States", "뉴욕", "로스앤젤레스"
     ],
 }
 
@@ -91,7 +92,7 @@ def fetch_rss(url):
 
         # RSS HTML 태그 및 공백 정리
         description = re.sub(r"<[^>]+>", " ", description)
-        description = re.sub(r"\s+", " ", description)
+        description = html.unescape(re.sub(r"\s+", " ", description))
 
         if title and link:
             items.append({
@@ -130,6 +131,7 @@ def clean_title(title):
 def collect_topics():
     results = []
     seen_links = set()
+    seen_titles = set()
     feed_errors = []
 
     for feed in RSS_FEEDS:
@@ -148,7 +150,17 @@ def collect_topics():
             text = f"{title} {item['description']}"
             link = item["link"]
 
-            if link in seen_links:
+            normalized_title = re.sub(r"[^\w가-힣]", "", title.rsplit(" - ", 1)[0].casefold())
+            if link in seen_links or normalized_title in seen_titles:
+                continue
+            try:
+                published = parsedate_to_datetime(item["pub_date"])
+                if published.tzinfo is None:
+                    published = published.replace(tzinfo=timezone.utc)
+                age = datetime.now(timezone.utc) - published
+                if age > timedelta(days=14) or age < timedelta(days=-1):
+                    continue
+            except (ValueError, TypeError, OverflowError):
                 continue
 
             if not is_relevant(text):
@@ -159,6 +171,7 @@ def collect_topics():
                 continue
 
             seen_links.add(link)
+            seen_titles.add(normalized_title)
 
             results.append({
                 "country": country,

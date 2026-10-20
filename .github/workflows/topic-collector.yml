@@ -5,12 +5,17 @@ on:
   schedule:
     - cron: "0 0 * * *"
 
+concurrency:
+  group: travel-content-generation
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
 jobs:
   collect-topics:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout repository
@@ -21,6 +26,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Test content safety rules
+        run: python -m unittest discover -s tests -v
+
       - name: Collect travel topics
         run: python scripts/collect_topics.py
 
@@ -30,6 +38,7 @@ jobs:
         run: python scripts/generate_articles.py
 
       - name: Save topic and article drafts
+        if: ${{ always() }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
