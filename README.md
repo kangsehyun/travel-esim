@@ -102,3 +102,20 @@ Apple의 iPhone eSIM 설치 문서도 후보로 추가합니다.
   기존 country·days 파라미터는 유지하세요. 같은 날짜의 글은 같은 캠페인으로 묶입니다.
 - 노출된 모든 방문자가 집계되는 것은 아닙니다(동의 거부, 광고 차단, 수집 지연 등).
 - 검증: `node tests/test_analytics.cjs`, `python -m unittest discover -s tests -v`.
+
+## 운영 정책·문의 관리 (2026-10-20)
+
+- 공개 문의: rkdalstjd8921@gmail.com. `privacy.html`, `terms.html`, `contact.html`을 실제 운영과 함께 관리합니다. 이전 문서는 `legal/`에 보존합니다.
+- 문의를 처리한 뒤 지체 없이, 늦어도 30일 이내 메일함·다운로드 사본에서 삭제합니다. 자동 삭제 기능을 구현한 것은 아니므로 운영자가 직접 이행해야 합니다. Gmail 휴지통·백업의 삭제 처리 시간도 확인합니다.
+- 문의 수집·이용 및 Gmail 국외 처리 동의를 각각 확인합니다. 동의 표시가 없는 일반 문의에는 필요한 안내만 회신하고 본격적인 처리를 진행하지 않습니다. 개인정보 권리 요청은 불필요한 새 동의를 조건으로 제한하지 않습니다. 본인 확인은 최소한으로 하고 법정 처리 기한을 따릅니다.
+- GA4 동의는 v2부터 수집·이용과 국외 처리를 별도로 선택해야 합니다. v1 허용은 승계하지 않습니다. 선택 버전·일시는 브라우저 로컬에 기록되며 서버에 개인정보 동의 장부를 구축한 것은 아닙니다. 별도 감사·입증 요구에 충분한지는 확인이 필요합니다.
+- GA4 관리 화면에서 사용자·이벤트 보관을 각 2개월, 새 활동에 따른 사용자 데이터 보관 재설정을 끈 상태로 저장했습니다(2026-10-20). 변경 적용은 Google 안내상 24시간 후이며 집계 보고서는 별개입니다. 쿠키 유효기간 90일은 서버 데이터 보관 기간과 다릅니다.
+- 이 변경은 법률 적합성 인증이나 전면 법률 검토가 아닙니다. 확인이 필요한 사항: (1) 여행심플의 개인/사업자 운영 형태와 통신판매·중개 등 실제 법적 지위 및 표시 의무, (2) Google/Gmail/Cloudflare의 실제 국외 처리 국가·재위탁 범위·보유 기간·적용 계약과 적법한 이전 근거, (3) 미성년자·동의 증빙·안전성 확보조치에 관한 운영 수준. 공개한 국가 목록 링크만으로 국가별 고지 요건을 충족한다고 단정하지 않습니다.
+- 정책 문구만으로 계정 보안·파기·권리 요청 대응이 자동 수행되지 않습니다. 새 수집 기능이나 자체 결제를 추가하기 전에 정책·동의·법적 지위를 다시 점검하세요. API·제휴 계정 키는 공개 문서에 기록하지 마세요.
+
+참고한 공식 자료:
+- 개인정보 보호법 제28조의8: https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1029334957
+- 개인정보 포털 작성지침: https://www.privacy.go.kr/front/bbs/bbsList.do?bbsNo=BBSMSTR_000000000049
+- GA4 보관: https://support.google.com/analytics/answer/7667196?hl=ko
+- Google 처리 약관: https://business.safety.google/adsprocessorterms/
+- Cloudflare 개인정보/처리 약관: https://www.cloudflare.com/privacypolicy/ 및 https://www.cloudflare.com/cloudflare-customer-dpa/
