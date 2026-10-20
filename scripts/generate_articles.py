@@ -23,7 +23,7 @@ ARTICLES_DIR.mkdir(parents=True, exist_ok=True)
 API_KEY = os.environ.get("OPENAI_API_KEY")
 MODEL = "gpt-4.1-mini"  # Fixed to prevent an accidental expensive model override.
 
-SITE_URL = "https://travel-esim.rkdalstjd8921-cfa.workers.dev"
+SITE_URL = "https://travelsimple-esim.com"
 
 # A request is reserved before contacting the API. Failed requests also consume
 # the daily reservation to prevent paid retry loops.

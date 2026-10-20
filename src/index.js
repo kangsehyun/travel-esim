@@ -4,6 +4,13 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    // Keep deep links and search conditions when moving to the public domain.
+    if (['travel-esim.rkdalstjd8921-cfa.workers.dev', 'www.travelsimple-esim.com'].includes(url.hostname) && ['GET', 'HEAD'].includes(request.method) && !url.pathname.startsWith('/api/')) {
+      url.protocol = 'https:';
+      url.host = 'travelsimple-esim.com';
+      return Response.redirect(url.toString(), 301);
+    }
+
     if (url.pathname === '/api/esims') {
       return handleEsims(request, env, url);
     }

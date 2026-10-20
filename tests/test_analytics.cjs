@@ -9,7 +9,7 @@ function setup(stored = null, legacy = null) {
   if (legacy) storage.set('travelsimple-analytics-consent-v1', legacy);
   function element(tag) { const e = {tag, children: [], handlers: {}, setAttribute() {}, addEventListener(n,f) {this.handlers[n]=f;}, append(...items){this.children.push(...items);}, focus(){}}; nodes.push(e); return e; }
   const document = {readyState:'complete',referrer:'https://newtravelinformation.tistory.com/1?email=private@example.com',cookie:'',createElement:element,head:{appendChild(e){if(e.tag==='script')scripts.push(e);}},body:{append(){}},addEventListener(n,f){events[n]=f;}};
-  const context = {document,location:{origin:'https://travel-esim.rkdalstjd8921-cfa.workers.dev',hostname:'travel-esim.rkdalstjd8921-cfa.workers.dev',pathname:'/esim.html',search:'?country=JP&days=5&utm_source=tistory&utm_medium=blog&utm_campaign=post-1&email=private@example.com&key=secret'},localStorage:{getItem(k){return storage.get(k)||null;},setItem(k,v){storage.set(k,v);}},URL,URLSearchParams,Date};
+  const context = {document,location:{origin:'https://travelsimple-esim.com',hostname:'travel-esim.rkdalstjd8921-cfa.workers.dev',pathname:'/esim.html',search:'?country=JP&days=5&utm_source=tistory&utm_medium=blog&utm_campaign=post-1&email=private@example.com&key=secret'},localStorage:{getItem(k){return storage.get(k)||null;},setItem(k,v){storage.set(k,v);}},URL,URLSearchParams,Date};
   context.window=context;
   vm.runInNewContext(code,context);
   const clickButton = label => nodes.find(e=>e.textContent===label).handlers.click();
