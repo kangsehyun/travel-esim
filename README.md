@@ -119,3 +119,23 @@ Apple의 iPhone eSIM 설치 문서도 후보로 추가합니다.
 - GA4 보관: https://support.google.com/analytics/answer/7667196?hl=ko
 - Google 처리 약관: https://business.safety.google/adsprocessorterms/
 - Cloudflare 개인정보/처리 약관: https://www.cloudflare.com/privacypolicy/ 및 https://www.cloudflare.com/cloudflare-customer-dpa/
+
+## 생성 전 공식 자료 확인과 실행 상태 (2026-10-20)
+
+유료 글 작성 전 중복을 제외한 후보를 최대 3개까지 확인합니다. 허용된 공식 도메인에서 수집한 구체적인 주제 후보 또는 기기 안내 본문(120자 이상)이 있어야 생성 요청을 예약합니다. 관광청 첫 화면 같은 `country_context`만 있거나 자료가 없으면 AI 호출과 유료 예약을 모두 건너뜁니다. 입력 길이도 예약 전에 검사합니다. 자료가 있다는 것은 해당 뉴스·본문 주장이 입증되었다는 뜻이 아니며 모든 결과는 여전히 `publication_hold: true`인 초안입니다.
+
+마지막 생성 시도의 요약은 `drafts/articles/run-YYYY-MM-DD.json`에 저장합니다. 같은 날짜 재실행 시 덮어쓰므로 이 파일은 하루 전체 이력이나 API 청구 장부가 아닙니다. 당일 `.md`, `.review.json`, `generation_ledger.json`도 함께 확인합니다. API 오류 본문이나 키를 상태 파일·생성 오류 메시지에 기록하지 않습니다.
+
+| 상태 | 의미 |
+| --- | --- |
+| started / generating | 생성 단계 시작 / 유료 요청 예약 후 작성 시작 |
+| generated | 초안·검토 기록 저장 완료, 사실 검증·게시 승인 완료는 아님 |
+| skipped_no_new_topics | 중복 제외 후 새 후보 없음 |
+| skipped_insufficient_evidence | 최대 3개 후보에서 사용할 구체적 공식 자료를 확보하지 못해 유료 생성 보류 |
+| skipped_input_limit | 입력 길이 초과로 유료 생성 보류 |
+| skipped_request_limit | 기존 일일·월간 요청 한도 도달 |
+| failed | 생성 단계 예외 발생. error_type만 기록하며 Actions 단계도 확인 필요 |
+
+수집 단계나 테스트 단계에서 먼저 실패하면 위 상태 파일이 없을 수 있고, 저장소 push에 실패하면 최신 상태가 반영되지 않을 수 있습니다. 파일 부재만으로 성공·실패를 단정하지 않습니다. GitHub 예약 실행은 지연·누락 가능성이 있어 매일 같은 시각의 생성이나 매일 1편을 보장하지 않습니다. 채팅 전달 작업은 그날 파일과 실행 상태를 읽고 새 초안이 없으면 사유를 알리며, 이전 글을 새 글로 재전달하거나 임의 유료 재생성을 하지 않습니다.
+
+호출 한도는 기존 기록 기반 일일 1회·월 31회, 고정 모델 및 토큰 한도를 유지합니다. 실제 금액의 결제 차단 장치가 아니며 다른 앱·키에서 발생하는 API 비용까지 제한하지 않습니다. 이번 검증은 네트워크/API를 모의 처리한 테스트만 실행했으며, 실제 유료 글 생성 워크플로를 실행하지 않았습니다.
