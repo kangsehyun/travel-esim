@@ -56,7 +56,7 @@ class PipelineTests(unittest.TestCase):
             article = {'title': 'test', 'slug': 'test', 'meta_description': 'test', 'content': 'test', 'internal_links': [{'url': 'https://evil.example/', 'anchor': 'bad'}]}
             text = g.save_article(topic, article).read_text()
             self.assertIn('publication_hold: true', text)
-            self.assertIn('verification_status: "unverified"', text)
+            self.assertIn('verification_status: "insufficient_evidence"', text)
             self.assertNotIn('evil.example', text)
 
     def test_private_sources_excluded(self):
