@@ -1,0 +1,10 @@
+drafts/
+scripts/
+tests/
+.github/
+.git/
+README.md
+wrangler.jsonc
+*.patch
+src/
+__pycache__/
