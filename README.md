@@ -40,7 +40,7 @@ https://developers.cloudflare.com/pages/framework-guides/deploy-anything/
 현재 배포는 `wrangler.jsonc`를 사용하는 Cloudflare Workers입니다.
 위의 Pages/API 연결 전 안내는 초기 MVP 기록이며 현재 구성과 다릅니다.
 
-- GitHub Actions: 한국시간 매일 오전 9시 예약 (실제 시작은 지연될 수 있음).
+- GitHub Actions: 한국시간 06:17 생성 시도 및 3회 보완 예약 (실제 시작은 지연될 수 있음).
 - RSS: 발행일이 확인되는 최근 14일 자료만 수집합니다.
 - 같은 URL, 추적 파라미터만 다른 URL, 유사 제목을 중복 후보로 제외합니다.
   다른 제목으로 보도된 같은 사건까지 완전히 판별하지는 못합니다.
@@ -143,3 +143,13 @@ Apple의 iPhone eSIM 설치 문서도 후보로 추가합니다.
 ## Custom domain (2026-10-20)
 
 Public site: https://travelsimple-esim.com . Both custom domains are managed by Wrangler. GET/HEAD pages on the old workers.dev host and www redirect permanently to the apex, preserving paths and queries. Existing API URLs remain available. All requests run through the Worker to apply host redirects before static assets; this counts toward the Workers request allowance. Historical drafts retain their original links.
+
+## 오전 10시 전달 준비 및 텔레그램 알림
+
+- 한국시간 06:17 생성 시도, 07:37·08:47·09:37 보완 실행. 당일 초안·실행 보고서·API 예약이 있으면 추가 생성을 건너뜁니다. 보완 실행은 시작하지 못한 작업을 위한 것이며, 실패한 유료 호출을 재시도하지 않습니다.
+- GitHub 예약 실행은 지연·누락될 수 있어 오전 10시 완료를 보장하지 않습니다. 완전한 정시 보장이 필요한 경우 별도의 외부 스케줄러와 장애 감시 구성이 필요합니다. 채팅 전달 예약은 기존대로 유지됩니다.
+- 자료 부족·호출 한도·실행 실패는 글 대신 상태로 알립니다. 모든 글은 공개 보류 초안으로만 저장하며 티스토리에 자동 게시하지 않습니다.
+- GitHub 저장소 Settings → Secrets and variables → Actions → New repository secret에 `TELEGRAM_BOT_TOKEN`과 `TELEGRAM_CHAT_ID`를 등록합니다. 토큰을 채팅·코드·로그에 붙이지 마세요.
+- BotFather로 만든 본인 봇의 개인 대화에서 먼저 `/start`를 보내세요. `TELEGRAM_CHAT_ID`는 그 개인 대화의 숫자 ID입니다. 그룹·채널로는 발송하지 않습니다. 기존 봇을 재사용해도 되며 getUpdates 조회가 기존 수신 프로그램에 영향을 줄 수 있으므로 별도 봇 사용을 권장합니다.
+- 두 secret을 등록하면 다음 실제 실행부터 생성 완료·보류·실패 상태와 GitHub 검토 링크만 보냅니다. 전체 글이나 비밀 정보는 전송하지 않습니다. 설정 전에는 알림을 건너뛰며 생성 기능은 계속 작동합니다.
+- 날짜·상태가 동일한 알림은 반복 발송하지 않습니다. 통신 오류로 결과가 불명확하면 자동 재전송하지 않고 `notification-YYYY-MM-DD.json`에 `delivery_unknown`으로 기록합니다. GitHub 저장 실패·runner 미기동·강제 종료 시에는 알림도 누락될 수 있습니다. 알림 실패만으로 유료 생성을 다시 실행하지 마세요.
