@@ -1,0 +1,59 @@
+name: Telegram Notification Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/telegram-test.yml']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: telegram-notification-test
+  cancel-in-progress: false
+
+jobs:
+  test-notification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify private recipient and send one test message
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python - <<'PY'
+          import os
+          from scripts.content_delivery import telegram
+          try:
+              token = os.environ.get('TELEGRAM_BOT_TOKEN', '').strip()
+              chat = os.environ.get('TELEGRAM_CHAT_ID', '').strip()
+              if not token or not chat.isdecimal():
+                  print('Missing bot token or invalid private chat ID. Check repository secrets.')
+                  raise SystemExit(1)
+              recipient = telegram('getChat', token, {'chat_id': chat})
+              if recipient.get('type') != 'private' or str(recipient.get('id')) != chat:
+                  print('Recipient is not the configured private chat. No message sent.')
+                  raise SystemExit(1)
+              result = telegram('sendMessage', token, {
+                  'chat_id': chat,
+                  'text': '여행심플 텔레그램 연결 테스트\n알림 연결이 정상입니다.\n앞으로 초안 생성 완료·보류·실패 상태를 알려드립니다.\n이 메시지는 연결 테스트이며 글 생성이나 결제는 실행하지 않았습니다.',
+                  'link_preview_options': {'is_disabled': True},
+              })
+              if not result.get('message_id'):
+                  print('Telegram did not return a message receipt.')
+                  raise SystemExit(1)
+              print('Telegram accepted the test message for the verified private chat.')
+          except SystemExit:
+              raise
+          except Exception as error:
+              # Never expose exception strings or token-bearing request URLs.
+              code = getattr(error, 'code', None)
+              print('Telegram test failed. HTTP status: ' + (str(code) if isinstance(code, int) else 'unavailable'))
+              raise SystemExit(1)
+          PY
