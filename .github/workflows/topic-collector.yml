@@ -3,7 +3,12 @@ name: Daily Travel Topic Collector
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    # KST 06:17 primary; 07:37 / 08:47 / 09:37 backup opportunities.
+    # GitHub schedules are best effort, not an exact-time guarantee.
+    - cron: "17 21 * * *"
+    - cron: "37 22 * * *"
+    - cron: "47 23 * * *"
+    - cron: "37 0 * * *"
 
 concurrency:
   group: travel-content-generation
@@ -15,33 +20,66 @@ permissions:
 jobs:
   collect-topics:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-
+    timeout-minutes: 15
     steps:
-      - name: Checkout repository
+      - name: Checkout latest main
+        id: checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Set up Python
+        id: python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
+      - name: Check today's durable records before generating
+        id: gate
+        run: python scripts/content_delivery.py gate
+
       - name: Test content safety rules
+        if: steps.gate.outputs.generate == 'true'
         run: python -m unittest discover -s tests -v
 
       - name: Collect travel topics
+        if: steps.gate.outputs.generate == 'true'
         run: python scripts/collect_topics.py
 
       - name: Generate AI article draft
+        if: steps.gate.outputs.generate == 'true'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python scripts/generate_articles.py
 
-      - name: Save topic and article drafts
-        if: ${{ always() }}
+      - name: Record failures before the generator starts
+        if: failure() && steps.checkout.outcome == 'success' && steps.python.outcome == 'success'
+        run: python scripts/content_delivery.py failure
+
+      - name: Persist outcomes before sending alerts
+        id: persist
+        if: always() && steps.checkout.outcome == 'success' && steps.python.outcome == 'success'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add drafts/
-          git diff --cached --quiet || git commit -m "Collect topics and generate article draft"
-          git push
+          git diff --cached --quiet || git commit -m "Save daily content generation outcome"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Send private Telegram status alert when configured
+        if: always() && steps.persist.outcome == 'success'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          WORKFLOW_RESULT: ${{ job.status }}
+        run: python scripts/content_delivery.py notify
+
+      - name: Persist notification receipt or uncertain delivery
+        if: always() && steps.persist.outcome == 'success'
+        run: |
+          git add drafts/articles/
+          git diff --cached --quiet || git commit -m "Record daily notification attempt"
+          git pull --rebase origin main
+          git push origin HEAD:main
