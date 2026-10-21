@@ -40,6 +40,7 @@ class PageText(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.hidden = 0
+        self.base_href = None
         self.parts = []
         self.links = []
         self.anchor = None
@@ -47,6 +48,8 @@ class PageText(HTMLParser):
         self.title = []
 
     def handle_starttag(self, tag, attrs):
+        if tag == 'base' and self.base_href is None:
+            self.base_href = dict(attrs).get('href')
         if tag in ('script', 'style', 'noscript', 'svg', 'template', 'nav', 'footer', 'header'):
             self.hidden += 1
         if tag == 'title':
@@ -90,7 +93,10 @@ def fetch_page(url):
         text = re.sub(r'\s+', ' ', ' '.join(parser.parts)).strip()
         if len(text) < 120 or any(marker in text.casefold() for marker in ('just a moment...', 'verify you are human', 'access denied', 'captcha')):
             raise ValueError('Source unreadable or challenge page')
-        return {'url': response.geturl(), 'title': ' '.join(parser.title).strip()[:240], 'text': text, 'links': parser.links}
+        link_base = urljoin(response.geturl(), parser.base_href or '')
+        if not allowed_url(link_base) or urlsplit(link_base).hostname != urlsplit(response.geturl()).hostname:
+            link_base = response.geturl()
+        return {'link_base': link_base, 'url': response.geturl(), 'title': ' '.join(parser.title).strip()[:240], 'text': text, 'links': parser.links}
 
 
 def topic_terms(topic):
@@ -124,7 +130,7 @@ def collect_evidence(topic):
         if role == 'country_context':
             candidates = []
             for href, label in page['links']:
-                target = urljoin(page['url'], href).split('#')[0]
+                target = urljoin(page.get('link_base', page['url']), href).split('#')[0]
                 score = sum(term in (label + ' ' + target).casefold() for term in terms)
                 if score and allowed_url(target) and urlsplit(target).hostname == urlsplit(url).hostname and target != page['url']:
                     candidates.append((score, target))
@@ -215,3 +221,45 @@ def collect_guide_evidence(topic):
     except Exception as error:
         return {'sources': [], 'errors': [{'url': curated['url'], 'error': type(error).__name__}],
                 'original_news_fetched': False}
+
+
+def destination_guide_topics(country):
+    """Discover bounded first-party detail links; a hub is never article evidence."""
+    organization, url = OFFICIAL_SOURCES[country]
+    try:
+        page = fetch_page(url)
+    except Exception:
+        return []
+    topics, seen = [], set()
+    for href, label in page['links']:
+        target = urljoin(page.get('link_base', page['url']), href).split('#')[0]
+        text = re.sub(r'\s+', ' ', label).strip()
+        if (not allowed_url(target) or urlsplit(target).hostname != urlsplit(url).hostname
+                or target.rstrip('/') == page['url'].rstrip('/') or target in seen
+                or urlsplit(target).query or not 8 <= len(text) <= 180):
+            continue
+        if not re.search(r'\b(transport|airport|train|rail|internet|wi-fi|wifi|weather|luggage|accessibility|currency|electricity|customs|etiquette|safety)\b', text, re.I):
+            continue
+        seen.add(target)
+        topics.append({'country': country, 'title': f'{country} 여행 준비: {text}',
+                       'source': organization, 'url': target, 'selection_mode': 'official_destination_guide',
+                       'description': '공식 관광청의 상세 안내를 바탕으로 작성하는 실용 여행 준비 글입니다.'})
+        if len(topics) >= 30:
+            break
+    return topics
+
+
+def collect_destination_evidence(topic):
+    organization, hub = OFFICIAL_SOURCES[topic['country']]
+    if not allowed_url(topic['url']) or urlsplit(topic['url']).hostname != urlsplit(hub).hostname:
+        raise ValueError('Unapproved destination source')
+    try:
+        page = fetch_page(topic['url'])
+        excerpt = excerpt_for(page['text'], topic_terms(topic))
+        return {'sources': [{'id': 'S1', 'organization': organization, 'url': page['url'],
+                 'title': page['title'], 'retrieved_at': datetime.now(timezone.utc).isoformat(),
+                 'role': 'topic_candidate', 'excerpt': excerpt,
+                 'text_sha256': hashlib.sha256(page['text'].encode()).hexdigest(),
+                 'status': 'retrieved_not_verified'}], 'errors': [], 'original_news_fetched': False}
+    except Exception as error:
+        return {'sources': [], 'errors': [{'url': topic['url'], 'error': type(error).__name__}], 'original_news_fetched': False}
