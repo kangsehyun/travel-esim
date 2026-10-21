@@ -1,0 +1,68 @@
+{
+  "topic_url": "https://support.apple.com/en-us/118227",
+  "checked_at": "2026-10-21T03:12:30.182518+00:00",
+  "evidence": {
+    "sources": [
+      {
+        "id": "S1",
+        "organization": "Apple Support",
+        "url": "https://support.apple.com/en-us/118227",
+        "title": "Use eSIM while traveling internationally with your iPhone - Apple Support",
+        "retrieved_at": "2026-10-21T03:12:19.443996+00:00",
+        "role": "device_guidance",
+        "excerpt": "﻿ Use eSIM while traveling internationally with your iPhone - Apple Support Use eSIM while traveling internationally with your iPhone Learn about the options and benefits of using eSIM while traveling abroad. Benefits of traveling with eSIM eSIM is more secure than a physical SIM because it can't be removed if your iPhone is lost or stolen. With eSIM, you don't need to obtain, carry, or swap physical SIM cards (which can also be lost), or wait for them to arrive by mail. You can have two eSIMs active at the same time on supported iPhone models . For example, you can use one eSIM for your home phone number and another eSIM for the place you're visiting. What you need An iPhone XS, iPhone XS Max, iPhone XR, or later A wireless carrier or worldwide service provider that supports eSIM Your iPhone must be connected to a Wi-Fi network or hotspot. In some countries or regions, iPhone models that are eSIM only can activate without a Wi-Fi network. If your iPhone has a SIM tray, you can use both a physical SIM and an eSIM while traveling internationally. Learn how to set up eSIM on iPhone . In China mainland, only iPhone 18 Pro, iPhone 18 Pro Max, iPhone 17e, and iPhone Air support eSIM. Learn more about activating eSIM in China mainland. In Hong Kong and Macao, certain iPhone models feature Dual SIM with two nano-SIM cards . Select an option to learn more about using eSIM while traveling internationally : Roam internationally with your existing carrier Purchase a travel eSIM from a local carrier or worldwide service provider Returning home from traveling internationally Roam internationally with your existing carrier Before you travel, check if your carrier includes international roaming on select data plans without additional fees. Some countries or regions might be included in your home plan. Alternatively, your carrier might offer affordable travel passes or plans that you can purchase ahead of time to use at your destination. International roaming with an eSIM works the same as roaming with a physical SIM. To learn more, contact your carrier. Purchase a travel eSIM from a local carrier or worldwide service provider To use your iPhone with another carrier when traveling internationally, your iPhone cannot be locked to a carrier. To check if your iPhone is unlocked, follow these steps: Open the Settings app. Tap General. Tap About. If your iPhone is unlocked, \"No ",
+        "text_sha256": "142a5f56c8945160d0ddfca82b7a6302eec51a8a1b20455ef943afaf4cf365eb",
+        "status": "retrieved_not_verified"
+      }
+    ],
+    "errors": [],
+    "original_news_fetched": false
+  },
+  "verification_status": "insufficient_evidence",
+  "publication_hold": true,
+  "issues": [
+    "본문 주장·출처 ID·원문 인용문 연결을 확인해야 합니다."
+  ],
+  "claims": [
+    {
+      "claim": "아이폰 XS, XS Max, XR 이상 모델부터 eSIM 기능을 지원한다.",
+      "source_id": "S1",
+      "quote": "An iPhone XS, iPhone XS Max, iPhone XR, or later",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "아이폰이 통신사에 잠겨있지 않아야 해외에서 다른 통신사의 eSIM을 사용할 수 있다.",
+      "source_id": "S1",
+      "quote": "To use your iPhone with another carrier when traveling internationally, your iPhone cannot be locked to a carrier.",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "아이폰 eSIM 활성화 시 보통 와이파이 연결이 필요하다.",
+      "source_id": "S1",
+      "quote": "Your iPhone must be connected to a Wi-Fi network or hotspot.",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "eSIM은 물리 SIM 카드보다 분실 위험이 적고 보안성이 높다.",
+      "source_id": "S1",
+      "quote": "eSIM is more secure than a physical SIM because it can't be removed if your iPhone is lost or stolen.",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "대부분 아이폰은 물리 SIM과 eSIM을 동시에 사용할 수 있다.",
+      "source_id": "S1",
+      "quote": "If your iPhone has a SIM tray, you can use both a physical SIM and an eSIM while traveling internationally.",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    }
+  ],
+  "limitations": [
+    "인용문 일치는 사실의 정확성·최신성·주장 전체의 근거를 보장하지 않습니다.",
+    "모델이 중요한 주장을 누락했을 수 있어 제목·요약·본문 전체를 검토해야 합니다.",
+    "입국·비자·정책은 관할 정부 기관의 직접 발표를 별도로 확인해야 합니다."
+  ]
+}

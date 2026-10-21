@@ -1,8 +1,13 @@
 {
   "date": "2026-10-21",
-  "updated_at": "2026-10-21T02:48:48.674732+00:00",
-  "status": "skipped_insufficient_evidence",
+  "updated_at": "2026-10-21T03:12:30.183207+00:00",
+  "status": "generated",
   "publication_hold": true,
+  "fallback_revision": 1,
+  "selection_mode": "official_guide",
+  "draft_file": "2026-10-21-iphone-esim-overseas-travel-preparation-7d2590ef4b88.md",
+  "review_file": "2026-10-21-iphone-esim-overseas-travel-preparation-7d2590ef4b88.review.json",
+  "verification_status": "insufficient_evidence",
   "source_attempts": [
     {
       "title": "1. 베트남 골프 여행, 이제 ‘이곳’ 뜬다 - 여행신문",
@@ -23,6 +28,14 @@
       "source_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1oRElLekNQX1QtcnpEMGc2bEkyZVdCU2dzaTl6SWtEenFqdzBLNWMtcXpRZDNvOGpJMG9PdGtSWHB4bTdfMktsRg?oc=5",
       "source_count": 1,
       "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "해외여행 아이폰 eSIM 준비: 출발 전 확인할 사항",
+      "source_url": "https://support.apple.com/en-us/118227",
+      "selection_mode": "official_guide",
+      "source_count": 1,
+      "eligible_source_count": 1,
       "error_count": 0
     }
   ]
