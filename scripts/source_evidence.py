@@ -176,3 +176,42 @@ def check_claims(article, evidence):
             'limitations': ['인용문 일치는 사실의 정확성·최신성·주장 전체의 근거를 보장하지 않습니다.',
                            '모델이 중요한 주장을 누락했을 수 있어 제목·요약·본문 전체를 검토해야 합니다.',
                            '입국·비자·정책은 관할 정부 기관의 직접 발표를 별도로 확인해야 합니다.']}
+
+
+# Pinned first-party guides are independent topics, never evidence for RSS news.
+FALLBACK_REVISION = 1
+OFFICIAL_GUIDES = [
+    ('118227', '해외여행 아이폰 eSIM 준비: 출발 전 확인할 사항', ['Before you begin', 'travel internationally']),
+    ('118669', '아이폰 eSIM 설치 방법: QR 코드와 개통 전 확인 사항', ['What you need', 'QR code']),
+    ('109317', '아이폰 듀얼 SIM 여행 설정: 통화 회선과 데이터 회선', ['cellular data network', 'Use two phone numbers']),
+    ('102478', '아이폰 eSIM 설정이 안 될 때 확인할 항목', ['Before you begin', 'Check your plans']),
+]
+
+
+def official_guide_topics():
+    return [{'country': '공통', 'title': title, 'source': 'Apple Support 공식 안내',
+             'url': f'https://support.apple.com/en-us/{identifier}',
+             'description': '공식 기기 안내에 근거한 여행 준비 글. 상품별 조건이나 뉴스로 확대 해석하지 않습니다.',
+             'selection_mode': 'official_guide', 'focus_terms': terms}
+            for identifier, title, terms in OFFICIAL_GUIDES]
+
+
+def collect_guide_evidence(topic):
+    # Exact catalog membership, not merely an approved host or model-provided URL.
+    curated = next((row for row in official_guide_topics()
+                    if row['url'] == topic.get('url') and row['title'] == topic.get('title')), None)
+    if curated is None:
+        raise ValueError('Unapproved guide topic')
+    try:
+        page = fetch_page(curated['url'])
+        excerpt = excerpt_for(page['text'], curated['focus_terms'])
+        return {'sources': [{'id': 'S1', 'organization': 'Apple Support',
+                 'url': page['url'], 'title': page['title'],
+                 'retrieved_at': datetime.now(timezone.utc).isoformat(),
+                 'role': 'device_guidance', 'excerpt': excerpt,
+                 'text_sha256': hashlib.sha256(page['text'].encode()).hexdigest(),
+                 'status': 'retrieved_not_verified'}], 'errors': [],
+                 'original_news_fetched': False}
+    except Exception as error:
+        return {'sources': [], 'errors': [{'url': curated['url'], 'error': type(error).__name__}],
+                'original_news_fetched': False}

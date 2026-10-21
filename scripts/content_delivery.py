@@ -29,13 +29,19 @@ def should_generate(date, directory=ARTICLES):
     # No paid retries or overwriting a same-day outcome on backup schedules.
     if list(directory.glob(f'{date}-*.md')):
         return False
-    if (directory / f'run-{date}.json').exists():
-        read(directory / f'run-{date}.json', {})  # Fail closed on corrupt records.
-        return False
     ledger = read(directory / 'generation_ledger.json', [])
     if not isinstance(ledger, list):
         raise ValueError('Invalid ledger')
-    return not any(row.get('date') == date for row in ledger)
+    if any(row.get('date') == date for row in ledger):
+        return False
+    report_path = directory / f'run-{date}.json'
+    if report_path.exists():
+        report = read(report_path, {})
+        # One migration retry only: old source-only skips made no paid request.
+        return (report.get('status') in {'skipped_insufficient_evidence', 'skipped_no_new_topics'}
+                and report.get('fallback_revision', 0) == 0)
+    return True
+
 
 
 def record_failure(date, directory=ARTICLES):
