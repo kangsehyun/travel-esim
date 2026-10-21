@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-21",
+  "updated_at": "2026-10-21T02:48:48.674732+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "source_attempts": [
+    {
+      "title": "1. 베트남 골프 여행, 이제 ‘이곳’ 뜬다 - 여행신문",
+      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5FcTdTM3ZmN0tUUTVxelh1NTF0aF95VkRWdTljb2hXY2duTkx6TEsyYmpseXJaUC05NUJ4N2VaRVQzLWVGQXNGSC1WTmFSYTF2cVdIdWhrdmdyMFVuVkdMeGJkcWROX3FEYWJaWFVJOVFEUQ?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 문묘 국립대학교는 관광 분야의 디지털 전환을 촉진합니다. - Vietnam.vn",
+      "source_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPdmRJZTJsTk90dWVFS2V4ZWd2WnN0X3RObmdaUlU3TVpjVXgxdHBCYzhCb1VDS2t5dDhheDFKaURadjQxNVVEUXJHTDdrRXNFRTlVcXZsaVZFZlNiOTZUVFFDcTBTcjRiTUs2UnRJVmNuZnJQc2VodGJvajFRMHpicHJGWjU?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. Travel – 세계에서 가장 쿨한 동네’ 떤딘 산책기 - 씬짜오베트남",
+      "source_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1oRElLekNQX1QtcnpEMGc2bEkyZVdCU2dzaTl6SWtEenFqdzBLNWMtcXpRZDNvOGpJMG9PdGtSWHB4bTdfMktsRg?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
