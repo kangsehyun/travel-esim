@@ -26,6 +26,7 @@ class GenerationGateTests(unittest.TestCase):
             for n, title in enumerate(['airport transport', 'museum ticket', 'mountain walking', 'train route']))
         (root / f'topics-{g.TODAY}.md').write_text(text)
         self.stack.enter_context(patch.object(g, "official_guide_topics", return_value=[]))
+        self.stack.enter_context(patch.object(g, "destination_guide_topics", return_value=[]))
         self.real_call_openai = g.call_openai
         self.ai = self.stack.enter_context(patch.object(g, 'call_openai'))
         self.ai.return_value = {'title': '검토 초안', 'meta_description': '검토용', 'slug': 'review',
