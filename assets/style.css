@@ -47,3 +47,21 @@ footer a{display:inline-flex;align-items:center;min-height:44px}footer{padding-b
  .trip-guide-link,.trip-product-link{min-height:44px;align-content:center;line-height:1.6}
  footer{padding-top:26px}footer a{font-size:14px;margin-right:16px}
 }
+
+/* Keep the product comparison in three columns, including on phones. */
+.product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:700px){
+ .product-grid{gap:8px}
+ .product-grid .product-card{padding:12px 8px;border-radius:12px}
+ .product-grid .eyebrow{font-size:10px;letter-spacing:1px}
+ .product-grid .product-card h3{font-size:13px;line-height:1.5;margin:8px 0;word-break:keep-all}
+ .product-grid .product-card .meta{font-size:11px;line-height:1.7;margin:8px 0 14px;overflow-wrap:anywhere}
+ .product-grid .product-card .price{font-size:17px;line-height:1.5;letter-spacing:-.5px;overflow-wrap:anywhere}
+ .product-grid .buy{font-size:12px;line-height:1.5;padding:10px 4px;margin-top:12px;min-height:44px;align-content:center}
+}
+@media(max-width:360px){
+ .product-grid{gap:6px}
+ .product-grid .product-card{padding:10px 6px}
+ .product-grid .product-card h3{font-size:12px}
+ .product-grid .product-card .price{font-size:15px}
+}
