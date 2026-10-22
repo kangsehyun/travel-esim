@@ -12,7 +12,14 @@
   function pageUrl() {
     const url = new URL(location.pathname, location.origin);
     const params = new URLSearchParams(location.search);
-    const rules = {country: /^(JP|TW|VN|TH|US)$/, days: /^\d{1,3}$/, utm_source: /^tistory$/, utm_medium: /^blog$/, utm_campaign: /^post-\d+$/};
+    // Preserve only our published campaign vocabulary, never arbitrary query values.
+    const rules = {
+      country: /^(JP|TW|VN|TH|US)$/,
+      days: /^\d{1,3}$/,
+      utm_source: /^(tistory|instagram|threads)$/,
+      utm_medium: /^(blog|social)$/,
+      utm_campaign: /^(post-\d+|profile|(?:launch|ig|reel|threads)-\d{8})$/
+    };
     Object.keys(rules).forEach(function (key) { const value = params.get(key); if (value && rules[key].test(value)) url.searchParams.set(key, value); });
     return url.href;
   }
