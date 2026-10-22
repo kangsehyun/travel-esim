@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-22",
+  "updated_at": "2026-10-22T00:02:09.363577+00:00",
+  "status": "generated",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "selection_mode": "official_guide",
+  "draft_file": "2026-10-22-iphone-esim-installation-qr-check-54edb143970c.md",
+  "review_file": "2026-10-22-iphone-esim-installation-qr-check-54edb143970c.review.json",
+  "verification_status": "insufficient_evidence",
+  "source_attempts": [
+    {
+      "title": "1. 연차없이 태국 방콕 1박 3일 드디어 동남아 여행 왔다 I 곽범 I 연차없이 어떡행2 EP.7 - YouTube",
+      "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9IMFI3UnlTZVlhVjFxRGxnR3BELVpOcmhyT014c3o3VkJ6R2FQYzVBZ0laOW9IeWRQTkcwTEZuY25iQWltNm5YZXd1dFliVEhqZVltTm5sckp4NUtv?oc=5",
+      "source_count": 0,
+      "eligible_source_count": 0,
+      "error_count": 1
+    },
+    {
+      "title": "2. 태국관광청, 방콕 아트 비엔날레 2026 소개…도시 전체가 현대미술 전시장으로 - 트래블바이크뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE96c3BDTjU2Zi1oWVBVdXlOWlhWcWdNVFZ0THFGUHQ1REp0WXA4cDlPS1NYRExWOUx0bmRuRmo5WXE5YmlHcGN6Um5ZMzlhMmhYbTBJclNEb2xZY1pLbWNkZlJLYWp3ZFlGY2xCNldB?oc=5",
+      "source_count": 0,
+      "eligible_source_count": 0,
+      "error_count": 1
+    },
+    {
+      "title": "1. 미국관광청 직무대행에 베테타 전 캘리포니아 청장 선임 - 퍼블릭뉴스통신",
+      "source_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9ERDFVOVRlU284enZGZ2puWnc4WW5oOGFFWHBpenhGY2tyc1dXMzhEU2FIS3I4LTFrQU01TC1CLXhEQ051LUhjNXVkYVFQbDFvNHBQYnJnSE5UQ1ViOURxdXV5NmlUNDBvb0l3?oc=5",
+      "source_count": 0,
+      "eligible_source_count": 0,
+      "error_count": 1
+    },
+    {
+      "title": "아이폰 eSIM 설치 방법: QR 코드와 개통 전 확인 사항",
+      "source_url": "https://support.apple.com/en-us/118669",
+      "selection_mode": "official_guide",
+      "source_count": 1,
+      "eligible_source_count": 1,
+      "error_count": 0
+    }
+  ]
+}

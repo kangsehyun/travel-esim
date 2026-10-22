@@ -1,0 +1,68 @@
+{
+  "topic_url": "https://support.apple.com/en-us/118669",
+  "checked_at": "2026-10-22T00:02:09.362869+00:00",
+  "evidence": {
+    "sources": [
+      {
+        "id": "S1",
+        "organization": "Apple Support",
+        "url": "https://support.apple.com/en-us/118669",
+        "title": "Set up eSIM on iPhone - Apple Support",
+        "retrieved_at": "2026-10-22T00:01:56.730301+00:00",
+        "role": "device_guidance",
+        "excerpt": "﻿ Set up eSIM on iPhone - Apple Support Set up eSIM on iPhone Learn about eSIM, how to set up an eSIM on the iPhone, and how to transfer the phone number to another iPhone. What is eSIM? An eSIM is an industry-standard digital SIM built into your iPhone, eliminating the need for a physical SIM card. This innovative feature enables you to switch between SIMs effortlessly, manage up to eight or more eSIMs, and activate new plans digitally. With eSIM, you enjoy greater flexibility, enhanced convenience, better security, and seamless connectivity, especially when traveling internationally. Learn more about using an eSIM while traveling internationally with your iPhone . What you need An iPhone XS, iPhone XS Max, iPhone XR, or later A wireless carrier or worldwide service provider that supports eSIM Connect your new iPhone to a Wi-Fi network or hotspot. In some countries and regions, iPhone models that are eSIM-only can activate without a Wi-Fi network. In China mainland, only iPhone 18 Pro, iPhone 18 Pro Max, iPhone 17e, and iPhone Air support eSIM. Learn more about activating eSIM in China mainland. In Hong Kong and Macao, certain iPhone models feature Dual SIM with two nano-SIM cards . How to activate an eSIM Setting up an eSIM allows you to activate a cellular plan from your carrier without a physical SIM. In most cases, you can activate your eSIM while you're setting up your iPhone, or you can activate your eSIM after setup. You can activate your eSIM on iPhone through one of the following methods, depending on your carrier's eSIM support: Transfer your phone number using eSIM Quick Transfer Activate an eSIM using eSIM Carrier Activation Set up an eSIM with a QR code Activate an eSIM with other methods Transfer an eSIM from an Android or other non-Apple device Transfer your phone number using eSIM Quick Transfer If your carrier supports eSIM Quick Transfer, you can transfer the SIM from your previous iPhone to your new iPhone without contacting them. With some carriers, you can also convert your current physical SIM card to an eSIM. Before you begin, make sure: You're signed in to both devices with your Apple Account Unlock your previous iPhone with the device passcode Both devices are nearby with Bluetooth turned on Both devices are on iOS 18.4 or later If you're asked to transfer your phone number during setup of your new iPhone, transfer your physical SIM",
+        "text_sha256": "2611adeed17fe044d22024fd80a367a021ac5b97e0b94e516a706defc6bccadc",
+        "status": "retrieved_not_verified"
+      }
+    ],
+    "errors": [],
+    "original_news_fetched": false
+  },
+  "verification_status": "insufficient_evidence",
+  "publication_hold": true,
+  "issues": [
+    "본문 주장·출처 ID·원문 인용문 연결을 확인해야 합니다."
+  ],
+  "claims": [
+    {
+      "claim": "eSIM은 아이폰에 내장된 디지털 SIM으로 물리적인 SIM 카드 없이 셀룰러 요금제를 활성화할 수 있다.",
+      "source_id": "S1",
+      "quote": "An eSIM is an industry-standard digital SIM built into your iPhone, eliminating the need for a physical SIM card.",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "아이폰 XS, XS Max, XR 이상의 기기에서 eSIM을 사용할 수 있다.",
+      "source_id": "S1",
+      "quote": "An iPhone XS, iPhone XS Max, iPhone XR, or later",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "eSIM 설정은 아이폰 초기 설정 과정 중 또는 설정 완료 후에 수행할 수 있다.",
+      "source_id": "S1",
+      "quote": "In most cases, you can activate your eSIM while you're setting up your iPhone, or you can activate your eSIM after setup.",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "QR 코드 스캔, eSIM 빠른 전송, 통신사 활성화 등 다양한 방법으로 eSIM을 활성화할 수 있다.",
+      "source_id": "S1",
+      "quote": "You can activate your eSIM on iPhone through one of the following methods, depending on your carrier's eSIM support: Transfer your phone number using eSIM Quick Transfer Activate an eSIM using eSIM Carrier Activation Set up an eSIM with a QR code",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "eSIM 빠른 전송은 iOS 18.4 이상이 설치된 두 아이폰에서 Apple 계정에 로그인되어 있고 Bluetooth가 켜진 상태에서 사용할 수 있다.",
+      "source_id": "S1",
+      "quote": "Both devices are on iOS 18.4 or later ... You're signed in to both devices with your Apple Account ... Both devices are nearby with Bluetooth turned on",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    }
+  ],
+  "limitations": [
+    "인용문 일치는 사실의 정확성·최신성·주장 전체의 근거를 보장하지 않습니다.",
+    "모델이 중요한 주장을 누락했을 수 있어 제목·요약·본문 전체를 검토해야 합니다.",
+    "입국·비자·정책은 관할 정부 기관의 직접 발표를 별도로 확인해야 합니다."
+  ]
+}
