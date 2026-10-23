@@ -17,7 +17,7 @@
   const multi=document.getElementById('coverage-type');if(multi)multi.value=code==='GLOBAL'?'true':'';
   select.dispatchEvent(new Event('change',{bubbles:true}));
   dialog.close();renderTiles();
-  document.getElementById('title')?.scrollIntoView({behavior:'smooth',block:'start'});
+  document.getElementById('title')?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
  }
  function card(code,name,icon,compact){
   const el=document.createElement(inCatalog?'button':'a');el.className=compact?'destination-option':'destination-tile';
@@ -33,7 +33,10 @@
   count.textContent=text?(options.length+'개 여행지'):'국가·지역 '+options.length+'개 · 여행지를 선택하세요';
   if(!options.length){const p=document.createElement('p');p.className='destination-empty';p.textContent='검색 결과가 없습니다. 다른 이름이나 국가 코드로 검색해 주세요.';results.append(p)}
  }
- document.querySelectorAll('[data-open-destinations]').forEach(b=>b.addEventListener('click',()=>{renderResults();dialog.showModal();query.focus()}));
+ function sizeDialog(){dialog.style.setProperty('--destination-visible-height',(window.visualViewport?.height||window.innerHeight)+'px')}
+ window.visualViewport?.addEventListener('resize',sizeDialog);
+ dialog.addEventListener('close',()=>document.documentElement.classList.remove('destination-modal-open'));
+ document.querySelectorAll('[data-open-destinations]').forEach(b=>b.addEventListener('click',()=>{renderResults();sizeDialog();dialog.showModal();document.documentElement.classList.add('destination-modal-open');query.focus()}));
  document.getElementById('destination-close').addEventListener('click',()=>dialog.close());
  dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
  query.addEventListener('input',renderResults);select.addEventListener('change',renderTiles);
