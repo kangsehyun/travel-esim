@@ -11,13 +11,15 @@
 <meta name="description" content="전체 국가의 eSIM 상품을 여행 기간과 데이터 사용량에 맞춰 비교하세요. 국가별 eSIM 선택 가이드와 설치 방법을 확인할 수 있습니다.">
 <link rel="canonical" href="https://travelsimple-esim.com/">
 <meta property="og:title" content="여행심플 | 해외여행 eSIM 비교">
-<meta property="og:description" content="여행 국가와 3~30일 일정에 맞는 eSIM 상품과 국가별 선택 가이드를 확인하세요.">
+<meta property="og:description" content="여행지를 선택하고 이용기간과 데이터 조건에 맞는 eSIM 상품을 비교하세요.">
 <meta property="og:url" content="https://travelsimple-esim.com/">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/discovery.css">
 <script defer src="/assets/analytics.js"></script>
 <script defer src="assets/catalog-countries.js"></script>
+<link rel="stylesheet" href="assets/destination.css">
+<script defer src="assets/destination-picker.js"></script>
 </head>
 <body class="discovery-home">
 <header>
@@ -32,38 +34,14 @@
 </header>
 
 <main>
-<section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">TRAVEL eSIM GUIDE</span>
-    <h1>해외여행 eSIM,<br>쉽게 비교하세요.</h1>
-    <p>여행 국가와 기간에 맞춰 필요한 데이터 상품을 찾을 수 있도록 도와드립니다.</p>
-
-    <form id="esim-search" class="search-card" action="esim.html" method="get" aria-label="여행 조건으로 상품 찾기">
-      <label for="country">여행 국가</label>
-      <select id="country" name="country">
-        <option value="">전체 국가</option><option value="JP">일본</option>
-        <option value="TW">대만</option>
-        <option value="VN">베트남</option>
-        <option value="TH">태국</option>
-        <option value="US">미국</option>
-      </select>
-      <fieldset class="trip-periods"><legend>여행 기간</legend><div class="trip-day-options"><label><input type="radio" name="days" value="" checked><span>전체 기간</span></label>
-        <label><input type="radio" name="days" value="3"><span>3일</span></label>
-        <label><input type="radio" name="days" value="5"><span>5일</span></label>
-        <label><input type="radio" name="days" value="7"><span>7일</span></label>
-        <label><input type="radio" name="days" value="10"><span>10일</span></label>
-        <label><input type="radio" name="days" value="15"><span>15일</span></label>
-        <label><input type="radio" name="days" value="30"><span>30일</span></label>
-      </div></fieldset>
-      <p id="selection-summary" class="trip-summary" aria-live="polite">선택한 국가와 기간으로 조회합니다.</p>
-      <button id="find" class="primary" type="submit">선택한 조건으로 상품 비교하기 →</button>
-      <a id="selected-country-guide" class="trip-guide-link" href="japan-esim.html">먼저 일본 eSIM 선택 기준 보기 →</a>
-      <p class="trip-search-note">표시 가격과 실제 결제 조건은 다를 수 있습니다. 지원 기기·데이터·핫스팟·이용 시작 조건을 구매 전에 확인하세요.</p>
-    </form>
-    <p id="country-load-status" class="trip-summary" role="status"></p><p><a class="trip-guide-link" href="esim.html">전체 상품 둘러보기 →</a></p><p class="trip-affiliate">구매 링크를 통해 구매하면 여행심플이 제휴 수수료를 받을 수 있습니다. 실제 판매·결제는 연결된 판매처에서 진행됩니다.</p>
-  </div>
+<section class="wrap destination-home"><section class="destination-section" aria-labelledby="destination-heading">
+  <div class="destination-intro"><span class="destination-kicker">여행 준비, 가볍게</span><h1 id="destination-heading">어디로 떠나시나요?</h1><p>여행지만 고르면, 내 여행에 맞는 eSIM을 찾을 수 있어요.</p></div>
+  <button type="button" class="destination-search" data-open-destinations><span class="search-symbol" aria-hidden="true">⌕</span><span>국가 또는 지역을 검색하세요</span><b>검색 <span aria-hidden="true">→</span></b></button>
+  <div class="destination-row-title"><h2>인기 여행지</h2><button type="button" class="destination-all" data-open-destinations>전체 보기 <span aria-hidden="true">↗</span></button></div>
+  <div id="destination-tiles" class="destination-tiles" aria-label="인기 여행지"></div><noscript><p>여행지 선택에는 JavaScript가 필요합니다. <a href="japan-esim.html">일본 여행 가이드</a>와 <a href="install.html">설치 안내</a>는 바로 읽을 수 있습니다.</p></noscript>
+  <p class="destination-hint">찾는 나라가 없나요? 검색에서 전체 국가·지역을 확인하세요.</p>
 </section>
-
+<dialog id="destination-dialog" class="destination-dialog" aria-labelledby="destination-dialog-title"><div class="destination-dialog-top"><div><small>DESTINATIONS</small><h2 id="destination-dialog-title">여행지를 찾아보세요</h2></div><button type="button" id="destination-close" aria-label="여행지 검색 닫기">×</button></div><label class="sr-only" for="destination-query">국가 이름 또는 코드</label><input type="search" id="destination-query" placeholder="예: 일본, 프랑스, JP" autocomplete="off"><p id="destination-count" role="status"></p><div id="destination-results" class="destination-results"></div></dialog><select id="country" hidden aria-label="여행 국가"><option value="">전체 국가</option><option value="JP">일본</option><option value="TW">대만</option><option value="VN">베트남</option><option value="TH">태국</option><option value="US">미국</option></select><p id="country-load-status" class="muted" role="status"></p><div class="destination-benefits"><span>⌕ 국가별 상품 비교</span><span>◷ 기간·데이터 선택</span><span>↗ 제휴 판매처 구매 연결</span></div></section>
 <section class="wrap section">
   <h2>여행심플은 이렇게 도와드립니다</h2>
   <div class="grid">
@@ -87,7 +65,7 @@
 
 <section class="wrap section">
   <h2>여행지별 eSIM 가이드</h2>
-  <p class="trip-section-intro">처음이라면 선택 가이드를, 조건을 정했다면 상품 비교를 이용하세요. 상품 링크에는 위에서 선택한 여행 기간이 반영됩니다.</p>
+  <p class="trip-section-intro">처음이라면 선택 가이드를, 조건을 정했다면 상품 비교를 이용하세요. 각 국가의 상품 화면에서 이용기간을 바꿀 수 있습니다.</p>
   <div class="grid">
     <article>
       <b>🇯🇵 JAPAN</b>

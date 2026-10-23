@@ -28,6 +28,7 @@ US: '미국'
 const params = new URLSearchParams(window.location.search);
 let country = (params.get('country') || '').toUpperCase();
 let days = Number(params.get('days') || 0);
+let scopeAll=params.get('scope')==='all';
 
 const title = document.getElementById('title');
 const subtitle = document.getElementById('subtitle');
@@ -69,6 +70,7 @@ if (!Number.isInteger(days) || days<0 || days>365) days=0;
 if(days && ![1,3,5,7,10,15,30].includes(days)){const option=document.createElement('option');option.value=String(days);option.textContent=days+'일';daysSelect.appendChild(option);}
 
 countrySelect.value = country;
+if(countrySelect.dataset)countrySelect.dataset.all=scopeAll?'true':'false';
 daysSelect.value = days ? String(days) : '';
 if(params.has('sort'))sortSelect.value=params.get('sort');
 if(!sortSelect.value)sortSelect.value='recommended';
@@ -78,7 +80,7 @@ Object.entries(extraFilters).forEach(([key,el])=>{if(el){if(key==='localNumber')
 function updateHeading() {
 let countryName=names[country]||country;
 try {if(country&&!names[country])countryName=new Intl.DisplayNames(['ko'],{type:'region'}).of(country)}catch(_){}
-title.textContent = country ? countryName+' eSIM' : '전체 eSIM 상품';
+title.textContent = country ? countryName+' eSIM' : extraFilters.multiCountry?.value==='true'?'여러 국가 eSIM':'전체 eSIM 상품';
 subtitle.textContent = (days ? '이용기간 '+days+'일 상품' : '모든 이용기간 상품')+'을 비교하세요. 가격·사용 조건은 구매 전 확인하세요.';
 if (guideLink) {
  const paths={JP:'japan',TW:'taiwan',VN:'vietnam',TH:'thailand',US:'usa'};
@@ -144,7 +146,11 @@ items.forEach(function (p, i) {
     '\n제공사: ' + (p.provider || '-') +
     '\n제공 방식: '+(p.dataType==='daily'?'매일 제공':p.dataType==='total'?'총량 제공':'확인 필요')+
     '\n전화번호: '+(p.hasLocalNumber===true?'포함':p.hasLocalNumber===false?'미포함':'확인 필요')+
-    '\n사용 국가: '+(Array.isArray(p.coverageCountries)?p.coverageCountries.join(', '):p.countryName||p.countryCode||'구매 페이지 확인');
+    '\n사용 국가: '+(Array.isArray(p.coverageCountries)&&p.coverageCountries.length?p.coverageCountries.join(', '):p.countryName||p.countryCode||'구매 페이지 확인');
+
+  meta.hidden=true;meta.id='product-conditions-'+i;
+  const specs=document.createElement('p');specs.className='product-key-spec';specs.textContent=(p.isUnlimited===true?'무제한 데이터':p.dataAmount||'데이터 확인 필요')+' · '+(p.validityDays?p.validityDays+'일':'기간 확인 필요')+'\n'+(p.dataType==='daily'?'매일 제공':p.dataType==='total'?'전체 기간 총량':'제공 방식 확인 필요');
+  const toggle=document.createElement('button');toggle.type='button';toggle.className='product-details-toggle';toggle.textContent='상세 조건 보기 ⌄';toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-controls',meta.id);toggle.addEventListener('click',()=>{meta.hidden=!meta.hidden;toggle.setAttribute('aria-expanded',String(!meta.hidden));toggle.textContent=meta.hidden?'상세 조건 보기 ⌄':'상세 조건 접기 ⌃';});
 
   const price = document.createElement('strong');
   price.className = 'price';
@@ -176,6 +182,7 @@ items.forEach(function (p, i) {
   article.appendChild(meta);
   article.appendChild(price);
   article.appendChild(link);
+  article.appendChild(specs);article.appendChild(toggle);
 
   box.appendChild(article);
 });
@@ -184,6 +191,9 @@ items.forEach(function (p, i) {
 }
 
 async function load(append = false) {
+if(!country&&!scopeAll){
+ if(activeController)activeController.abort();++requestNumber;allItems=[];hasMore=false;loading=false;box.innerHTML='';box.setAttribute('aria-busy','false');status.textContent='위에서 여행지를 선택해 주세요. 전체 상품은 여행지 검색에서 볼 수 있어요.';if(moreButton)moreButton.hidden=true;if(retryButton)retryButton.hidden=true;updateHeading();return;
+}
 if(append&&loading)return;
 loading=true;
 if(moreButton)moreButton.disabled=true;
@@ -243,10 +253,12 @@ try {
 
 function searchProducts() {
   country = countrySelect.value;
+  scopeAll=!!(countrySelect.dataset&&countrySelect.dataset.all==='true');
   days = Number(daysSelect.value);
 
   const nextUrl = new URL(window.location.href);
   if(country)nextUrl.searchParams.set('country',country);else nextUrl.searchParams.delete('country');
+  if(scopeAll)nextUrl.searchParams.set('scope','all');else nextUrl.searchParams.delete('scope');
   if(days)nextUrl.searchParams.set('days',String(days));else nextUrl.searchParams.delete('days');
   nextUrl.searchParams.set('sort',sortSelect.value);
   if(unlimitedCheck.checked)nextUrl.searchParams.set('unlimited','true');else nextUrl.searchParams.delete('unlimited');

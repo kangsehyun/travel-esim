@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="assets/discovery.css">
 <script defer src="/assets/analytics.js"></script>
 <script defer src="assets/catalog-countries.js"></script>
+<link rel="stylesheet" href="assets/destination.css">
+<script defer src="assets/destination-picker.js"></script>
 </head>
 <body>
 
@@ -29,12 +31,14 @@
   </div>
 </header>
 
-<main class="wrap page discovery-countries">
-  <span class="eyebrow">COUNTRY GUIDES</span>
-  <h1>어디로 떠나시나요?</h1>
-  <p class="lead">판매 중인 전체 국가의 상품을 찾아보세요. 주요 국가의 선택 가이드도 함께 제공합니다.</p>
-  <section class="catalog-directory"><h2>전체 판매 국가</h2><p><a class="trip-guide-link" href="esim.html">모든 국가·여러 국가 상품 둘러보기 →</a></p><label for="country-search">국가 이름·코드 검색</label><input id="country-search" type="search" placeholder="예: 프랑스, FR" autocomplete="off"><p id="country-load-status" role="status">전체 국가 불러오는 중…</p><div id="all-countries" class="catalog-countries"></div></section>
-  <h2>주요 국가 가이드</h2><div class="trip-browse-control"><label for="browse-days">상품을 비교할 여행 기간</label><select id="browse-days"><option value="3">3일</option><option value="5" selected>5일</option><option value="7">7일</option><option value="10">10일</option><option value="15">15일</option><option value="30">30일</option></select><noscript><p>기간별 링크 변경에는 JavaScript가 필요합니다. 기본 5일 상품 화면으로 이동한 뒤 기간을 바꿀 수도 있습니다.</p></noscript><p id="selection-summary" class="trip-summary" aria-live="polite">아래 상품 링크는 5일 조건으로 조회합니다.</p></div>
+<main class="wrap page discovery-countries destination-country-page"><section class="destination-section" aria-labelledby="destination-heading">
+  <div class="destination-intro"><span class="destination-kicker">여행 준비, 가볍게</span><h1 id="destination-heading">어디로 떠나시나요?</h1><p>여행지만 고르면, 내 여행에 맞는 eSIM을 찾을 수 있어요.</p></div>
+  <button type="button" class="destination-search" data-open-destinations><span class="search-symbol" aria-hidden="true">⌕</span><span>국가 또는 지역을 검색하세요</span><b>검색 <span aria-hidden="true">→</span></b></button>
+  <div class="destination-row-title"><h2>인기 여행지</h2><button type="button" class="destination-all" data-open-destinations>전체 보기 <span aria-hidden="true">↗</span></button></div>
+  <div id="destination-tiles" class="destination-tiles" aria-label="인기 여행지"></div><noscript><p>여행지 선택에는 JavaScript가 필요합니다. <a href="japan-esim.html">일본 여행 가이드</a>와 <a href="install.html">설치 안내</a>는 바로 읽을 수 있습니다.</p></noscript>
+  <p class="destination-hint">찾는 나라가 없나요? 검색에서 전체 국가·지역을 확인하세요.</p>
+</section>
+<dialog id="destination-dialog" class="destination-dialog" aria-labelledby="destination-dialog-title"><div class="destination-dialog-top"><div><small>DESTINATIONS</small><h2 id="destination-dialog-title">여행지를 찾아보세요</h2></div><button type="button" id="destination-close" aria-label="여행지 검색 닫기">×</button></div><label class="sr-only" for="destination-query">국가 이름 또는 코드</label><input type="search" id="destination-query" placeholder="예: 일본, 프랑스, JP" autocomplete="off"><p id="destination-count" role="status"></p><div id="destination-results" class="destination-results"></div></dialog><select id="country" hidden aria-label="여행 국가"><option value="">전체 국가</option><option value="JP">일본</option></select><p id="country-load-status" class="muted" role="status"></p>  <h2>주요 국가 가이드</h2><div class="trip-browse-control"><label for="browse-days">상품을 비교할 여행 기간</label><select id="browse-days"><option value="3">3일</option><option value="5" selected>5일</option><option value="7">7일</option><option value="10">10일</option><option value="15">15일</option><option value="30">30일</option></select><noscript><p>기간별 링크 변경에는 JavaScript가 필요합니다. 기본 5일 상품 화면으로 이동한 뒤 기간을 바꿀 수도 있습니다.</p></noscript><p id="selection-summary" class="trip-summary" aria-live="polite">아래 상품 링크는 5일 조건으로 조회합니다.</p></div>
   <p class="trip-section-intro">기기 호환성과 개통 조건이 궁금하면 ‘선택 가이드’를, 가격·데이터 조건을 비교하려면 ‘상품 비교’를 선택하세요.</p>
   <div class="trip-country-cards">
     <article><span class="eyebrow">JAPAN</span><h2>일본 eSIM</h2><p class="trip-cities">도쿄 · 오사카 · 후쿠오카</p><p>여행 일수와 데이터 제공 방식, 설치·로밍 조건을 확인하세요.</p><div class="trip-card-actions"><a class="trip-guide-link" href="japan-esim.html">일본 선택 가이드 →</a><a class="trip-product-link" data-trip-country="JP" href="esim.html?country=JP&amp;days=5">일본 5일 상품 비교 →</a></div></article>
