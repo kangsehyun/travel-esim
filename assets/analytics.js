@@ -16,9 +16,9 @@
     const rules = {
       country: /^(JP|TW|VN|TH|US)$/,
       days: /^\d{1,3}$/,
-      utm_source: /^(tistory|instagram|threads)$/,
+      utm_source: /^(tistory|instagram|threads|youtube)$/,
       utm_medium: /^(blog|social)$/,
-      utm_campaign: /^(post-\d+|profile|(?:launch|ig|reel|threads)-\d{8})$/
+      utm_campaign: /^(post-\d+|profile|(?:launch|ig|reel|threads|shorts-launch|shorts)-\d{8})$/
     };
     Object.keys(rules).forEach(function (key) { const value = params.get(key); if (value && rules[key].test(value)) url.searchParams.set(key, value); });
     return url.href;
@@ -103,3 +103,4 @@
   });
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
 }());
+
