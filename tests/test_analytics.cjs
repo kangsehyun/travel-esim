@@ -53,6 +53,8 @@ for (const [source, campaign] of [
   ['instagram', 'launch-20261022'], ['threads', 'launch-20261022'],
   ['instagram', 'ig-20261023'], ['instagram', 'reel-20261023'],
   ['threads', 'threads-20261023'],
+  ['youtube', 'profile'], ['youtube', 'shorts-launch-20261023'],
+  ['youtube', 'shorts-20261024'],
 ]) {
   const query = '?country=TW&days=7&utm_source=' + source + '&utm_medium=social&utm_campaign=' + campaign + '&utm_content=link_in_bio&fbclid=secret-meta-id&email=private%40example.com&token=secret';
   const test = setup(null, null, query);
@@ -86,3 +88,4 @@ const rejected = setup('granted', null, '?utm_source=private%40example.com&utm_m
 const rejectedLocation = new URL(rejected.context.dataLayer.map(x => Array.from(x)).find(x => x[0] === 'config')[2].page_location);
 assert.equal(rejectedLocation.search, '');
 console.log('Instagram/Threads attribution, campaign formats, privacy filtering and consent regression checks: PASS');
+
