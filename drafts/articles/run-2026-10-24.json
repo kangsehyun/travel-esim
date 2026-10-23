@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-24",
+  "updated_at": "2026-10-23T23:52:52.314158+00:00",
+  "status": "generated",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "selection_mode": "news",
+  "draft_file": "2026-10-24-esim-vs-roaming-cost-comparison-f71ac5c03063.md",
+  "review_file": "2026-10-24-esim-vs-roaming-cost-comparison-f71ac5c03063.review.json",
+  "verification_status": "insufficient_evidence",
+  "source_attempts": [
+    {
+      "title": "1. 해외에서 유심 안 바꿔도 된다. eSIM과 로밍, 뭐가 더 쌀까? - 여행픽",
+      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1FNnpldkttbFducjRDRzRaeG5EVGtqU3F4Q3A0VUtjQjF5LWFkcWFsWTd3b1hTaTNOWTFlRmJTdHdjd0t4X2FBY1NHZWluOG1TRDNZR3JyOTY0ck9KNzBzMEEzSTlmUVhTYlU1WA?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 1,
+      "error_count": 0
+    }
+  ]
+}
