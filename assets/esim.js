@@ -26,8 +26,8 @@ US: '미국'
 };
 
 const params = new URLSearchParams(window.location.search);
-let country = (params.get('country') || 'JP').toUpperCase();
-let days = Number(params.get('days') || 5);
+let country = (params.get('country') || '').toUpperCase();
+let days = Number(params.get('days') || 0);
 
 const title = document.getElementById('title');
 const subtitle = document.getElementById('subtitle');
@@ -45,6 +45,9 @@ const daysSelect = document.getElementById('search-days');
 
 let allItems = [];
 let requestNumber = 0;
+let nextOffset=0, total=null, hasMore=false, loading=false;
+const moreButton=document.getElementById('more-products');
+const extraFilters={dataType:document.getElementById('data-type'),multiCountry:document.getElementById('coverage-type'),network:document.getElementById('network-type'),localNumber:document.getElementById('local-number')};
 
 if (
 !title ||
@@ -59,23 +62,28 @@ if (
 ) {
 console.error('esim.html에서 필요한 HTML 요소를 찾을 수 없습니다.');
 } else {
-if (!names[country]) country = 'JP';
+if (country && !/^[A-Z]{2}$/.test(country)) country = '';
+if (country && !names[country]) { const option=document.createElement('option');option.value=country;option.textContent=country;countrySelect.appendChild(option); }
 
-if (![1, 3, 5, 7, 10, 15, 30].includes(days)) {
-days = 5;
-}
+if (!Number.isInteger(days) || days<0 || days>365) days=0;
+if(days && ![1,3,5,7,10,15,30].includes(days)){const option=document.createElement('option');option.value=String(days);option.textContent=days+'일';daysSelect.appendChild(option);}
 
 countrySelect.value = country;
-daysSelect.value = String(days);
+daysSelect.value = days ? String(days) : '';
+if(params.has('sort'))sortSelect.value=params.get('sort');
+if(!sortSelect.value)sortSelect.value='recommended';
+unlimitedCheck.checked=params.get('unlimited')==='true';
+Object.entries(extraFilters).forEach(([key,el])=>{if(el){if(key==='localNumber')el.checked=params.get(key)==='true';else el.value=params.get(key)||'';}});
 
 function updateHeading() {
-title.textContent = names[country] + ' eSIM';
-subtitle.textContent =
-days + '일 여행에 맞는 실제 판매 상품을 비교하세요.';
+let countryName=names[country]||country;
+try {if(country&&!names[country])countryName=new Intl.DisplayNames(['ko'],{type:'region'}).of(country)}catch(_){}
+title.textContent = country ? countryName+' eSIM' : '전체 eSIM 상품';
+subtitle.textContent = (days ? '이용기간 '+days+'일 상품' : '모든 이용기간 상품')+'을 비교하세요. 가격·사용 조건은 구매 전 확인하세요.';
 if (guideLink) {
-  const paths = {JP: 'japan', TW: 'taiwan', VN: 'vietnam', TH: 'thailand', US: 'usa'};
-  guideLink.href = paths[country] + '-esim.html';
-  guideLink.textContent = names[country] + ' eSIM 선택 가이드';
+ const paths={JP:'japan',TW:'taiwan',VN:'vietnam',TH:'thailand',US:'usa'};
+ guideLink.hidden=!paths[country];
+ if(paths[country]){guideLink.href=paths[country]+'-esim.html';guideLink.textContent=countryName+' eSIM 선택 가이드';}
 }
 }
 
@@ -105,11 +113,12 @@ if (sortSelect.value === 'price-asc') {
   });
 }
 
-status.textContent = '조건에 맞는 상품 ' + items.length + '개';
+status.textContent = '불러온 상품 '+allItems.length+'개'+(total===null?'':' / 검색 결과 '+total+'개')+' · 현재 표시 '+items.length+'개'+(hotspotCheck.checked?' (핫스팟 필터는 불러온 상품에 적용)':'');
+if(moreButton){moreButton.hidden=!hasMore;moreButton.disabled=loading;}
 box.innerHTML = '';
 
 if (items.length === 0) {
-  box.textContent = '조건에 맞는 상품이 없습니다. 필터를 변경해보세요.';
+  box.textContent = hasMore ? '불러온 상품 중 일치하는 상품이 없습니다. 상품 더 보기를 누르거나 필터를 변경하세요.' : '조건에 맞는 상품이 없습니다. 필터를 변경해보세요.';
   return;
 }
 
@@ -132,7 +141,10 @@ items.forEach(function (p, i) {
     '\n통신망: ' + (p.networkType || '-') +
     ' · ' + (p.isLocalNetwork === true ? '현지망' : p.isLocalNetwork === false ? '로밍' : '망 유형 확인 필요') +
     '\n핫스팟: ' + (p.hotspot === true ? '가능' : p.hotspot === false ? '불가' : '확인 필요') +
-    '\n제공사: ' + (p.provider || '-');
+    '\n제공사: ' + (p.provider || '-') +
+    '\n제공 방식: '+(p.dataType==='daily'?'매일 제공':p.dataType==='total'?'총량 제공':'확인 필요')+
+    '\n전화번호: '+(p.hasLocalNumber===true?'포함':p.hasLocalNumber===false?'미포함':'확인 필요')+
+    '\n사용 국가: '+(Array.isArray(p.coverageCountries)?p.coverageCountries.join(', '):p.countryName||p.countryCode||'구매 페이지 확인');
 
   const price = document.createElement('strong');
   price.className = 'price';
@@ -171,27 +183,32 @@ items.forEach(function (p, i) {
 
 }
 
-async function load() {
+async function load(append = false) {
+if(append&&loading)return;
+loading=true;
+if(moreButton)moreButton.disabled=true;
 const currentRequest = ++requestNumber;
 if (activeController) activeController.abort();
 activeController = new AbortController();
 const controller = activeController;
 const timer = setTimeout(function () { controller.abort(); }, 15000);
-allItems = [];
+if(!append){allItems=[];nextOffset=0;total=null;hasMore=false;}
 box.setAttribute('aria-busy', 'true');
 if (retryButton) retryButton.hidden = true;
 
 
 updateHeading();
 status.textContent = '실시간 eSIM 상품을 불러오는 중입니다...';
-box.innerHTML = '';
+if(!append)box.innerHTML = '';
 
 try {
+  const query=new URLSearchParams({offset:String(nextOffset),sort:sortSelect.value==='price-asc'?'price':sortSelect.value});
+  if(country)query.set('country',country);
+  if(days)query.set('days',String(days));
+  if(unlimitedCheck.checked)query.set('unlimited','true');
+  Object.entries(extraFilters).forEach(([key,el])=>{if(el){const value=key==='localNumber'?(el.checked?'true':''):el.value;if(value)query.set(key,value);}});
   const response = await fetch(
-    '/api/esims?country=' +
-    encodeURIComponent(country) +
-    '&days=' +
-    encodeURIComponent(days),
+    '/api/esims?'+query,
     {signal: controller.signal}
   );
 
@@ -204,20 +221,22 @@ try {
   }
 
   if (!Array.isArray(data.items)) throw new Error('Invalid product response');
-  allItems = data.items.filter(function (item) { return item && typeof item === 'object' && !Array.isArray(item); });
+  const received=data.items.filter(function(item){return item&&typeof item==='object'&&!Array.isArray(item)});
+  const seen=new Set(allItems.map(p=>p.id||p.url));
+  allItems=allItems.concat(received.filter(p=>{const key=p.id||p.url;if(!key)return true;if(seen.has(key))return false;seen.add(key);return true;}));
+  total=Number.isInteger(data.total)&&data.total>=0?data.total:null;
+  nextOffset+=50;hasMore=received.length>0&&(total!==null?nextOffset<total:received.length===50);
   render();
 } catch (error) {
   if (currentRequest !== requestNumber) return;
 
   console.error('eSIM 상품 로딩 오류:', error);
-  status.textContent =
-    '상품 정보를 불러오지 못했습니다.';
-  box.textContent =
-    '잠시 후 다시 시도해 주세요. 문제가 계속되면 여행 국가나 기간을 변경해 보세요.';
+  status.textContent = append?'다음 상품을 불러오지 못했습니다. 상품 더 보기를 눌러 다시 시도하세요.':'상품 정보를 불러오지 못했습니다.';
+  if(!append)box.textContent='잠시 후 다시 시도해 주세요. 국가·기간 조건을 변경할 수도 있습니다.';
   if (retryButton) retryButton.hidden = false;
 } finally {
   clearTimeout(timer);
-  if (currentRequest === requestNumber) box.setAttribute('aria-busy', 'false');
+  if (currentRequest === requestNumber) {loading=false;box.setAttribute('aria-busy','false');if(moreButton){moreButton.disabled=false;moreButton.hidden=!hasMore;}}
 }
 
 }
@@ -227,19 +246,24 @@ function searchProducts() {
   days = Number(daysSelect.value);
 
   const nextUrl = new URL(window.location.href);
-  nextUrl.searchParams.set('country', country);
-  nextUrl.searchParams.set('days', String(days));
+  if(country)nextUrl.searchParams.set('country',country);else nextUrl.searchParams.delete('country');
+  if(days)nextUrl.searchParams.set('days',String(days));else nextUrl.searchParams.delete('days');
+  nextUrl.searchParams.set('sort',sortSelect.value);
+  if(unlimitedCheck.checked)nextUrl.searchParams.set('unlimited','true');else nextUrl.searchParams.delete('unlimited');
+  Object.entries(extraFilters).forEach(([key,el])=>{if(el){const value=key==='localNumber'?(el.checked?'true':''):el.value;if(value)nextUrl.searchParams.set(key,value);else nextUrl.searchParams.delete(key);}});
 
   window.history.replaceState({}, '', nextUrl.toString());
   load();
 }
 
-if (retryButton) retryButton.addEventListener('click', load);
+if (retryButton) retryButton.addEventListener('click', ()=>load(false));
 countrySelect.addEventListener('change', searchProducts);
 daysSelect.addEventListener('change', searchProducts);
 
-sortSelect.addEventListener('change', render);
-unlimitedCheck.addEventListener('change', render);
+sortSelect.addEventListener('change', searchProducts);
+unlimitedCheck.addEventListener('change', searchProducts);
+Object.values(extraFilters).forEach(el=>{if(el)el.addEventListener('change',searchProducts)});
+if(moreButton)moreButton.addEventListener('click',()=>load(true));
 hotspotCheck.addEventListener('change', render);
 
 load();

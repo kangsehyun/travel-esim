@@ -153,3 +153,12 @@ Public site: https://travelsimple-esim.com . Both custom domains are managed by 
 - BotFather로 만든 본인 봇의 개인 대화에서 먼저 `/start`를 보내세요. `TELEGRAM_CHAT_ID`는 그 개인 대화의 숫자 ID입니다. 그룹·채널로는 발송하지 않습니다. 기존 봇을 재사용해도 되며 getUpdates 조회가 기존 수신 프로그램에 영향을 줄 수 있으므로 별도 봇 사용을 권장합니다.
 - 두 secret을 등록하면 다음 실제 실행부터 생성 완료·보류·실패 상태와 GitHub 검토 링크만 보냅니다. 전체 글이나 비밀 정보는 전송하지 않습니다. 설정 전에는 알림을 건너뛰며 생성 기능은 계속 작동합니다.
 - 날짜·상태가 동일한 알림은 반복 발송하지 않습니다. 통신 오류로 결과가 불명확하면 자동 재전송하지 않고 `notification-YYYY-MM-DD.json`에 `delivery_unknown`으로 기록합니다. GitHub 저장 실패·runner 미기동·강제 종료 시에는 알림도 누락될 수 있습니다. 알림 실패만으로 유료 생성을 다시 실행하지 마세요.
+
+
+## 전체 eSIMOA 카탈로그
+
+`/api/countries`는 판매 국가 목록, `/api/esims`는 전체 판매 상품의 50개 단위 페이지를 조회합니다. 국가·기간은 선택 사항이며 offset은 50의 배수입니다. 가격·데이터·기간 정렬과 무제한·데이터 제공 방식·여러 국가·현지 번호·망 방식 조건을 공급사에 전달합니다. 핫스팟은 공급사 API의 근사 검색 제한을 피하기 위해 불러온 상품 내에서만 필터링하며 UI에 적용 범위를 표시합니다. 구매 URL의 제휴 파라미터는 수정하지 않습니다. 판매 중단 및 공개 API에서 제공되지 않는 상품은 포함하지 않습니다.
+
+공식 참조: https://esimoa.com/en/developers/docs/public-api/list-esims 및 /countries. API 키는 Worker secret ESIMOA_API_KEY에만 두며 브라우저·저장소에 포함하지 않습니다. 가격 캐시는 120초이며 실제 결제 조건은 판매처에서 재확인합니다.
+
+검증: `node tests/test_catalog_api.cjs`, `node tests/test_products.cjs`, `node tests/test_analytics.cjs`, `node tests/test_domain.cjs`.

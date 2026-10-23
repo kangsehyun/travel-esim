@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>여행심플 | 해외여행 eSIM 비교</title>
-<meta name="description" content="일본, 대만, 베트남, 태국, 미국 여행 eSIM 상품을 여행 기간과 데이터 사용량에 맞춰 비교하세요. 국가별 eSIM 선택 가이드와 설치 방법을 확인할 수 있습니다.">
+<meta name="description" content="전체 국가의 eSIM 상품을 여행 기간과 데이터 사용량에 맞춰 비교하세요. 국가별 eSIM 선택 가이드와 설치 방법을 확인할 수 있습니다.">
 <link rel="canonical" href="https://travelsimple-esim.com/">
 <meta property="og:title" content="여행심플 | 해외여행 eSIM 비교">
 <meta property="og:description" content="여행 국가와 3~30일 일정에 맞는 eSIM 상품과 국가별 선택 가이드를 확인하세요.">
@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/discovery.css">
 <script defer src="/assets/analytics.js"></script>
+<script defer src="assets/catalog-countries.js"></script>
 </head>
 <body class="discovery-home">
 <header>
@@ -40,15 +41,15 @@
     <form id="esim-search" class="search-card" action="esim.html" method="get" aria-label="여행 조건으로 상품 찾기">
       <label for="country">여행 국가</label>
       <select id="country" name="country">
-        <option value="JP">일본</option>
+        <option value="">전체 국가</option><option value="JP">일본</option>
         <option value="TW">대만</option>
         <option value="VN">베트남</option>
         <option value="TH">태국</option>
         <option value="US">미국</option>
       </select>
-      <fieldset class="trip-periods"><legend>여행 기간</legend><div class="trip-day-options">
+      <fieldset class="trip-periods"><legend>여행 기간</legend><div class="trip-day-options"><label><input type="radio" name="days" value="" checked><span>전체 기간</span></label>
         <label><input type="radio" name="days" value="3"><span>3일</span></label>
-        <label><input type="radio" name="days" value="5" checked><span>5일</span></label>
+        <label><input type="radio" name="days" value="5"><span>5일</span></label>
         <label><input type="radio" name="days" value="7"><span>7일</span></label>
         <label><input type="radio" name="days" value="10"><span>10일</span></label>
         <label><input type="radio" name="days" value="15"><span>15일</span></label>
@@ -59,7 +60,7 @@
       <a id="selected-country-guide" class="trip-guide-link" href="japan-esim.html">먼저 일본 eSIM 선택 기준 보기 →</a>
       <p class="trip-search-note">표시 가격과 실제 결제 조건은 다를 수 있습니다. 지원 기기·데이터·핫스팟·이용 시작 조건을 구매 전에 확인하세요.</p>
     </form>
-    <p class="trip-affiliate">구매 링크를 통해 구매하면 여행심플이 제휴 수수료를 받을 수 있습니다. 실제 판매·결제는 연결된 판매처에서 진행됩니다.</p>
+    <p id="country-load-status" class="trip-summary" role="status"></p><p><a class="trip-guide-link" href="esim.html">전체 상품 둘러보기 →</a></p><p class="trip-affiliate">구매 링크를 통해 구매하면 여행심플이 제휴 수수료를 받을 수 있습니다. 실제 판매·결제는 연결된 판매처에서 진행됩니다.</p>
   </div>
 </section>
 
