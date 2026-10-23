@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="assets/style.css">
 <script defer src="/assets/analytics.js"></script>
 <script defer src="assets/catalog-countries.js"></script>
+<link rel="stylesheet" href="assets/destination.css">
+<script defer src="assets/destination-picker.js"></script>
 </head>
 <body>
   <header>
@@ -22,18 +24,24 @@
     </div>
   </header>
 
-  <main class="wrap page">
+  <main class="wrap page destination-catalog"><section class="destination-section" aria-labelledby="destination-heading">
+  <div class="destination-intro"><span class="destination-kicker">여행 준비, 가볍게</span><h1 id="destination-heading">어디로 떠나시나요?</h1><p>여행지만 고르면, 내 여행에 맞는 eSIM을 찾을 수 있어요.</p></div>
+  <button type="button" class="destination-search" data-open-destinations><span class="search-symbol" aria-hidden="true">⌕</span><span>국가 또는 지역을 검색하세요</span><b>검색 <span aria-hidden="true">→</span></b></button>
+  <div class="destination-row-title"><h2>인기 여행지</h2><button type="button" class="destination-all" data-open-destinations>전체 보기 <span aria-hidden="true">↗</span></button></div>
+  <div id="destination-tiles" class="destination-tiles" aria-label="인기 여행지"></div><noscript><p>여행지 선택에는 JavaScript가 필요합니다. <a href="japan-esim.html">일본 여행 가이드</a>와 <a href="install.html">설치 안내</a>는 바로 읽을 수 있습니다.</p></noscript>
+  <p class="destination-hint">찾는 나라가 없나요? 검색에서 전체 국가·지역을 확인하세요.</p>
+</section>
+<dialog id="destination-dialog" class="destination-dialog" aria-labelledby="destination-dialog-title"><div class="destination-dialog-top"><div><small>DESTINATIONS</small><h2 id="destination-dialog-title">여행지를 찾아보세요</h2></div><button type="button" id="destination-close" aria-label="여행지 검색 닫기">×</button></div><label class="sr-only" for="destination-query">국가 이름 또는 코드</label><input type="search" id="destination-query" placeholder="예: 일본, 프랑스, JP" autocomplete="off"><p id="destination-count" role="status"></p><div id="destination-results" class="destination-results"></div></dialog>
     <div class="result-head">
       <div>
         <span class="eyebrow">ESIM SEARCH</span>
-        <h1 id="title">전체 eSIM 상품</h1>
-        <p id="subtitle">여행 기간에 맞는 상품을 확인하세요.</p>
+        <h2 id="title">전체 eSIM 상품</h2>
+        <p id="subtitle">나라와 이용기간을 선택해 상품을 비교하세요.</p>
       </div>
       <a class="back" href="/">← 다시 검색</a>
     </div>
 
-    <section class="filter-panel search-panel">
-      <div class="filter-field">
+      <div hidden>
         <label for="search-country">여행 국가</label>
         <select id="search-country">
           <option value="">전체 국가</option><option value="JP">일본</option>
@@ -43,9 +51,8 @@
           <option value="US">미국</option>
         </select>
       </div>
-
-      <div class="filter-field">
-        <label for="search-days">상품 이용기간 (정확히 일치)</label>
+<div class="simple-filters">      <div class="filter-field">
+        <label for="search-days">이용기간</label>
         <select id="search-days">
           <option value="" selected>전체 기간</option><option value="1">1일</option>
           <option value="3">3일</option>
@@ -55,25 +62,14 @@
           <option value="15">15일</option>
           <option value="30">30일</option>
         </select>
-      </div>
-    </section>
-
-    <section class="filter-panel">
-      <div class="filter-field">
-        <label for="sort">상품 정렬</label>
+      </div>      <div class="filter-field">
+        <label for="sort">정렬</label>
         <select id="sort">
-          <option value="recommended">공급사 기본순</option>
+          <option value="recommended">기본순</option>
           <option value="price-asc">최저가순</option>
           <option value="data">데이터 많은 순</option><option value="validity">이용기간 긴 순</option><option value="price_per_gb">GB당 가격순</option>
         </select>
-      </div>
-
-      <label class="filter-check">
-        <input type="checkbox" id="unlimited">
-        무제한 데이터만
-      </label>
-
-      <label class="filter-check">
+      </div><label class="filter-check simple-chip"><input type="checkbox" id="unlimited">무제한 데이터</label></div><details class="advanced-filters"><summary>세부 조건 더 보기 <span>핫스팟 · 통신망 · 전화번호</span></summary><div class="filter-panel">      <label class="filter-check">
         <input type="checkbox" id="hotspot">
         불러온 상품 중 핫스팟 가능
       </label>
@@ -81,8 +77,7 @@
       <div class="filter-field"><label for="coverage-type">사용 범위</label><select id="coverage-type"><option value="">전체</option><option value="false">단일 국가</option><option value="true">여러 국가</option></select></div>
       <div class="filter-field"><label for="network-type">통신망 방식</label><select id="network-type"><option value="">전체</option><option value="local">현지망</option><option value="roaming">로밍</option></select></div>
       <label class="filter-check"><input type="checkbox" id="local-number">현지 전화번호 포함</label>
-    </section>
-    <p id="country-load-status" class="muted" role="status"></p>
+</div></details>    <p id="country-load-status" class="muted" role="status"></p>
     <p class="muted">아래 구매 링크를 통해 구매하면 여행심플이 제휴 수수료를 받을 수 있습니다. 실제 판매·결제는 이심모아에서 진행됩니다.</p>
     <div id="status" class="status" role="status" aria-live="polite">상품 정보를 불러오는 중입니다.</div>
     <button id="retry-products" type="button" class="back" hidden>상품 다시 불러오기</button>
