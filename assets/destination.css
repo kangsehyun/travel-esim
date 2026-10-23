@@ -5,3 +5,67 @@
 @media(max-width:350px){.destination-illustration{width:40px;height:40px;font-size:26px}.destination-tile{font-size:10px}.destination-catalog .product-grid{grid-template-columns:1fr}}
 
 .product-key-spec{white-space:pre-line}
+
+/* Phone ergonomics: readable controls and a keyboard-aware country picker. */
+.destination-modal-open{overflow:hidden}
+.destination-dialog{overscroll-behavior:contain}
+.destination-dialog input{font-size:16px;min-height:48px}
+.destination-dialog-top button{width:44px;height:44px;flex-shrink:0}
+.destination-option{min-height:52px}
+.destination-all{min-height:44px;min-width:72px;padding:10px 0 10px 10px}
+.product-details-toggle{min-height:44px;touch-action:manipulation}
+@media(max-width:700px){
+ .destination-section{margin-bottom:24px}
+ .destination-catalog .result-head h2{scroll-margin-top:16px}
+ .simple-filters select,.advanced-filters select{font-size:16px;min-height:48px}
+ .simple-filters .simple-chip{min-height:48px}
+ .advanced-filters summary{min-height:48px;align-content:center;padding:10px 0}
+ .destination-catalog .product-card h3{font-size:16px;line-height:1.55}
+ .destination-catalog .product-card .price{font-size:24px}
+ .destination-catalog .product-card .buy{min-height:48px;align-content:center;font-size:14px}
+ .destination-catalog .product-card .meta{font-size:14px;overflow-wrap:anywhere}
+ .destination-catalog .product-key-spec{font-size:14px;line-height:1.65}
+ .destination-catalog #more-products{width:100%;min-width:0;min-height:48px}
+ .destination-catalog .status{line-height:1.7}
+ .destination-dialog{width:calc(100% - 24px);max-width:600px;margin:auto;padding:20px 16px;max-height:calc(var(--destination-visible-height,100dvh) - 24px);border-radius:20px;overflow:hidden}
+ .destination-dialog[open]{display:flex;flex-direction:column}
+ .destination-dialog-top{gap:12px;margin-bottom:14px;flex-shrink:0}
+ .destination-dialog-top h2{font-size:21px;line-height:1.4}
+ .destination-dialog input,#destination-count{flex-shrink:0}
+ .destination-results{min-height:0;flex:1;max-height:none;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .destination-option{font-size:14px;line-height:1.5;padding:10px 8px;min-width:0}
+ .destination-option .destination-illustration{width:30px;height:30px;font-size:23px}
+}
+@media(max-width:540px){
+ .destination-intro h1,.page .destination-intro h1{font-size:clamp(26px,7.4vw,32px)}
+ .destination-intro p{max-width:31ch;font-size:15px;line-height:1.7}
+ .destination-search{min-height:64px;gap:8px;padding:8px 8px 8px 12px;font-size:14px}
+ .destination-search>span:nth-child(2){flex:1;min-width:0;line-height:1.5;word-break:keep-all}
+ .destination-search b{min-height:46px;padding:14px;font-size:13px;align-content:center}
+ .destination-search .search-symbol{flex-shrink:0;font-size:27px}
+ .destination-tiles{gap:6px;grid-template-columns:repeat(5,minmax(0,1fr))}
+ .destination-tile{padding:10px 3px;gap:8px;min-height:92px;font-size:clamp(11px,3.05vw,13px);line-height:1.5}
+ .destination-tile>span:last-child{max-width:100%;overflow-wrap:anywhere}
+ .destination-illustration{width:min(46px,100%);height:auto;aspect-ratio:1;font-size:clamp(26px,7.8vw,33px);flex-shrink:0}
+ .destination-hint{line-height:1.7;font-size:13px}
+ .destination-benefits{grid-template-columns:1fr;gap:7px;margin:18px 0}
+ .destination-benefits span{font-size:14px;padding:13px 16px}
+ .destination-catalog .product-grid{gap:12px}
+ .destination-catalog .product-card{padding:16px 12px}
+ .destination-catalog .product-card h3{font-size:15px}
+ .destination-catalog .product-card .price{font-size:23px}
+ .destination-catalog .product-key-spec{font-size:13px;padding:11px}
+ .destination-catalog .product-card .buy{font-size:13px}
+ .destination-catalog .product-card .meta{font-size:13px}
+}
+@media(max-width:380px){
+ .destination-catalog .product-grid{grid-template-columns:minmax(0,1fr)}
+ .destination-catalog .product-card{padding:20px}
+ .destination-catalog .product-card h3{font-size:18px}
+ .destination-catalog .product-key-spec{font-size:15px}
+ .destination-catalog .product-card .price{font-size:26px}
+ .destination-catalog .product-card .buy{font-size:15px}
+ .destination-catalog .product-card .meta{font-size:14px}
+}
+@media(hover:none){.destination-tile:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.destination-tile{transition:none}.destination-tile:hover{transform:none}html{scroll-behavior:auto}}
