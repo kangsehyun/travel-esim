@@ -1,0 +1,51 @@
+{
+  "topic_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5Yem81N0JzZGtGY0J5MHE0eUFGLXRqVVFyS00xRXhIWERXSEEyYWFJM1VTUG1nRUt5d2I5d2s5aXhYU1FMMmdHczlWaE80UHRmNVpRNkRHRjZ0LUxEbXc?oc=5",
+  "checked_at": "2026-10-24T23:21:00.511667+00:00",
+  "evidence": {
+    "sources": [
+      {
+        "id": "S1",
+        "organization": "JNTO",
+        "url": "https://www.japan.travel/en/plan/traveling-with-disability/",
+        "title": "Traveling With a Disability | Travel Japan | JNTO",
+        "retrieved_at": "2026-10-24T23:20:52.161124+00:00",
+        "role": "topic_candidate",
+        "excerpt": "Traveling With a Disability | Travel Japan | JNTO Trade Meetings & Events Newsletter Sign-up Coronavirus (COVID-19) Advisory Information Select Language 简体中文 繁體中文（香港） 繁體中文（臺灣） India (English) Bahasa Indonesia 한국어 ภาษาไทย Tiếng Việt Singapore (English) Philippines (English) Malaysia (English) Australia/New Zealand (English) Français Deutsch Italiano Español United Kingdom (English) Nordic countries（English） Canada (English) Canada (Français) United States (English) Mexico (español) Português العربية Global (English) 简体中文 繁體中文（香港） 繁體中文（臺灣） India (English) Bahasa Indonesia 한국어 ภาษาไทย Tiếng Việt Singapore (English) Philippines (English) Malaysia (English) Australia/New Zealand (English) Français Deutsch Italiano Español United Kingdom (English) Nordic countries（English） Canada (English) Canada (Français) United States (English) Mexico (español) Português العربية Global (English) HOME Back Destinations All Hokkaido Tohoku Aomori Akita Iwate Yamagata Miyagi Fukushima Hokuriku Shinetsu Niigata Toyama Ishikawa Fukui Nagano Kanto Tokyo Kanagawa Chiba Saitama Ibaraki Tochigi Gunma Tokai Yamanashi Shizuoka Gifu Aichi Mie Kansai Kyoto Osaka Shiga Hyogo Nara Wakayama Chugoku Tottori Shimane Okayama Hiroshima Yamaguchi Shikoku Tokushima Kagawa Ehime Kochi Kyushu Fukuoka Saga Nagasaki Oita Kumamoto Miyazaki Kagoshima Okinawa Major cities Hokkaido Sapporo Asahikawa Hakodate Kushiro Tohoku Sendai Aomori Akita Morioka Tsuruoka Fukushima Hokuriku Shinetsu Kanazawa Niigata Toyama Nagano Matsumoto Fukui Kanto Tokyo Yokohama Saitama Chiba Utsunomiya Maebashi Tokai Nagoya Fujiyoshida Hamamatsu Gifu Takayama Iseshima Kansai Osaka Kyoto Nara Kobe Himeji Otsu Chugoku Hiroshima Okayama Kurashiki Matsue Tottori Shimonoseki Shikoku Matsuyama Takamatsu Tokushima Kochi Kyushu Fukuoka Kumamoto Kagoshima Beppu Nagasaki Miyazaki Okinawa Naha Ishigaki Island Miyako Island Kerama Island Passion Nature Mt. Fuji Tokyo Island Zao Yakushima Japan Alps Towada Outdoors Niseko Minakami Nagano Miyazaki Miyako Ishigaki Island Tradition Kyoto Hongu Kiso Koka & Shigaraki Nara Hida Takayama Cuisine Fukuoka Osaka Sapporo Ginza, Nihonbashi Ise Kanazawa Art Kanazawa Setouchi Kiyosato Hakone Roppongi Relaxation Beppu & Yufuin (Onsen) Miyako Island Suwa Ginzan Onsen Nagasaki Islands Cities Yokohama Sendai Osaka Hiroshima Vacation Style New Discoveries or Slow Travel Kumano Kodo Fukui Shimane Shonai Shikoku Ka",
+        "text_sha256": "d2d81250e4e1955575ca712d48390509e26364dcd7dd7e26ca9e8c9bafa897a7",
+        "status": "retrieved_not_verified"
+      },
+      {
+        "id": "S2",
+        "organization": "JNTO",
+        "url": "https://www.japan.travel/en/plan/",
+        "title": "Japan Travel Planning | Travel Japan（Japan National Tourism Organization）",
+        "retrieved_at": "2026-10-24T23:20:52.162487+00:00",
+        "role": "country_context",
+        "excerpt": "(Shinrin-yoku) Experiences in Japan Luxury Wellness Travel Featured Luxury Sports Experiences in Japan National Parks Japan's Local Treasures Japan Heritage Heritage Stays Snow Like No Other Wonder Around Japan Experiences in Japan National Parks Japan Heritage Sustainable Travel in JAPAN Plan Your Trip Traveling to Japan First-Time Visitor Info Visa Information Getting to Japan Airport Access COVID-19: Practical Information for Traveling to Japan All Stories & Guides Shopping Anime Tourism Temple Stays Countryside Stays Accessible Tourism All Itineraries Hokkaido Great Outdoors Scenic World Heritage in Tohoku Shikoku’s Nature and Traditions Southern Kyushu by Rail First-Time Visitor Info Online Reservation Sites Stories & Guides Itineraries Getting Around Transportation in Japan Traveling by Rail How to Travel by Train and Bus JR Rail Passes Scenic Railways Renting a Car Sustainable Travel in Japan Plan Your Trip Travel Brochures Online Reservation Sites Eco-friendly Accommodation Luxury Accommodations Heritage Stays Others Traveling With a Disability Hands-free Travel How to Book a Certified Tour Guide Volunteer Guides Tourist Information Center FAQ Travel Brochures Restaurant Search Sustainable Travel in Japan Online Reservation Sites About Japan First-Time Visitor Info World Heritage Fuji Guide Japanese Ryokan Guide Japanese Manners Sustainable Travel in Japan Weather & Geography Spring in Japan Summer in Japan Autumn in Japan Winter in Japan Weather Forecast Cherry Blossom Forecast Autumn Leaves Forecast Weather & Geography Autumn Leaves Forecast World Heritage Sustainable Travel in Japan Essential Information Japan Visitor Hotline Travel Insurance in Japan Japan Safe Travel Information Local Laws Visa Information Accessibility in Japan Vegetarian Guide Muslim Travelers Safety Tips Accessibility in Japan Japan Visitor Hotline Travel Insurance in Japan Safety Tips Blog News News from JNTO US Partner News Press Release Newsletter Archives Trade Newsletter Tour Companies Tender Notice News from JNTO US Partner News Press Release Newsletter Archives My Favorites ${v.title} ${v.desc | trunc(25)} ${v.title} ${v.desc | trunc(25)} View All Use the Planning a Trip to Japan? Share your travel photos with us by hashtagging your images with #visitjapanjp First-Time Visitor Info Home Plan Your Trip Smooth your way with a little forward planning It is easy to feel a ",
+        "text_sha256": "761c20e24c52fda8c3de62ed450476da9d32f14a273dcfbc7066c753193235b0",
+        "status": "retrieved_not_verified"
+      }
+    ],
+    "errors": [],
+    "original_news_fetched": false
+  },
+  "verification_status": "insufficient_evidence",
+  "publication_hold": true,
+  "issues": [
+    "본문 주장·출처 ID·원문 인용문 연결을 확인해야 합니다."
+  ],
+  "claims": [
+    {
+      "claim": "외국인 관광객들이 휴대폰 번호 인증과 특정 앱 접속 제한 문제로 인해 불편함을 겪고 있다.",
+      "source_id": "S1",
+      "quote": "Traveling With a Disability | Travel Japan | JNTO ... It is easy to feel a",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    }
+  ],
+  "limitations": [
+    "인용문 일치는 사실의 정확성·최신성·주장 전체의 근거를 보장하지 않습니다.",
+    "모델이 중요한 주장을 누락했을 수 있어 제목·요약·본문 전체를 검토해야 합니다.",
+    "입국·비자·정책은 관할 정부 기관의 직접 발표를 별도로 확인해야 합니다."
+  ]
+}

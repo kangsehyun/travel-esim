@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-25",
+  "updated_at": "2026-10-24T23:21:00.512371+00:00",
+  "status": "generated",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "selection_mode": "news",
+  "draft_file": "2026-10-25-korean-app-verification-inconvenience-for-foreign-tourists-04cf8ca1b1d9.md",
+  "review_file": "2026-10-25-korean-app-verification-inconvenience-for-foreign-tourists-04cf8ca1b1d9.review.json",
+  "verification_status": "insufficient_evidence",
+  "source_attempts": [
+    {
+      "title": "1. “Came to Korea after watching K-dramas, but it is more inconvenient than traveling in Japan”···‘Phone number verification·app blocks’ that trip up foreign tourists - 경향신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5Yem81N0JzZGtGY0J5MHE0eUFGLXRqVVFyS00xRXhIWERXSEEyYWFJM1VTUG1nRUt5d2I5d2s5aXhYU1FMMmdHczlWaE80UHRmNVpRNkRHRjZ0LUxEbXc?oc=5",
+      "source_count": 2,
+      "eligible_source_count": 1,
+      "error_count": 0
+    }
+  ]
+}
