@@ -49,7 +49,8 @@ console.log('Analytics separate consent, legacy rejection, sanitized attribution
 
 // Use real profile, launch and daily-publishing link patterns, including Meta noise.
 for (const [source, campaign] of [
-  ['instagram', 'profile'], ['threads', 'profile'],
+  ['instagram', 'profile'], ['threads', 'profile'], ['youtube', 'profile'],
+  ['youtube', 'shorts-launch-20261023'], ['youtube', 'shorts-launch'], ['youtube', 'reel-20261024'], ['youtube', 'shorts-20261023'],
   ['instagram', 'launch-20261022'], ['threads', 'launch-20261022'],
   ['instagram', 'ig-20261023'], ['instagram', 'reel-20261023'],
   ['threads', 'threads-20261023'],
@@ -86,3 +87,18 @@ const rejected = setup('granted', null, '?utm_source=private%40example.com&utm_m
 const rejectedLocation = new URL(rejected.context.dataLayer.map(x => Array.from(x)).find(x => x[0] === 'config')[2].page_location);
 assert.equal(rejectedLocation.search, '');
 console.log('Instagram/Threads attribution, campaign formats, privacy filtering and consent regression checks: PASS');
+
+// Expanded catalog clicks must not turn France/all-country selections into Japan.
+for (const [query, expectedCountry, expectedDays] of [
+  ['?country=FR', 'FR', undefined], ['', undefined, undefined],
+  ['?country=ZZ&days=-1', undefined, undefined],
+  ['?country=DE&days=366', 'DE', undefined], ['?country=KR&days=30', 'KR', 30],
+]) {
+  const test=setup('granted',null,query);
+  test.clickProduct('https://esimoa.com/ko/plans/test');
+  const event=test.context.dataLayer.map(x=>Array.from(x)).find(x=>x[0]==='event')[2];
+  assert.equal(event.country,expectedCountry); assert.equal(event.travel_days,expectedDays);
+  const config=test.context.dataLayer.map(x=>Array.from(x)).find(x=>x[0]==='config')[2];
+  if(expectedCountry) assert.equal(new URL(config.page_location).searchParams.get('country'),expectedCountry);
+}
+console.log('YouTube and expanded catalog attribution: PASS');

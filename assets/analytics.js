@@ -14,11 +14,11 @@
     const params = new URLSearchParams(location.search);
     // Preserve only our published campaign vocabulary, never arbitrary query values.
     const rules = {
-      country: /^(JP|TW|VN|TH|US)$/,
+      country: /^(?!ZZ$)[A-Z]{2}$/,
       days: /^\d{1,3}$/,
-      utm_source: /^(tistory|instagram|threads)$/,
+      utm_source: /^(tistory|instagram|threads|youtube)$/,
       utm_medium: /^(blog|social)$/,
-      utm_campaign: /^(post-\d+|profile|(?:launch|ig|reel|threads)-\d{8})$/
+      utm_campaign: /^(post-\d+|profile|shorts-launch|(?:launch|ig|reel|threads|shorts|shorts-launch)-\d{8})$/
     };
     Object.keys(rules).forEach(function (key) { const value = params.get(key); if (value && rules[key].test(value)) url.searchParams.set(key, value); });
     return url.href;
@@ -98,7 +98,13 @@
     try { url = new URL(link.href); } catch (_) { return; }
     if (url.protocol !== 'https:' || !['www.esimoa.com', 'esimoa.com'].includes(url.hostname)) return;
     const params = new URLSearchParams(location.search);
-    window.gtag('event', 'esim_purchase_click', {country: /^(JP|TW|VN|TH|US)$/.test(params.get('country') || '') ? params.get('country') : 'JP', travel_days: Number(params.get('days')) || 5, link_domain: url.hostname, link_path: url.pathname, page_location: pageUrl(), transport_type: 'beacon'});
+    const details = {link_domain: url.hostname, link_path: url.pathname, page_location: pageUrl(), transport_type: 'beacon'};
+    const selectedCountry = params.get('country') || '';
+    const selectedDays = params.get('days') || '';
+    if (/^(?!ZZ$)[A-Z]{2}$/.test(selectedCountry)) details.country = selectedCountry;
+    if (/^\d{1,3}$/.test(selectedDays) && Number(selectedDays) > 0 && Number(selectedDays) <= 365) details.travel_days = Number(selectedDays);
+    // Missing filters mean all countries/periods, never an assumed Japan five-day trip.
+    window.gtag('event', 'esim_purchase_click', details);
     // Keep the original link, new-tab behavior and eSIMOA referral parameters.
   });
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
