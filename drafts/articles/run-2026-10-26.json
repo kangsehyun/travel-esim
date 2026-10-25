@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-26",
+  "updated_at": "2026-10-25T23:19:57.548016+00:00",
+  "status": "generated",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "selection_mode": "official_guide",
+  "draft_file": "2026-10-26-iphone-dual-sim-travel-setup-af8abab4b1b9.md",
+  "review_file": "2026-10-26-iphone-dual-sim-travel-setup-af8abab4b1b9.review.json",
+  "verification_status": "insufficient_evidence",
+  "source_attempts": [
+    {
+      "title": "1. 대만 관광 홍보대사 ‘김혜윤’ 위촉 - 트래블데일리",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5BZVhSWW95cXkzZTJfWFFnbzRhaV9oWFI2VV9feEEtQjRwUzNvM3FKUGplVUJES3JDcWc0SUJqNlhtdENaQXNnSGljdGVRNzhqeGhmaXF4azN0d1gxZkR4ZlVwTXVoRXR0MXdGWVpHNjI?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. [현장] 대만 관광 홍보대사 김혜윤, 4색 여행으로 한국 공략…미식부터 자연·야경까지 - 트래블바이크뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5vUGJWWDB4V1hRbHV4YTJfbk9XX0xRaHpsR1NGSXlIdF9xaTRiX0Z1eGVadUx6WUk1X1NLZU1QY29zX0pFV2xEMTd1eVRWV21DWkFWWWNxUzBMakZVZjZ6aEV6bWNDWFItdEloSw?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. [4K] 김혜윤(Kim HyeYoon), ‘홍보대사가 추천해드려요~☝🏻’ 취향 따라 떠나는 대만 여행지는? | 대만관광청 홍보대사 위촉식 - YouTube",
+      "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1RR1VMaDVKLVVBZWo4TmlmdzE0U0F1Q3Y3MWZKTGdlZjgxNTlsTUttVmplb3BSVnJMNzVhVEE4d2QtUXZyeV9rMlVCcGQ0NHdLYlc0d3VjanctUHV5?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "아이폰 듀얼 SIM 여행 설정: 통화 회선과 데이터 회선",
+      "source_url": "https://support.apple.com/en-us/109317",
+      "selection_mode": "official_guide",
+      "source_count": 1,
+      "eligible_source_count": 1,
+      "error_count": 0
+    }
+  ]
+}

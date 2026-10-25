@@ -1,0 +1,68 @@
+{
+  "topic_url": "https://support.apple.com/en-us/109317",
+  "checked_at": "2026-10-25T23:19:57.547112+00:00",
+  "evidence": {
+    "sources": [
+      {
+        "id": "S1",
+        "organization": "Apple Support",
+        "url": "https://support.apple.com/en-us/109317",
+        "title": "Using Dual SIM with an eSIM - Apple Support",
+        "retrieved_at": "2026-10-25T23:19:47.976830+00:00",
+        "role": "device_guidance",
+        "excerpt": "er number for personal calls. Add a local data plan when you travel outside of the country or region. Have separate voice and data plans. Both phone numbers can make and receive voice and FaceTime calls. They can also send and receive messages using iMessage, SMS, and MMS. 1 Your iPhone can use one cellular data network at a time. What you need An iPhone XS, iPhone XS Max, iPhone XR, or later In China mainland, only iPhone 18 Pro, iPhone 18 Pro Max, iPhone Duo, iPhone 17e, and iPhone Air support eSIM. Learn about using eSIM with your iPhone in China mainland. In Hong Kong and Macao, certain iPhone models feature Dual SIM with two nano-SIM cards . A wireless carrier that supports eSIM To use two carriers, your carrier must unlock your iPhone, or both plans must be from the same carrier. Contact your carrier for details. If you have an enterprise or corporate cellular service plan, check with your company administrator to see if they support this feature. Set up another cellular plan on your iPhone Use two phone numbers Learn about Dual SIM status icons Change your cellular data number Manage cellular settings Erase your eSIM Set up another cellular plan on your iPhone You can use Dual SIM by using a physical SIM and an eSIM. iPhone 13 models and later also support Dual SIM with two eSIMs, in addition to a physical SIM and an eSIM. Learn how to activate a cellular plan on an eSIM . Travel internationally with Dual SIM You can also use Dual SIM while traveling internationally with your iPhone. For example, you can use one number for your home line and another for your travel line. With iOS 26 and later, if you download a travel eSIM, you might experience a customized travel eSIM set up journey. Learn how to stay connected in the country or region you’re visiting . Label your plans After you activate your second plan, label your plans. For example, you can label one plan Business and the other plan Personal. You'll use these labels to choose which phone number to use for calls and messages. You can designate a number for cellular data and assign a number to your contacts. That way, you know which number you will use. If you change your mind later, you can change your labels: Open the Settings app. Tap either Cellular or Mobile Data. Tap the number whose label you want to change. Tap Cellular Plan Label and select a new label or enter a custom label. Set your def",
+        "text_sha256": "1ff2b3ab30faf03bc30b8af6490f9bde7d930ad525be25c8746b98542645af91",
+        "status": "retrieved_not_verified"
+      }
+    ],
+    "errors": [],
+    "original_news_fetched": false
+  },
+  "verification_status": "insufficient_evidence",
+  "publication_hold": true,
+  "issues": [
+    "본문 주장·출처 ID·원문 인용문 연결을 확인해야 합니다."
+  ],
+  "claims": [
+    {
+      "claim": "아이폰 XS, iPhone XR 이후 모델부터 물리적 SIM과 eSIM을 함께 사용하는 듀얼 SIM 기능을 지원한다.",
+      "source_id": "S1",
+      "quote": "Your iPhone can use one cellular data network at a time. What you need An iPhone XS, iPhone XS Max, iPhone XR, or later",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "두 전화번호 모두 음성 통화, FaceTime, iMessage, SMS, MMS를 보내고 받을 수 있다.",
+      "source_id": "S1",
+      "quote": "Both phone numbers can make and receive voice and FaceTime calls. They can also send and receive messages using iMessage, SMS, and MMS.",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "iPhone 13 모델과 이후 모델은 물리적 SIM과 eSIM뿐 아니라 두 개의 eSIM도 지원한다.",
+      "source_id": "S1",
+      "quote": "iPhone 13 models and later also support Dual SIM with two eSIMs, in addition to a physical SIM and an eSIM.",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "아이폰은 한 번에 한 개의 셀룰러 데이터 네트워크만 사용할 수 있다.",
+      "source_id": "S1",
+      "quote": "Your iPhone can use one cellular data network at a time.",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "eSIM을 추가한 후에는 회선에 라벨을 부여해 용도별로 구분할 수 있다.",
+      "source_id": "S1",
+      "quote": "After you activate your second plan, label your plans.",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    }
+  ],
+  "limitations": [
+    "인용문 일치는 사실의 정확성·최신성·주장 전체의 근거를 보장하지 않습니다.",
+    "모델이 중요한 주장을 누락했을 수 있어 제목·요약·본문 전체를 검토해야 합니다.",
+    "입국·비자·정책은 관할 정부 기관의 직접 발표를 별도로 확인해야 합니다."
+  ]
+}
