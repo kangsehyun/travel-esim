@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-27",
+  "updated_at": "2026-10-27T00:32:20.757896+00:00",
+  "status": "generated",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "selection_mode": "official_guide",
+  "draft_file": "2026-10-27-iphone-esim-setup-troubleshooting-c86dda85328e.md",
+  "review_file": "2026-10-27-iphone-esim-setup-troubleshooting-c86dda85328e.review.json",
+  "verification_status": "insufficient_evidence",
+  "source_attempts": [
+    {
+      "title": "1. Travel – 썬푸꾸옥항공은 어떤 항공사인가? - 씬짜오베트남",
+      "source_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1SaWRTMzVtMU1LcWJZN1FnOEI0aHZ0UjRBNUhMdGRsUWlLRUgxQl91Rk84MHAySFJCSEVMUVhRNnFXS1R2bGVDTA?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 베트남항공, ‘2026 세계 최고 기내식 항공사’ 선정… 북유럽 협력 강화 및 노선 확대 - 디스커버리뉴스(DISCOVERYNEWS)",
+      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9kMG44VHZwZEhVT3p3QVRONXhnSFUxWk9HTlRIQ3pTb3QwcktoaXNVMmVGVDNmbUdMakxYMEwyd0MtSHhpb3dZWnJ5eGFHSGxRZW11ZG9KNHJWV3JWU3AwYUFSTy16UjJHLWo0TWpsRVFkUQ?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. “하이퐁, 베트남의 새로운 골프 여행지로 키울 것” - 여행신문",
+      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBxRVAyOU1sRGtxbDlrRWUwTHdPR0pDUkxGRUNzcTdoY3psaFlkN0gtSFFJeXlnYjlBOXZFTHo0c29sMTU2dzNLSzV1eExwc3FrOWpMV2llbXZrUC1JenpQT2xtRVdIcEVhNlFjeTJlRTFzdw?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "아이폰 eSIM 설정이 안 될 때 확인할 항목",
+      "source_url": "https://support.apple.com/en-us/102478",
+      "selection_mode": "official_guide",
+      "source_count": 1,
+      "eligible_source_count": 1,
+      "error_count": 0
+    }
+  ]
+}
