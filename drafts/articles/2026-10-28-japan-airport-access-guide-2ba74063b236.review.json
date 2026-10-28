@@ -1,0 +1,38 @@
+{
+  "topic_url": "https://www.japan.travel/en/plan/airport-access/",
+  "checked_at": "2026-10-28T00:33:41.168888+00:00",
+  "evidence": {
+    "sources": [
+      {
+        "id": "S1",
+        "organization": "JNTO",
+        "url": "https://www.japan.travel/en/plan/airport-access/",
+        "title": "Airport Access | Plan | Travel Japan（Japan National Tourism Organization）",
+        "retrieved_at": "2026-10-28T00:33:30.046610+00:00",
+        "role": "topic_candidate",
+        "excerpt": "Airport Access | Plan | Travel Japan（Japan National Tourism Organization） Trade Meetings & Events Newsletter Sign-up Coronavirus (COVID-19) Advisory Information Select Language 简体中文 繁體中文（香港） 繁體中文（臺灣） India (English) Bahasa Indonesia 한국어 ภาษาไทย Tiếng Việt Singapore (English) Philippines (English) Malaysia (English) Australia/New Zealand (English) Français Deutsch Italiano Español United Kingdom (English) Nordic countries（English） Canada (English) Canada (Français) United States (English) Mexico (español) Português العربية Global (English) 简体中文 繁體中文（香港） 繁體中文（臺灣） India (English) Bahasa Indonesia 한국어 ภาษาไทย Tiếng Việt Singapore (English) Philippines (English) Malaysia (English) Australia/New Zealand (English) Français Deutsch Italiano Español United Kingdom (English) Nordic countries（English） Canada (English) Canada (Français) United States (English) Mexico (español) Português العربية Global (English) HOME Back Destinations All Hokkaido Tohoku Aomori Akita Iwate Yamagata Miyagi Fukushima Hokuriku Shinetsu Niigata Toyama Ishikawa Fukui Nagano Kanto Tokyo Kanagawa Chiba Saitama Ibaraki Tochigi Gunma Tokai Yamanashi Shizuoka Gifu Aichi Mie Kansai Kyoto Osaka Shiga Hyogo Nara Wakayama Chugoku Tottori Shimane Okayama Hiroshima Yamaguchi Shikoku Tokushima Kagawa Ehime Kochi Kyushu Fukuoka Saga Nagasaki Oita Kumamoto Miyazaki Kagoshima Okinawa Major cities Hokkaido Sapporo Asahikawa Hakodate Kushiro Tohoku Sendai Aomori Akita Morioka Tsuruoka Fukushima Hokuriku Shinetsu Kanazawa Niigata Toyama Nagano Matsumoto Fukui Kanto Tokyo Yokohama Saitama Chiba Utsunomiya Maebashi Tokai Nagoya Fujiyoshida Hamamatsu Gifu Takayama Iseshima Kansai Osaka Kyoto Nara Kobe Himeji Otsu Chugoku Hiroshima Okayama Kurashiki Matsue Tottori Shimonoseki Shikoku Matsuyama Takamatsu Tokushima Kochi Kyushu Fukuoka Kumamoto Kagoshima Beppu Nagasaki Miyazaki Okinawa Naha Ishigaki Island Miyako Island Kerama Island Passion Nature Mt. Fuji Tokyo Island Zao Yakushima Japan Alps Towada Outdoors Niseko Minakami Nagano Miyazaki Miyako Ishigaki Island Tradition Kyoto Hongu Kiso Koka & Shigaraki Nara Hida Takayama Cuisine Fukuoka Osaka Sapporo Ginza, Nihonbashi Ise Kanazawa Art Kanazawa Setouchi Kiyosato Hakone Roppongi Relaxation Beppu & Yufuin (Onsen) Miyako Island Suwa Ginzan Onsen Nagasaki Islands Cities Yokohama Sendai Osaka Hiroshima Vacation Style New Discoveries or Slow Travel Kumano Kodo Fukui S",
+        "text_sha256": "b8f5fa9147dd0d379a61d83caad27a238f8d5f8c5f040edc875bc0b8c1076f6b",
+        "status": "retrieved_not_verified"
+      }
+    ],
+    "errors": [],
+    "original_news_fetched": false
+  },
+  "verification_status": "needs_human_review",
+  "publication_hold": true,
+  "issues": [],
+  "claims": [
+    {
+      "claim": "일본에는 국제선 주요 공항인 나리타, 하네다, 간사이, 주부 공항 등이 있으며, 각 공항별로 다양한 교통 수단이 마련되어 있습니다.",
+      "source_id": "S1",
+      "quote": "Airport Access | Plan | Travel Japan（Japan National Tourism Organization）",
+      "citation_check": "matched_requires_human_review",
+      "semantic_verdict": "not_verified"
+    }
+  ],
+  "limitations": [
+    "인용문 일치는 사실의 정확성·최신성·주장 전체의 근거를 보장하지 않습니다.",
+    "모델이 중요한 주장을 누락했을 수 있어 제목·요약·본문 전체를 검토해야 합니다.",
+    "입국·비자·정책은 관할 정부 기관의 직접 발표를 별도로 확인해야 합니다."
+  ]
+}
