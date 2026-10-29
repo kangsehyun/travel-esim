@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-29",
+  "updated_at": "2026-10-29T01:01:57.949689+00:00",
+  "status": "generated",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "selection_mode": "news",
+  "draft_file": "2026-10-29-usa-canada-mexico-tmobile-esim-1day-eb53bf53f7fe.md",
+  "review_file": "2026-10-29-usa-canada-mexico-tmobile-esim-1day-eb53bf53f7fe.review.json",
+  "verification_status": "needs_human_review",
+  "source_attempts": [
+    {
+      "title": "1. 미국/캐나다/멕시코 이심 eSIM 뉴욕 티모바일 완전 무제한 1일 유심사 알림톡 - 판다랭크",
+      "source_url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE55YUlfU3RJaW1JQ18xUWhETFM5SUZJdnhYV1RPZjZ2UnZOZEotNGZHM3prTEhaMXdRdFpoZ0pUWU8ydnZ3WTZB?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 1,
+      "error_count": 1
+    }
+  ]
+}

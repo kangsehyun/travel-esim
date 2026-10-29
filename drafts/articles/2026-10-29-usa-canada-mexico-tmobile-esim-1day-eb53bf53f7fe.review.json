@@ -1,0 +1,50 @@
+{
+  "topic_url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE55YUlfU3RJaW1JQ18xUWhETFM5SUZJdnhYV1RPZjZ2UnZOZEotNGZHM3prTEhaMXdRdFpoZ0pUWU8ydnZ3WTZB?oc=5",
+  "checked_at": "2026-10-29T01:01:57.948786+00:00",
+  "evidence": {
+    "sources": [
+      {
+        "id": "S1",
+        "organization": "Apple Support",
+        "url": "https://support.apple.com/en-us/118669",
+        "title": "Set up eSIM on iPhone - Apple Support",
+        "retrieved_at": "2026-10-29T01:01:47.950932+00:00",
+        "role": "device_guidance",
+        "excerpt": "﻿ Set up eSIM on iPhone - Apple Support Set up eSIM on iPhone Learn about eSIM, how to set up an eSIM on the iPhone, and how to transfer the phone number to another iPhone. What is eSIM? An eSIM is an industry-standard digital SIM built into your iPhone, eliminating the need for a physical SIM card. This innovative feature enables you to switch between SIMs effortlessly, manage up to eight or more eSIMs, and activate new plans digitally. With eSIM, you enjoy greater flexibility, enhanced convenience, better security, and seamless connectivity, especially when traveling internationally. Learn more about using an eSIM while traveling internationally with your iPhone . What you need An iPhone XS, iPhone XS Max, iPhone XR, or later A wireless carrier or worldwide service provider that supports eSIM Connect your new iPhone to a Wi-Fi network or hotspot. In some countries and regions, iPhone models that are eSIM-only can activate without a Wi-Fi network. In China mainland, only iPhone 18 Pro, iPhone 18 Pro Max, iPhone Duo, iPhone 17e, and iPhone Air support eSIM. Learn more about activating eSIM in China mainland. In Hong Kong and Macao, certain iPhone models feature Dual SIM with two nano-SIM cards . How to activate an eSIM Setting up an eSIM allows you to activate a cellular plan from your carrier without a physical SIM. In most cases, you can activate your eSIM while you're setting up your iPhone, or you can activate your eSIM after setup. You can activate your eSIM on iPhone through one of the following methods, depending on your carrier's eSIM support: Transfer your phone number using eSIM Quick Transfer Activate an eSIM using eSIM Carrier Activation Set up an eSIM with a QR code Activate an eSIM with other methods Transfer an eSIM from an Android or other non-Apple device Transfer your phone number using eSIM Quick Transfer If your carrier supports eSIM Quick Transfer, you can transfer the SIM from your previous iPhone to your new iPhone without contacting them. With some carriers, you can also convert your current physical SIM card to an eSIM. Before you begin, make sure: You're signed in to both devices with your Apple Account Your previous iPhone with the device passcode is unlocked Both devices are nearby with Bluetooth turned on Both devices are on iOS 18.4 or later If you're asked to transfer your phone number during setup of your new iPhone, transfer ",
+        "text_sha256": "4e5439080d4ab19a95359309c43200c308ee2f4c866c06152029f2c30b0cae20",
+        "status": "retrieved_not_verified"
+      }
+    ],
+    "errors": [
+      {
+        "url": "https://www.visittheusa.com/",
+        "error": "HTTPError"
+      }
+    ],
+    "original_news_fetched": false
+  },
+  "verification_status": "needs_human_review",
+  "publication_hold": true,
+  "issues": [],
+  "claims": [
+    {
+      "claim": "eSIM은 아이폰과 일부 최신 스마트폰에 내장된 디지털 SIM칩으로, 별도의 물리 유심카드가 필요 없습니다.",
+      "source_id": "S1",
+      "quote": "An eSIM is an industry-standard digital SIM built into your iPhone, eliminating the need for a physical SIM card.",
+      "citation_check": "matched_requires_human_review",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "최대 8개 이상의 eSIM을 저장해 필요할 때마다 요금제를 쉽게 전환할 수 있습니다.",
+      "source_id": "S1",
+      "quote": "This innovative feature enables you to switch between SIMs effortlessly, manage up to eight or more eSIMs, and activate new plans digitally.",
+      "citation_check": "matched_requires_human_review",
+      "semantic_verdict": "not_verified"
+    }
+  ],
+  "limitations": [
+    "인용문 일치는 사실의 정확성·최신성·주장 전체의 근거를 보장하지 않습니다.",
+    "모델이 중요한 주장을 누락했을 수 있어 제목·요약·본문 전체를 검토해야 합니다.",
+    "입국·비자·정책은 관할 정부 기관의 직접 발표를 별도로 확인해야 합니다."
+  ]
+}
