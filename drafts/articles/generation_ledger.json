@@ -160,5 +160,23 @@
       },
       "total_tokens": 3275
     }
+  },
+  {
+    "date": "2026-10-30",
+    "model": "gpt-4.1-mini",
+    "status": "response_received",
+    "max_output_tokens": 3500,
+    "usage": {
+      "input_tokens": 2019,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 1327,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3346
+    }
   }
 ]

@@ -1,0 +1,47 @@
+{
+  "topic_url": "https://www.japan.travel/en/itineraries/kyushus-hot-springs-by-rail",
+  "checked_at": "2026-10-30T01:07:20.365005+00:00",
+  "evidence": {
+    "sources": [
+      {
+        "id": "S1",
+        "organization": "JNTO",
+        "url": "https://www.japan.travel/en/itineraries/kyushus-hot-springs-by-rail/",
+        "title": "Southern Kyushu by Rail | Itineraries | Travel Japan - Japan National Tourism Organization (Official Site)",
+        "retrieved_at": "2026-10-30T01:07:08.174350+00:00",
+        "role": "topic_candidate",
+        "excerpt": "Southern Kyushu by Rail | Itineraries | Travel Japan - Japan National Tourism Organization (Official Site) Trade Meetings & Events Newsletter Sign-up Coronavirus (COVID-19) Advisory Information Select Language 简体中文 繁體中文（香港） 繁體中文（臺灣） India (English) Bahasa Indonesia 한국어 ภาษาไทย Tiếng Việt Singapore (English) Philippines (English) Malaysia (English) Australia/New Zealand (English) Français Deutsch Italiano Español United Kingdom (English) Nordic countries（English） Canada (English) Canada (Français) United States (English) Mexico (español) Português العربية Global (English) 简体中文 繁體中文（香港） 繁體中文（臺灣） India (English) Bahasa Indonesia 한국어 ภาษาไทย Tiếng Việt Singapore (English) Philippines (English) Malaysia (English) Australia/New Zealand (English) Français Deutsch Italiano Español United Kingdom (English) Nordic countries（English） Canada (English) Canada (Français) United States (English) Mexico (español) Português العربية Global (English) HOME Back Destinations All Hokkaido Tohoku Aomori Akita Iwate Yamagata Miyagi Fukushima Hokuriku Shinetsu Niigata Toyama Ishikawa Fukui Nagano Kanto Tokyo Kanagawa Chiba Saitama Ibaraki Tochigi Gunma Tokai Yamanashi Shizuoka Gifu Aichi Mie Kansai Kyoto Osaka Shiga Hyogo Nara Wakayama Chugoku Tottori Shimane Okayama Hiroshima Yamaguchi Shikoku Tokushima Kagawa Ehime Kochi Kyushu Fukuoka Saga Nagasaki Oita Kumamoto Miyazaki Kagoshima Okinawa Major cities Hokkaido Sapporo Asahikawa Hakodate Kushiro Tohoku Sendai Aomori Akita Morioka Tsuruoka Fukushima Hokuriku Shinetsu Kanazawa Niigata Toyama Nagano Matsumoto Fukui Kanto Tokyo Yokohama Saitama Chiba Utsunomiya Maebashi Tokai Nagoya Fujiyoshida Hamamatsu Gifu Takayama Iseshima Kansai Osaka Kyoto Nara Kobe Himeji Otsu Chugoku Hiroshima Okayama Kurashiki Matsue Tottori Shimonoseki Shikoku Matsuyama Takamatsu Tokushima Kochi Kyushu Fukuoka Kumamoto Kagoshima Beppu Nagasaki Miyazaki Okinawa Naha Ishigaki Island Miyako Island Kerama Island Passion Nature Mt. Fuji Tokyo Island Zao Yakushima Japan Alps Towada Outdoors Niseko Minakami Nagano Miyazaki Miyako Ishigaki Island Tradition Kyoto Hongu Kiso Koka & Shigaraki Nara Hida Takayama Cuisine Fukuoka Osaka Sapporo Ginza, Nihonbashi Ise Kanazawa Art Kanazawa Setouchi Kiyosato Hakone Roppongi Relaxation Beppu & Yufuin (Onsen) Miyako Island Suwa Ginzan Onsen Nagasaki Islands Cities Yokohama Sendai Osaka Hiroshima Vacation Style New Discoveries o",
+        "text_sha256": "1d3a72e1978ac7eeaefe129e44665cd11dd2384a6a5e14e19e616ebb90c99b56",
+        "status": "retrieved_not_verified"
+      }
+    ],
+    "errors": [],
+    "original_news_fetched": false
+  },
+  "verification_status": "insufficient_evidence",
+  "publication_hold": true,
+  "issues": [
+    "본문 주장·출처 ID·원문 인용문 연결을 확인해야 합니다."
+  ],
+  "claims": [
+    {
+      "claim": "JR 규슈열차를 이용하면 현지 기차망이 잘 발달되어 주요 온천 지역과 도시를 손쉽게 이동할 수 있습니다.",
+      "source_id": "S1",
+      "quote": "Southern Kyushu by Rail | Itineraries | Travel Japan - Japan National Tourism Organization (Official Site) ... South Kyushu by Rail",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "Southern Kyushu 지역은 후쿠오카, 구마모토, 가고시마 등 다채로운 온천과 자연 명소가 밀집해 있습니다.",
+      "source_id": "S1",
+      "quote": "Southern Kyushu by Rail ... Onsen ... Nature ... Major cities ... Kumamoto ... Kagoshima ...",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    }
+  ],
+  "limitations": [
+    "인용문 일치는 사실의 정확성·최신성·주장 전체의 근거를 보장하지 않습니다.",
+    "모델이 중요한 주장을 누락했을 수 있어 제목·요약·본문 전체를 검토해야 합니다.",
+    "입국·비자·정책은 관할 정부 기관의 직접 발표를 별도로 확인해야 합니다."
+  ]
+}

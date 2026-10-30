@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "updated_at": "2026-10-30T01:07:20.365764+00:00",
+  "status": "generated",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "selection_mode": "official_destination_guide",
+  "draft_file": "2026-10-30-southern-kyushu-rail-travel-4060dc61d48d.md",
+  "review_file": "2026-10-30-southern-kyushu-rail-travel-4060dc61d48d.review.json",
+  "verification_status": "insufficient_evidence",
+  "source_attempts": [
+    {
+      "title": "2. [HD포토] 레드벨벳 아이린-슬기, ‘둘이서만 떠나는 일본 투어’…‘그것은 아슬이니까’ (인천공항 출국) - 톱스타뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1POG1RMG5vaVhSS3FGWWszR2hrdm1OQkhUbWg0OC1kU2JZa1Fib2ZkblZ2eVpuUWVPdFYtSDFUMUJ2UzJ4dDFfUG1RY1hJRFhJd2FPS3UwNE5rQTFneklza2t3WmJvYV9vODRBeGFnTnBRQQ?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. 대만 기륭 출발 크루즈, 오키나와 2∼4박…타이베이 여행과 연결 - 여행레저신문",
+      "source_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQdDV2cVRqREV0Sm53LW0yU0ozQmwzU3V2OS1yWEk3SEdwZnpPSWJqT1U3VHdlTzNQSWllZzdtemNGQ0wzMHgzZ01VQ25xdEZyQWFNZmFjWnU1ay1Oei1yOXBCLUhtM21WRm1iYnQ3cU1XcklIUjVXQ216eHhQUFE4Zg?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "1. Choo Sung-hoon “Nickname ‘Sexyama’, famous worldwide!” (The Manly Way to Travel in Taiwan) - 스포츠경향",
+      "source_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBrZDR6ZS14WmV1NjhEVUZCOXN1UDBXNVhhZ0lvLU1nQ0gteWZtM3d6V1pacWpCOXdKaDZrX3hrNllobWZrVU1QNDJtWENHS0V6dk4yTU5pYk8zNEZ4amxScEhR?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "일본 여행 준비: Southern Kyushu by Rail",
+      "source_url": "https://www.japan.travel/en/itineraries/kyushus-hot-springs-by-rail",
+      "selection_mode": "official_destination_guide",
+      "source_count": 1,
+      "eligible_source_count": 1,
+      "error_count": 0
+    }
+  ]
+}
