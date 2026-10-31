@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-31",
+  "updated_at": "2026-10-31T00:51:51.651502+00:00",
+  "status": "generated",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "selection_mode": "news",
+  "draft_file": "2026-10-31-talon-japan-english-launch-657dd3e3b821.md",
+  "review_file": "2026-10-31-talon-japan-english-launch-657dd3e3b821.review.json",
+  "verification_status": "insufficient_evidence",
+  "source_attempts": [
+    {
+      "title": "2. [HD포토] 레드벨벳 아이린-슬기, ‘둘이서만 떠나는 일본 투어’…‘그것은 아슬이니까’ (인천공항 출국) - 톱스타뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1POG1RMG5vaVhSS3FGWWszR2hrdm1OQkhUbWg0OC1kU2JZa1Fib2ZkblZ2eVpuUWVPdFYtSDFUMUJ2UzJ4dDFfUG1RY1hJRFhJd2FPS3UwNE5rQTFneklza2t3WmJvYV9vODRBeGFnTnBRQQ?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. 태국어 일본 여행 사이트 '탈론 재팬(Talon Japan)', 영문판 출시 - haveagood-holiday.com",
+      "source_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQNmR5aVdiX3pVLXJIS0hhcVBoZnpBeUJHZXpTdndpU0o1WUpFWGdHSUdLVmkzaDE5WDlxXzY4RzV0Q0NULVA2OWs0a255WEpXOU1OZ2dqdS04MjB0ZThqOU1UNGRZbkNKMzB4S01GRXVBbG1EM2FhSGMzWGlkaGhSSWxuaDNMSzg?oc=5",
+      "source_count": 2,
+      "eligible_source_count": 1,
+      "error_count": 0
+    }
+  ]
+}
