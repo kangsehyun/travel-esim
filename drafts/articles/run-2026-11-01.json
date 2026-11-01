@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-01",
+  "updated_at": "2026-11-01T00:11:30.410480+00:00",
+  "status": "generated",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "selection_mode": "official_destination_guide",
+  "draft_file": "2026-11-01-japan-travel-rail-preparation-71fcbd78757e.md",
+  "review_file": "2026-11-01-japan-travel-rail-preparation-71fcbd78757e.review.json",
+  "verification_status": "needs_human_review",
+  "source_attempts": [
+    {
+      "title": "1. Choo Sung-hoon “Nickname ‘Sexyama’, famous worldwide!” (The Manly Way to Travel in Taiwan) - 스포츠경향",
+      "source_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBrZDR6ZS14WmV1NjhEVUZCOXN1UDBXNVhhZ0lvLU1nQ0gteWZtM3d6V1pacWpCOXdKaDZrX3hrNllobWZrVU1QNDJtWENHS0V6dk4yTU5pYk8zNEZ4amxScEhR?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 단양군, 대만 여행업계·유튜버 초청… 해외 관광객 유치 박차 - 브레이크뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE4zOUhrZHB5ZGV6dE1JRXVWRzQxWjdxYVA4Q3RfNVhnRW5mdldKamI4b1VvZ3ptUDdSNFlrRHlxZ0FfM3dLbUpEZw?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. 「누구나 언제나 대만족」 2026 대만관광청 캠페인 영상 혼자편_30초 - YouTube",
+      "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5RWXh1NHBDQ3U1N2hnc3ViVWVTYTFHN2ppZHNZMDhmbV9qb1pCT0tseXJpRXd2cThneXlLeGt1UnBHMlBwZHJkV0xrQndZaU1JODExVWZRZU5rdnQ1?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "일본 여행 준비: Traveling by Rail",
+      "source_url": "https://www.japan.travel/en/guide/traveling-by-rail/",
+      "selection_mode": "official_destination_guide",
+      "source_count": 1,
+      "eligible_source_count": 1,
+      "error_count": 0
+    }
+  ]
+}
