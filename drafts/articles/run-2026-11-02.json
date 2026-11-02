@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-02",
+  "updated_at": "2026-11-02T00:50:09.091668+00:00",
+  "status": "generated",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "selection_mode": "official_destination_guide",
+  "draft_file": "2026-11-02-japan-train-bus-travel-guide-352df0a90a38.md",
+  "review_file": "2026-11-02-japan-train-bus-travel-guide-352df0a90a38.review.json",
+  "verification_status": "insufficient_evidence",
+  "source_attempts": [
+    {
+      "title": "1. 필리핀 아웃바운드 여행, '가성비·단거리' 중심 재편… 베트남·한국 웃고 홍콩 울고 - 뉴스트래블",
+      "source_url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5DSzl5b1pEZHlWbUR1dHhYb2ZIUkU4bXkzMXNpSF90X0R3OHl5MXRTNE5zbjR6ZVlSVzU4SEhmOFk0UW9zd0ZtakhuWFd5Mk5qZW9sVlcwUEN4RUl0T3pXeElIRWIyQQ?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 칸화성은 비자 면제 대상인 중국인 관광객을 관리하는 시스템을 개발하고 있습니다. - Vietnam.vn",
+      "source_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNR3BwOV80NFRjTnc4M3IzU085VGhPTXcyQlQ3LXVnQm9jeWFNdjBrcGRWaW4tYkVabFB1RnVBdURxX25XMXFnX1NVTndUTkp0ZDZBRU0zV3NMQnFFYWFlQ2F3MkZtcTRtczhsZTNZWUNxN0xWMng1ZXNxTzQ5S2wwUVJ5cFNteFdodXYxYk1MRVU5b3VkY09ralJBU1FKc0pQSC1WRA?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. Travel – 썬푸꾸옥항공은 어떤 항공사인가? - 씬짜오베트남",
+      "source_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1SaWRTMzVtMU1LcWJZN1FnOEI0aHZ0UjRBNUhMdGRsUWlLRUgxQl91Rk84MHAySFJCSEVMUVhRNnFXS1R2bGVDTA?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "일본 여행 준비: How to Travel by Train and Bus",
+      "source_url": "https://www.japan.travel/en/guide/how-to-travel-by-train-and-bus-in-japan/",
+      "selection_mode": "official_destination_guide",
+      "source_count": 1,
+      "eligible_source_count": 1,
+      "error_count": 0
+    }
+  ]
+}
