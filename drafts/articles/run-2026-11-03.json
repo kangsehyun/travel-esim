@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-03",
+  "updated_at": "2026-11-03T02:56:49.139241+00:00",
+  "status": "generated",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "selection_mode": "official_destination_guide",
+  "draft_file": "2026-11-03-japan-travel-preparation-jr-rail-passes-6e57737d653c.md",
+  "review_file": "2026-11-03-japan-travel-preparation-jr-rail-passes-6e57737d653c.review.json",
+  "verification_status": "insufficient_evidence",
+  "source_attempts": [
+    {
+      "title": "1. 태국관광청, 태국 웰니스 관광 집중 조명 - 트래블데일리",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5zMDdONWNJZzU1M2ZnbEg2YkhaRWViTmY2cmJuOGNybjdjajFNcVU5dXhOSWhfOFVIMjlHcF8wS0E5T3JFU1RZQ1hiNDFLVEcwTW9wOUtONVNpUWpNOHJnNndUV3JuTlhZRkhRcm5PZ1c?oc=5",
+      "source_count": 0,
+      "eligible_source_count": 0,
+      "error_count": 1
+    },
+    {
+      "title": "2. ‘World Theme Travel’ Goes Beyond Thailand’s Tourist Trail - 뉴스컬처",
+      "source_url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFA5SUlGNWZ0cjUwN2JhZnZiUFFnR21Vbzg1SVdGX1hjVW5STXppX3NUdHhraGpUa3Z2YlMwT2tsSU5fcHhJaWN3LTRIckhuNmJQaU9qYklYV21qbm03cmNnaXAyNFJGUQ?oc=5",
+      "source_count": 0,
+      "eligible_source_count": 0,
+      "error_count": 1
+    },
+    {
+      "title": "3. 태국 마트 가격 팩트체크 🛒 귀한 여행 시간과 동선 아껴주는 쇼핑 가이드 ⏰ | 탑스, 고메마켓, 로터스, 빅씨 + 세븐일레븐까지 - YouTube",
+      "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9hQWI2ZUxrRHl3Q3hOWThEbWJyMmNFbmlaTkxLUGxvT1MwM0RqekNiX3pGN2RIWUkyaWlCcnN1ZmpqWkZ3RkVaTlRRZDFtS2M2dmF0RXd1MEJnVHpp?oc=5",
+      "source_count": 0,
+      "eligible_source_count": 0,
+      "error_count": 1
+    },
+    {
+      "title": "일본 여행 준비: JR Rail Passes",
+      "source_url": "https://www.japan.travel/en/plan/jr-rail-passes/",
+      "selection_mode": "official_destination_guide",
+      "source_count": 1,
+      "eligible_source_count": 1,
+      "error_count": 0
+    }
+  ]
+}
