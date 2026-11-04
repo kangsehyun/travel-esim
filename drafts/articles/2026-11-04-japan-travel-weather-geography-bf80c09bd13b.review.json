@@ -1,0 +1,61 @@
+{
+  "topic_url": "https://www.japan.travel/en/plan/weather/",
+  "checked_at": "2026-11-04T01:27:39.286973+00:00",
+  "evidence": {
+    "sources": [
+      {
+        "id": "S1",
+        "organization": "JNTO",
+        "url": "https://www.japan.travel/en/plan/weather/",
+        "title": "Weather & Geography | Japan's Weather | Travel Japan | JNTO",
+        "retrieved_at": "2026-11-04T01:27:26.342705+00:00",
+        "role": "topic_candidate",
+        "excerpt": "Weather & Geography | Japan's Weather | Travel Japan | JNTO Trade Meetings & Events Newsletter Sign-up Coronavirus (COVID-19) Advisory Information Select Language 简体中文 繁體中文（香港） 繁體中文（臺灣） India (English) Bahasa Indonesia 한국어 ภาษาไทย Tiếng Việt Singapore (English) Philippines (English) Malaysia (English) Australia/New Zealand (English) Français Deutsch Italiano Español United Kingdom (English) Nordic countries（English） Canada (English) Canada (Français) United States (English) Mexico (español) Português العربية Global (English) 简体中文 繁體中文（香港） 繁體中文（臺灣） India (English) Bahasa Indonesia 한국어 ภาษาไทย Tiếng Việt Singapore (English) Philippines (English) Malaysia (English) Australia/New Zealand (English) Français Deutsch Italiano Español United Kingdom (English) Nordic countries（English） Canada (English) Canada (Français) United States (English) Mexico (español) Português العربية Global (English) HOME Back Destinations All Hokkaido Tohoku Aomori Akita Iwate Yamagata Miyagi Fukushima Hokuriku Shinetsu Niigata Toyama Ishikawa Fukui Nagano Kanto Tokyo Kanagawa Chiba Saitama Ibaraki Tochigi Gunma Tokai Yamanashi Shizuoka Gifu Aichi Mie Kansai Kyoto Osaka Shiga Hyogo Nara Wakayama Chugoku Tottori Shimane Okayama Hiroshima Yamaguchi Shikoku Tokushima Kagawa Ehime Kochi Kyushu Fukuoka Saga Nagasaki Oita Kumamoto Miyazaki Kagoshima Okinawa Major cities Hokkaido Sapporo Asahikawa Hakodate Kushiro Tohoku Sendai Aomori Akita Morioka Tsuruoka Fukushima Hokuriku Shinetsu Kanazawa Niigata Toyama Nagano Matsumoto Fukui Kanto Tokyo Yokohama Saitama Chiba Utsunomiya Maebashi Tokai Nagoya Fujiyoshida Hamamatsu Gifu Takayama Iseshima Kansai Osaka Kyoto Nara Kobe Himeji Otsu Chugoku Hiroshima Okayama Kurashiki Matsue Tottori Shimonoseki Shikoku Matsuyama Takamatsu Tokushima Kochi Kyushu Fukuoka Kumamoto Kagoshima Beppu Nagasaki Miyazaki Okinawa Naha Ishigaki Island Miyako Island Kerama Island Passion Nature Mt. Fuji Tokyo Island Zao Yakushima Japan Alps Towada Outdoors Niseko Minakami Nagano Miyazaki Miyako Ishigaki Island Tradition Kyoto Hongu Kiso Koka & Shigaraki Nara Hida Takayama Cuisine Fukuoka Osaka Sapporo Ginza, Nihonbashi Ise Kanazawa Art Kanazawa Setouchi Kiyosato Hakone Roppongi Relaxation Beppu & Yufuin (Onsen) Miyako Island Suwa Ginzan Onsen Nagasaki Islands Cities Yokohama Sendai Osaka Hiroshima Vacation Style New Discoveries or Slow Travel Kumano Kodo Fukui Shimane Shonai ",
+        "text_sha256": "d7e83f3581c11049d99056eb41ea7263645f0e562da6a937440602bc38f9c6b1",
+        "status": "retrieved_not_verified"
+      }
+    ],
+    "errors": [],
+    "original_news_fetched": false
+  },
+  "verification_status": "insufficient_evidence",
+  "publication_hold": true,
+  "issues": [
+    "본문 주장·출처 ID·원문 인용문 연결을 확인해야 합니다."
+  ],
+  "claims": [
+    {
+      "claim": "일본은 남북으로 약 3,000km에 이르는 섬나라로, 지역별 기후가 매우 다양하다.",
+      "source_id": "S1",
+      "quote": "Weather & Geography | Japan's Weather | Travel Japan | JNTO",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "홋카이도 및 도호쿠 지방은 겨울에 많은 눈이 내리며 여름은 선선한 편이다.",
+      "source_id": "S1",
+      "quote": "Major cities Hokkaido Sapporo Asahikawa Hakodate Kushiro Tohoku Sendai Aomori Akita Morioka Tsuruoka Fukushima",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "간토·간사이·규슈 지역은 사계절이 뚜렷하며, 봄과 가을에 관광객이 많이 찾는다.",
+      "source_id": "S1",
+      "quote": "Kanto Tokyo Kanagawa Chiba Saitama Ibaraki Tochigi Gunma Tokai Yamanashi Shizuoka Gifu Aichi Mie Kansai Kyoto Osaka",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "오키나와 등 남쪽 섬들은 아열대 기후로 겨울에도 온화하다.",
+      "source_id": "S1",
+      "quote": "Okinawa Naha Ishigaki Island Miyako Island Kerama Island Passion Nature",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    }
+  ],
+  "limitations": [
+    "인용문 일치는 사실의 정확성·최신성·주장 전체의 근거를 보장하지 않습니다.",
+    "모델이 중요한 주장을 누락했을 수 있어 제목·요약·본문 전체를 검토해야 합니다.",
+    "입국·비자·정책은 관할 정부 기관의 직접 발표를 별도로 확인해야 합니다."
+  ]
+}

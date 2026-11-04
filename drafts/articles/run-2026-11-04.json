@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-04",
+  "updated_at": "2026-11-04T01:27:39.288188+00:00",
+  "status": "generated",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "selection_mode": "official_destination_guide",
+  "draft_file": "2026-11-04-japan-travel-weather-geography-bf80c09bd13b.md",
+  "review_file": "2026-11-04-japan-travel-weather-geography-bf80c09bd13b.review.json",
+  "verification_status": "insufficient_evidence",
+  "source_attempts": [
+    {
+      "title": "1. \"일본 여행 왔더니, 이제 세금 먼저 내라고 하네요\"… 11월부터 완전히 달라진 면세 제도 - 발품뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1sQWZ3SlE5dFVuZHVkQUZ6dDJCRzZnRWUyMGxjdUhwUjBlTGppOTdQZTJ5cXdSSjJ2MGV6cHhYSzV2NWNuUFA0N181T0JoRnhPOVhHZTYwOVpTb0VZanQ00gFnQVVfeXFMTlFETmFxbmVpSTViOV9hV0VEY0lpTDR3N2RUb3VvS0p1MVVtV0xHXzlGQ0JyT04tZTB0ZDNNVjNXaDZ0cGZINkVFX0VXOHF0QnVVRlFUa083WDZwRXZtVnZmZ0NGNFBvVQ?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "1. Choo Sung-hoon “Nickname ‘Sexyama’, famous worldwide!” (The Manly Way to Travel in Taiwan) - 스포츠경향",
+      "source_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBrZDR6ZS14WmV1NjhEVUZCOXN1UDBXNVhhZ0lvLU1nQ0gteWZtM3d6V1pacWpCOXdKaDZrX3hrNllobWZrVU1QNDJtWENHS0V6dk4yTU5pYk8zNEZ4amxScEhR?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 「누구나 언제나 대만족」 2026 대만관광청 캠페인 영상 혼자편_30초 - YouTube",
+      "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5RWXh1NHBDQ3U1N2hnc3ViVWVTYTFHN2ppZHNZMDhmbV9qb1pCT0tseXJpRXd2cThneXlLeGt1UnBHMlBwZHJkV0xrQndZaU1JODExVWZRZU5rdnQ1?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "일본 여행 준비: Weather & Geography",
+      "source_url": "https://www.japan.travel/en/plan/weather/",
+      "selection_mode": "official_destination_guide",
+      "source_count": 1,
+      "eligible_source_count": 1,
+      "error_count": 0
+    }
+  ]
+}
