@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-06",
+  "updated_at": "2026-11-06T01:36:41.893355+00:00",
+  "status": "generated",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "selection_mode": "official_destination_guide",
+  "draft_file": "2026-11-06-japan-travel-accessibility-guide-d0f2b34b3207.md",
+  "review_file": "2026-11-06-japan-travel-accessibility-guide-d0f2b34b3207.review.json",
+  "verification_status": "insufficient_evidence",
+  "source_attempts": [
+    {
+      "title": "1. 울산시, 대만 최대 관광박람회에 홍보관 운영 - 연합뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1DLTZ2Q042Smkxc1BuUDJ3b2tIeE5MVVFhOGdUcUR3WkFWSS1UUDc0NDRiQjhYTDhiNTdNaHgzQi1xaDByMjdFeGxlakVKXzFNcDVVblJkMDFWTUnSAWBBVV95cUxOZ2VCQjU0WWhmS0lIVUtpdC1lNUN2QVBDNzFLWDNGQ2NVSTlyMEEyOHZsdjVGUVNvazZIeTVoOTJwZTlWNjBVREhiT216VG9rdGJjYVlGbnA2U2JNbmFYWEE?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 울산시, 대만 최대 관광박람회 ‘2026 타이베이국제여전(TITF)’홍보관 운영 - 시사일보",
+      "source_url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9ySnhjVVQzcTA1dkhoaEFXblN2ZlZSTC1vTWw1SDZkejRORUloVHFiNmY4YzlkOEI0WTMzZkFhYnJtcm9CeUUzSWZJTmo?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. Choo Sung-hoon “Nickname ‘Sexyama’, famous worldwide!” (The Manly Way to Travel in Taiwan) - 스포츠경향",
+      "source_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBrZDR6ZS14WmV1NjhEVUZCOXN1UDBXNVhhZ0lvLU1nQ0gteWZtM3d6V1pacWpCOXdKaDZrX3hrNllobWZrVU1QNDJtWENHS0V6dk4yTU5pYk8zNEZ4amxScEhR?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "일본 여행 준비: Accessibility in Japan",
+      "source_url": "https://www.japan.travel/en/guide/accessibility-in-japan/",
+      "selection_mode": "official_destination_guide",
+      "source_count": 1,
+      "eligible_source_count": 1,
+      "error_count": 0
+    }
+  ]
+}

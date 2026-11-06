@@ -1,0 +1,54 @@
+{
+  "topic_url": "https://www.japan.travel/en/guide/accessibility-in-japan/",
+  "checked_at": "2026-11-06T01:36:41.892108+00:00",
+  "evidence": {
+    "sources": [
+      {
+        "id": "S1",
+        "organization": "JNTO",
+        "url": "https://www.japan.travel/en/guide/accessibility-in-japan/",
+        "title": "Accessible Tourism | Guide | Travel Japan (Japan National Tourism Organization)",
+        "retrieved_at": "2026-11-06T01:36:30.253658+00:00",
+        "role": "topic_candidate",
+        "excerpt": "Japan Winter in Japan Weather Forecast Cherry Blossom Forecast Autumn Leaves Forecast Weather & Geography Autumn Leaves Forecast World Heritage Sustainable Travel in Japan Essential Information Japan Visitor Hotline Travel Insurance in Japan Japan Safe Travel Information Local Laws Visa Information Accessibility in Japan Vegetarian Guide Muslim Travelers Safety Tips Accessibility in Japan Japan Visitor Hotline Travel Insurance in Japan Safety Tips Blog News News from JNTO US Partner News Press Release Newsletter Archives Trade Newsletter Tour Companies Tender Notice News from JNTO US Partner News Press Release Newsletter Archives My Favorites ${v.title} ${v.desc | trunc(25)} ${v.title} ${v.desc | trunc(25)} View All Use the Planning a Trip to Japan? Share your travel photos with us by hashtagging your images with #visitjapanjp GUIDE Accessible Tourism OVERVIEW KEYWORDS HOME Stories & Guides Accessibility in Japan for the 2020 Olympics Aiming to secure an enjoyable and barrier-free travel experience for one and all. You can find all of the information you will need for accessible traveling in Japan right here. Accessible Tourism Accessible tourism means travel designed for everyone. That includes the elderly, people with disabilities, families with children, and anyone else who may need assistance. Japan strives to enable anyone, regardless of age or physical ability, to explore and travel throughout the country worry and carefree. There are many guides readily available online and in various tourist-friendly locations to help you make the most of your trip to Japan. You'll never feel limited as there are endless things to do and places to see. Here are a few resources you can use on your visit both in and out of Tokyo. Find the information you need about accessible tourism in Tokyo here . This will help you learn about how and when to use public transportation like trains, buses, or taxis to get around town. You can also see where to find lodging and restrooms, as well as how to access and best enjoy popular tourist attractions. Do you like exploring outdoors? There are lots of barrier-free courses you can take at sightseeing destinations across Tokyo. With 30 listed here , you can explore exciting neighborhoods like Shinjuku, the food haven of Tsukiji, or historical Ueno, to name a few. You will be able to plan out any excursions you want to by accessing ba",
+        "text_sha256": "3855cc59cd0dba12d2835cd6827d1a52253ed19d69a94c5e86b3b4b8618f6c91",
+        "status": "retrieved_not_verified"
+      }
+    ],
+    "errors": [],
+    "original_news_fetched": false
+  },
+  "verification_status": "insufficient_evidence",
+  "publication_hold": true,
+  "issues": [
+    "본문 주장·출처 ID·원문 인용문 연결을 확인해야 합니다."
+  ],
+  "claims": [
+    {
+      "claim": "일본은 나이, 신체조건에 관계없이 누구나 여행을 즐길 수 있도록 다양한 접근성 정책과 편의시설을 갖추고 있습니다.",
+      "source_id": "S1",
+      "quote": "Japan strives to enable anyone, regardless of age or physical ability, to explore and travel throughout the country worry and carefree.",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "도쿄에서는 휠체어 접근 가능한 엘리베이터와 저상버스가 마련돼 있어 대중교통 이용이 편리합니다.",
+      "source_id": "S1",
+      "quote": "This will help you learn about how and when to use public transportation like trains, buses, or taxis to get around town.",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    },
+    {
+      "claim": "도쿄 내 관광지에는 배리어프리 산책 코스가 조성되어 있어 누구나 즐길 수 있습니다.",
+      "source_id": "S1",
+      "quote": "There are lots of barrier-free courses you can take at sightseeing destinations across Tokyo.",
+      "citation_check": "missing_or_invalid",
+      "semantic_verdict": "not_verified"
+    }
+  ],
+  "limitations": [
+    "인용문 일치는 사실의 정확성·최신성·주장 전체의 근거를 보장하지 않습니다.",
+    "모델이 중요한 주장을 누락했을 수 있어 제목·요약·본문 전체를 검토해야 합니다.",
+    "입국·비자·정책은 관할 정부 기관의 직접 발표를 별도로 확인해야 합니다."
+  ]
+}
