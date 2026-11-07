@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-07",
+  "updated_at": "2026-11-07T00:58:09.937259+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. 여기어때-대만관광청 맞손..대만 숙소·항공·투어 할인 - 브레이크뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE9xMGtMYlVvOVQ3NXh3VE5IdTRfTnI3dUNMVjU1THZycVUxQnJkQWJ0MjJlLXVZWnVXdHpnMFZhZDlmZw?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 여기어때 대만 여행 할인, 숙소 10만원 쿠폰팩·항공권 2만원 혜택 - 여행레저신문",
+      "source_url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBYTkg4bm9BNlRyd3FsRFN2dlpTWVh0eWNkOVc4QlNZVWYzdjVUdnh2Zk1yZ0Zrc1JyN1FTbC1ZVWhfUXN1bDdhVGVhdGhqN2N2UkdwOUxVVDh1aWxGaERBYkwyYWRMZm9JMktrUFpwOUJ6YkxtZ2VZcC1Eaw?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. 울산시, 대만 최대 관광박람회에 홍보관 운영 - 연합뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5nZUJCNTRZaGZLSUhVS2l0LWU1Q3ZBUEM3MUtYM0ZDY1VJOXIwQTI4dmx2NUZRU29rNkh5NWg5MnBlOVY2MFVESGJPbXpUb2t0YmNhWUZucDZTYk1uYVhYQdIBYEFVX3lxTE5nZUJCNTRZaGZLSUhVS2l0LWU1Q3ZBUEM3MUtYM0ZDY1VJOXIwQTI4dmx2NUZRU29rNkh5NWg5MnBlOVY2MFVESGJPbXpUb2t0YmNhWUZucDZTYk1uYVhYQQ?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
