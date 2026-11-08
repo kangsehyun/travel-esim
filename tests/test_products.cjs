@@ -8,7 +8,7 @@ function setup(responses,search='?country=JP&days=5&utm_source=tistory') {
   ids.sort.value='recommended';
   let calls=0;const urls=[];
   const location={search,href:'https://travel.example/esim.html'+search};
-  const context={URL,URLSearchParams,AbortController,setTimeout(){return 1;},clearTimeout(){},console:{error(){}},document:{getElementById(id){return ids[id];},createElement:el},fetch:async(url)=>{urls.push(url);const next=responses[calls++];if(next instanceof Error)throw next;return {ok:true,json:async()=>next};},window:{location,history:{replaceState(){}}}};
+  const context={URL,URLSearchParams,AbortController,setTimeout(){return 1;},clearTimeout(){},console:{error(){}},document:{getElementById(id){return ids[id];},createElement:el},fetch:async(url)=>{urls.push(url);const next=responses[calls++];if(next instanceof Error)throw next;return {ok:true,json:async()=>next};},window:{location,history:{replaceState(_state,_unused,url){location.href=url;}}}};
   vm.runInNewContext(code, context);
   return {ids,context,urls,get calls(){return calls;}};
 }
@@ -26,7 +26,7 @@ const tick=()=>new Promise(resolve=>setImmediate(resolve));
   assert.equal(cards[0].children[2].hidden,true);cards[0].children[6].handlers.click();assert.equal(cards[0].children[2].hidden,false);assert.equal(cards[0].children[6].attributes['aria-expanded'],'true');
   for(const value of [null,undefined,'',0,'0',-1,'wrong',false])assert.equal(a.context.knownPrice(value),null);
   assert.equal(a.context.knownPrice('11200'),11200);
-  for(const direction of [1,-1])assert(a.context.comparePrices({priceKrw:null},{priceKrw:1},direction)>0);
+  assert(a.context.comparePrices({priceKrw:null},{priceKrw:1})>0);
   assert.equal(a.context.purchaseUrl('https://esimoa.com.evil.example/'),null);
   assert.equal(a.context.purchaseUrl('https://user@www.esimoa.com/'),null);
   const b=setup([new Error('network'),{items:[]}]);await tick();
@@ -44,7 +44,20 @@ const tick=()=>new Promise(resolve=>setImmediate(resolve));
   await paged.ids['more-products'].handlers.click();assert.equal(paged.ids.products.children.length,100);assert(paged.urls[1].includes('offset=50'));
   await paged.ids['more-products'].handlers.click();assert.equal(paged.ids.products.children.length,105);assert(paged.urls[2].includes('offset=100'));assert.equal(paged.ids['more-products'].hidden,true);
   const failedPage=setup([page(0,50),new Error('page timeout'),page(50,50)]);await tick();await failedPage.ids['more-products'].handlers.click();assert.equal(failedPage.ids.products.children.length,50);assert.equal(failedPage.ids['more-products'].hidden,false);await failedPage.ids['more-products'].handlers.click();assert(failedPage.urls[2].includes('offset=50'));assert.equal(failedPage.ids.products.children.length,100);
-  const filters=setup([page(0,1),page(0,1)]);await tick();filters.ids['search-country'].value='FR';filters.ids['search-days'].value='';filters.ids.sort.value='price-asc';await filters.ids.sort.handlers.change();await tick();assert(filters.urls[1].includes('country=FR'));assert(filters.urls[1].includes('sort=price'));assert(!filters.urls[1].includes('days='));
+  const filters=setup([page(0,1),page(0,1)]);await tick();filters.ids['search-country'].value='FR';filters.ids['search-days'].value='';filters.ids.sort.value='price';await filters.ids.sort.handlers.change();await tick();assert(filters.urls[1].includes('country=FR'));assert(filters.urls[1].includes('sort=price'));assert(!filters.urls[1].includes('days='));
+  for (const [input, expected] of [['price', 'price'], ['price-asc', 'price'], ['price-desc', 'recommended'], ['unrecognized', 'recommended']]) {
+    const landing = setup([page(0,1), page(0,1)], '?country=JP&days=3&sort='+input+'&utm_source=youtube');
+    await tick();
+    assert.equal(landing.ids.sort.value, expected, input);
+    const request = new URL(landing.urls[0], 'https://travel.example').searchParams;
+    assert.equal(request.get('sort'), expected, input);
+    assert.equal(request.get('days'), '3', input);
+    assert.equal(landing.ids.products.children.length, 1, input);
+    await landing.ids['search-days'].handlers.change();
+    const url = new URL(landing.context.window.location.href);
+    assert.equal(url.searchParams.get('sort'), expected, input);
+    assert.equal(url.searchParams.get('utm_source'), 'youtube', input);
+  }
   const chooser=setup([{items:[]}],'');await tick();assert.equal(chooser.calls,0,'do not overwhelm visitor with the entire catalog on entry');assert(chooser.ids.status.textContent.includes('여행지'));chooser.ids['search-country'].value='FR';chooser.ids['search-country'].handlers.change();await tick();assert.equal(chooser.calls,1);assert(chooser.urls[0].includes('country=FR'));
   const explicitAll=setup([{items:[]}],'?scope=all');await tick();assert.equal(explicitAll.calls,1);assert(!explicitAll.urls[0].includes('country='));
   console.log('Product unknown values, price ordering, safe referral URLs and error retry: PASS');
