@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-08",
+  "updated_at": "2026-11-08T00:43:20.913165+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. 2026 코리아 글로우 & 웰니스 페스티벌: 웰빙과 관광이 어우러진 여행지. - Vietnam.vn",
+      "source_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQX1NSeGw2Z3hteHBGYkVlYXRXSDJ3OWZmbnU5ZVBGZkFtNHJVOWNodXBad29GSU84ZjVxckFhNHRvOEZWNm5KUVhNQ0xmZ2U4dFljUTk5SVlPS3ZNcklsanpWUzQtcU12UFBYUmRneFJBRlRtbjZmakpZaXpMWXFXRHQzc0tVT2NMdVU1MS1qVV9RTlloLW96Q3JSelJmX28xT3QwaUVGQQ?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. Travel – 썬푸꾸옥항공은 어떤 항공사인가? - 씬짜오베트남",
+      "source_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1SaWRTMzVtMU1LcWJZN1FnOEI0aHZ0UjRBNUhMdGRsUWlLRUgxQl91Rk84MHAySFJCSEVMUVhRNnFXS1R2bGVDTA?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. 칸화성은 비자 면제 대상인 중국인 관광객을 관리하는 시스템을 개발하고 있습니다. - Vietnam.vn",
+      "source_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNR3BwOV80NFRjTnc4M3IzU085VGhPTXcyQlQ3LXVnQm9jeWFNdjBrcGRWaW4tYkVabFB1RnVBdURxX25XMXFnX1NVTndUTkp0ZDZBRU0zV3NMQnFFYWFlQ2F3MkZtcTRtczhsZTNZWUNxN0xWMng1ZXNxTzQ5S2wwUVJ5cFNteFdodXYxYk1MRVU5b3VkY09ralJBU1FKc0pQSC1WRA?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
