@@ -4,11 +4,18 @@ function knownPrice(value) {
   const price = Number(value);
   return Number.isFinite(price) && price > 0 ? price : null;
 }
-function comparePrices(a, b, direction) {
+function comparePrices(a, b) {
   const left = knownPrice(a.priceKrw), right = knownPrice(b.priceKrw);
   if (left === null) return right === null ? 0 : 1;
   if (right === null) return -1;
-  return direction * (left - right);
+  return left - right;
+}
+function catalogSort(value) {
+  // Older shared links used price-asc while the catalog API uses price.
+  if (value === 'price-asc') return 'price';
+  return ['recommended', 'price', 'data', 'validity', 'price_per_gb'].includes(value)
+    ? value
+    : 'recommended';
 }
 function purchaseUrl(value) {
   try {
@@ -72,8 +79,7 @@ if(days && ![1,3,5,7,10,15,30].includes(days)){const option=document.createEleme
 countrySelect.value = country;
 if(countrySelect.dataset)countrySelect.dataset.all=scopeAll?'true':'false';
 daysSelect.value = days ? String(days) : '';
-if(params.has('sort'))sortSelect.value=params.get('sort');
-if(!sortSelect.value)sortSelect.value='recommended';
+sortSelect.value = catalogSort(params.get('sort'));
 unlimitedCheck.checked=params.get('unlimited')==='true';
 Object.entries(extraFilters).forEach(([key,el])=>{if(el){if(key==='localNumber')el.checked=params.get(key)==='true';else el.value=params.get(key)||'';}});
 
@@ -105,14 +111,8 @@ if (hotspotCheck.checked) {
   });
 }
 
-if (sortSelect.value === 'price-asc') {
-  items.sort(function (a, b) {
-    return comparePrices(a, b, 1);
-  });
-} else if (sortSelect.value === 'price-desc') {
-  items.sort(function (a, b) {
-    return comparePrices(a, b, -1);
-  });
+if (sortSelect.value === 'price') {
+  items.sort(comparePrices);
 }
 
 status.textContent = '불러온 상품 '+allItems.length+'개'+(total===null?'':' / 검색 결과 '+total+'개')+' · 현재 표시 '+items.length+'개'+(hotspotCheck.checked?' (핫스팟 필터는 불러온 상품에 적용)':'');
@@ -212,7 +212,7 @@ status.textContent = '실시간 eSIM 상품을 불러오는 중입니다...';
 if(!append)box.innerHTML = '';
 
 try {
-  const query=new URLSearchParams({offset:String(nextOffset),sort:sortSelect.value==='price-asc'?'price':sortSelect.value});
+  const query=new URLSearchParams({offset:String(nextOffset),sort:catalogSort(sortSelect.value)});
   if(country)query.set('country',country);
   if(days)query.set('days',String(days));
   if(unlimitedCheck.checked)query.set('unlimited','true');
@@ -260,7 +260,7 @@ function searchProducts() {
   if(country)nextUrl.searchParams.set('country',country);else nextUrl.searchParams.delete('country');
   if(scopeAll)nextUrl.searchParams.set('scope','all');else nextUrl.searchParams.delete('scope');
   if(days)nextUrl.searchParams.set('days',String(days));else nextUrl.searchParams.delete('days');
-  nextUrl.searchParams.set('sort',sortSelect.value);
+  nextUrl.searchParams.set('sort',catalogSort(sortSelect.value));
   if(unlimitedCheck.checked)nextUrl.searchParams.set('unlimited','true');else nextUrl.searchParams.delete('unlimited');
   Object.entries(extraFilters).forEach(([key,el])=>{if(el){const value=key==='localNumber'?(el.checked?'true':''):el.value;if(value)nextUrl.searchParams.set(key,value);else nextUrl.searchParams.delete(key);}});
 
