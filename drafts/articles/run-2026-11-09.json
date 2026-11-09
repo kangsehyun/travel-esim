@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-09",
+  "updated_at": "2026-11-09T00:58:06.452535+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. 태국관광청, 태국 웰니스 관광 집중 조명 - 트래블데일리",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5zMDdONWNJZzU1M2ZnbEg2YkhaRWViTmY2cmJuOGNybjdjajFNcVU5dXhOSWhfOFVIMjlHcF8wS0E5T3JFU1RZQ1hiNDFLVEcwTW9wOUtONVNpUWpNOHJnNndUV3JuTlhZRkhRcm5PZ1c?oc=5",
+      "source_count": 0,
+      "eligible_source_count": 0,
+      "error_count": 1
+    },
+    {
+      "title": "2. ‘World Theme Travel’ Goes Beyond Thailand’s Tourist Trail - 뉴스컬처",
+      "source_url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFA5SUlGNWZ0cjUwN2JhZnZiUFFnR21Vbzg1SVdGX1hjVW5STXppX3NUdHhraGpUa3Z2YlMwT2tsSU5fcHhJaWN3LTRIckhuNmJQaU9qYklYV21qbm03cmNnaXAyNFJGUQ?oc=5",
+      "source_count": 0,
+      "eligible_source_count": 0,
+      "error_count": 1
+    },
+    {
+      "title": "3. 아고다, 방콕 유로비전 아시아 결승 지원…태국 숙소 최대 25% 할인 - 여행레저신문",
+      "source_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOSFhzZWRCVFpuUVE4V3dYQS1QTVBNYlYwall0TVRxU2twZEI4d3BldmYzdmQ0cXBoSW95LTZjVHB2UW1rdHdsRVhFa2xnX0xSV1JJcEo4dDNRNUR0S3lEWnlfaVViSklIajJiSXN3NHFoQk1zeWllRThCVFlsdVlLNFhKYjU?oc=5",
+      "source_count": 0,
+      "eligible_source_count": 0,
+      "error_count": 1
+    }
+  ]
+}
