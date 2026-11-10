@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-10",
+  "updated_at": "2026-11-10T03:37:56.305679+00:00",
+  "status": "generated",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "selection_mode": "news",
+  "draft_file": "2026-11-10-japan-tax-free-shopping-quiz-48f90a2ff169.md",
+  "review_file": "2026-11-10-japan-tax-free-shopping-quiz-48f90a2ff169.review.json",
+  "verification_status": "insufficient_evidence",
+  "source_attempts": [
+    {
+      "title": "1. 대한항공, USA투데이 주관 어워즈 비즈니스·일등석 등 3개 부문 1위 - 퍼블릭뉴스통신",
+      "source_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBZWXZjS3VuQVVMLVMycU1QZmIzQjVUX253bXJHaWUxYTZhNFhFZ1EzRi1UcHpacjIzRjZvMm8xN0s5bnBwUnhFX2FWWGFqV0hneDVkaEpnSDZMSEUyUUZMWkxSelN2SkNhLUNJ?oc=5",
+      "source_count": 0,
+      "eligible_source_count": 0,
+      "error_count": 1
+    },
+    {
+      "title": "1. 중국 관광객 55% 줄었는데 한국인은 역대 최다… 일본 관광시장에 나타난 변화 - 발품뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9zQ01wU3pTejhBcF9OLW1wSGpRZk01ZklfbUZWN21VTDNvSkZrNDZzSjJtc19wQmZmbWpWUGtadzNlYkNBcElTa2FJVnV2N1l5UjFpZ2UxVDQwSVloOVdwNW9R0gFqQVVfeXFMTVJjME12aW9KR1pDRmdNeGFsek5DRmpmRzhuaEFrSUtQemNRNkYtS1ZSS2Y2TktzWXZaR213UlBwOUduMHZUM1gzWkJpdHk1aXVReTkwLXRYZTVWNGhFRTkybzVpdENQcWhnZw?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. [새소식] 일본 면세 쇼핑 퀴즈에 참여하고 일본 왕복 항공권의 행운을 잡으세요! - Japan National Tourism Organization (JNTO)",
+      "source_url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPNHFTTDkzTUJJOVhEN1VLN0pzRW01eDJxZkpRSC1sNlljeExFRjkyajdSd1NWcXdUSW02UnFLMnZ6XzFZNmlNSFZMMkl3WnVaakVubzRFdmE4Vkt5WlVmdUlMTElmakZPb1ozc2hMTEVvOGVDLUJUWDF1M0RYVkZmQVFrRlJSOE9VUlJkRE1NVlAtM1dfeXhxWThyNi1Ob0pHUFVId1J6b0tuSVJfLVVJd1Jla2JtNk9MYU5mc2ViT3MwUHdnaWZXdVNqUWhNUk5DUUl3OA?oc=5",
+      "source_count": 2,
+      "eligible_source_count": 1,
+      "error_count": 0
+    }
+  ]
+}
