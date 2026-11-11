@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-11",
+  "updated_at": "2026-11-11T01:17:12.069026+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. 서울관광재단, 대만 최대 박람회서 ‘주말 연계 서울형 웰니스’ 관광 홍보 - 디스커버리뉴스(DISCOVERYNEWS)",
+      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5qb1hOR0NNdlRhVGhsNXd5NTdDMFdZZ1BWQnpiUnRlblRJVC1QRXo1cFJfUkpLOEdfaUE4UzFnZ2YwbzRFZTZWaDd1ZF9YYy1VaElYR3FKdnlGWGpDSmFiSVNyVlpUYTMwY0pHYlVXbXRLdw?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 강원관광재단 강원·서울 한자리에… 대만에 한국 지방 연계여행 알렸다 - 한경일보",
+      "source_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBXVjI5OGJWQmg3Zmk4WjBxMzVpeTh5S0Z0b2d1SnVkMmJfTVRkQ3RIZ2tSQ1VJbDFwb2xCTlVWZ3BFRUxHdUlNcUZ4eDBEcXpRTUxEYTh5R0dYVzNjSDk4Tk5VaDBLU3M?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. 서울관광재단, 대만 최대 관광박람회에서 ‘금요일 밤부터 시작되는 서울형 웰니스’ 집중 홍보 - 의정신문 서울시티",
+      "source_url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1jZldONHFwT2NpazFfU2E1WEtZMG5Yb2J2WnVXaFFlaEVOOE5RRHc4bWR5eUVSb2lPNU0xWFhpaDBfWnFVM1p1WUplN19XN3lRcG5VSzBSN3Z3aDFIVHJVaFNzTlFMNXB1ZE1iR2RlTQ?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
