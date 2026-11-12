@@ -43,7 +43,16 @@ const tick=()=>new Promise(resolve=>setImmediate(resolve));
   assert.equal(paged.ids.products.children.length,50);assert.equal(paged.ids['more-products'].hidden,false);
   await paged.ids['more-products'].handlers.click();assert.equal(paged.ids.products.children.length,100);assert(paged.urls[1].includes('offset=50'));
   await paged.ids['more-products'].handlers.click();assert.equal(paged.ids.products.children.length,105);assert(paged.urls[2].includes('offset=100'));assert.equal(paged.ids['more-products'].hidden,true);
-  const failedPage=setup([page(0,50),new Error('page timeout'),page(50,50)]);await tick();await failedPage.ids['more-products'].handlers.click();assert.equal(failedPage.ids.products.children.length,50);assert.equal(failedPage.ids['more-products'].hidden,false);await failedPage.ids['more-products'].handlers.click();assert(failedPage.urls[2].includes('offset=50'));assert.equal(failedPage.ids.products.children.length,100);
+  const failedPage=setup([page(0,50),new Error('page timeout'),page(50,50)]);
+  await tick();
+  await failedPage.ids['more-products'].handlers.click();
+  assert.equal(failedPage.ids.products.children.length,50);
+  assert.equal(failedPage.ids['retry-products'].hidden,false);
+  assert.equal(failedPage.ids['retry-products'].textContent,'다음 상품 다시 불러오기');
+  await failedPage.ids['retry-products'].handlers.click();
+  assert.equal(failedPage.urls[2],failedPage.urls[1],'retry the failed page with the same filters and offset');
+  assert.equal(failedPage.ids.products.children.length,100);
+  assert.equal(failedPage.ids['retry-products'].hidden,true);
   const filters=setup([page(0,1),page(0,1)]);await tick();filters.ids['search-country'].value='FR';filters.ids['search-days'].value='';filters.ids.sort.value='price';await filters.ids.sort.handlers.change();await tick();assert(filters.urls[1].includes('country=FR'));assert(filters.urls[1].includes('sort=price'));assert(!filters.urls[1].includes('days='));
   for (const [input, expected] of [['price', 'price'], ['price-asc', 'price'], ['price-desc', 'recommended'], ['unrecognized', 'recommended']]) {
     const landing = setup([page(0,1), page(0,1)], '?country=JP&days=3&sort='+input+'&utm_source=youtube');

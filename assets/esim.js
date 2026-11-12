@@ -44,6 +44,7 @@ const box = document.getElementById('products');
 const retryButton = document.getElementById('retry-products');
 const guideLink = document.getElementById('country-guide');
 let activeController = null;
+let retryAppend = false;
 
 const sortSelect = document.getElementById('sort');
 const unlimitedCheck = document.getElementById('unlimited');
@@ -241,9 +242,13 @@ try {
   if (currentRequest !== requestNumber) return;
 
   console.error('eSIM 상품 로딩 오류:', error);
-  status.textContent = append?'다음 상품을 불러오지 못했습니다. 상품 더 보기를 눌러 다시 시도하세요.':'상품 정보를 불러오지 못했습니다.';
+  status.textContent = append?'다음 상품을 불러오지 못했습니다. 이미 불러온 상품은 계속 비교할 수 있습니다.':'상품 정보를 불러오지 못했습니다.';
   if(!append)box.textContent='잠시 후 다시 시도해 주세요. 국가·기간 조건을 변경할 수도 있습니다.';
-  if (retryButton) retryButton.hidden = false;
+  if (retryButton) {
+    retryAppend = append;
+    retryButton.textContent = append ? '다음 상품 다시 불러오기' : '상품 다시 불러오기';
+    retryButton.hidden = false;
+  }
 } finally {
   clearTimeout(timer);
   if (currentRequest === requestNumber) {loading=false;box.setAttribute('aria-busy','false');if(moreButton){moreButton.disabled=false;moreButton.hidden=!hasMore;}}
@@ -268,7 +273,7 @@ function searchProducts() {
   load();
 }
 
-if (retryButton) retryButton.addEventListener('click', ()=>load(false));
+if (retryButton) retryButton.addEventListener('click', ()=>load(retryAppend));
 countrySelect.addEventListener('change', searchProducts);
 daysSelect.addEventListener('change', searchProducts);
 
