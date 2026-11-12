@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-12",
+  "updated_at": "2026-11-12T02:18:14.334852+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. 서울관광재단, 대만 최대 관광박람회에서 ‘금요일 밤부터 시작되는 서울형 웰니스’ 집중 홍보 - https://www.timess.co.kr/",
+      "source_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5QaHBSTnZpMU5vQlE5d0k5WGhKalZJSUpwZEJ2MmlEVUdJRXJmOFczV2hvY1pzUzE0Nlo2bFM5b05DM0JDdllwYWRseHpsdXlOcERwUnh6cTdrVmxlQUtzZ2JR?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 1
+    },
+    {
+      "title": "2. 금요일 밤엔 야경, 주말엔 등산·스파…서울관광재단, 대만서 홍보 - 뉴스1",
+      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBvbG1tV1JObUwxdlA2UUxmZFY1Rm1lWWt2c3Y1ZUFWVFdETk5VazFBVm5sc2R4akRKSFVybzdxUUtkSlI2anVjX080UVBCTERrVzB2d0o3X2l2aXc0WTZBUg?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. 강원관광재단, 대만서 관광자원 홍보 - 투어코리아",
+      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1VVzEtX3l5VF9ORkhzb0g5ejNMTDlHd2dfRmVvM1NjUDFTOEtCaktGbHhFWkh3N0lYZ3lWcU0wU3BXUGdSdFh0T194T2FCQ2NYSjAzM0tnajE3SHhyZldPOGQ3d3E5b2RqVTY1NzRR?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
