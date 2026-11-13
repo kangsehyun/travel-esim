@@ -79,9 +79,10 @@
       <label class="filter-check"><input type="checkbox" id="local-number">현지 전화번호 포함</label>
 </div></details>    <p id="country-load-status" class="muted" role="status"></p>
     <p class="muted">아래 구매 링크를 통해 구매하면 여행심플이 제휴 수수료를 받을 수 있습니다. 실제 판매·결제는 이심모아에서 진행됩니다.</p>
-    <div id="status" class="status" role="status" aria-live="polite">상품 정보를 불러오는 중입니다.</div>
+    <noscript><p>실시간 상품 비교에는 JavaScript가 필요합니다. 브라우저에서 JavaScript를 켜거나 <a href="/countries">국가별 선택 가이드</a>에서 구매 전 확인할 조건을 먼저 살펴보세요.</p></noscript>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
     <button id="retry-products" type="button" class="back" hidden>상품 다시 불러오기</button>
-    <div id="products" class="product-grid" aria-busy="true"></div>
+    <div id="products" class="product-grid"></div>
     <button id="more-products" type="button" class="primary" hidden>상품 더 보기</button>
     <section class="notice">
       <h2>구매 전 확인하세요</h2>
