@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-13",
+  "updated_at": "2026-11-13T01:54:07.460774+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. 금요일 밤엔 야경, 주말엔 등산·스파…서울관광재단, 대만서 홍보 - 뉴스1",
+      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBvbG1tV1JObUwxdlA2UUxmZFY1Rm1lWWt2c3Y1ZUFWVFdETk5VazFBVm5sc2R4akRKSFVybzdxUUtkSlI2anVjX080UVBCTERrVzB2d0o3X2l2aXc0WTZBUg?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 강원관광재단, 대만서 관광자원 홍보 - 투어코리아",
+      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1VVzEtX3l5VF9ORkhzb0g5ejNMTDlHd2dfRmVvM1NjUDFTOEtCaktGbHhFWkh3N0lYZ3lWcU0wU3BXUGdSdFh0T194T2FCQ2NYSjAzM0tnajE3SHhyZldPOGQ3d3E5b2RqVTY1NzRR?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. 강원관광재단 강원·서울 한자리에… 대만에 한국 지방 연계여행 알렸다 - 영남연합뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9PVFRDTmJlZ2pvYjhuWGRDaUZ1cnRvSlNPWVZRYjV2bzFzOWpiaVdtNFEycWxaSWthTGtkRkR5OVBTSjRUSG9HT2s0V0NvUFFuX3dMQ2VtdkpRdG9pT1pxUktqRXU0eVRHZk8wUlZHcw?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
