@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-14",
+  "updated_at": "2026-11-14T01:28:43.702580+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. 베트남 관광 사이트 Vietnam.travel, 태국 제치고 동남아 2위 - 씬짜오베트남",
+      "source_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5tVWMyb2puc3pCUDhKZ0hiYU80LXU0NFJ1TGxBLXdaREU3MlM5OUY1cjlUcDdwZi1QQnprbTBNd0VCa0ctc3g0Zw?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 베트남 여행 웹사이트 vietnam.travel은 동남아시아에서 2위를 차지하고 있습니다. - Vietnam.vn",
+      "source_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPakp1bGU2WWNjdTcwZlMwT1JpMXZkaW9XV0pJMWVJUnVWN3NXeExxNHRDRi1IbXAzaTkybG1yaVhCUVc0WDBFUnJnWkl4Ti1NRi1tTTJSNUVoaEpEVlpWU3lON1NiQmlYdFpnT2VvZXVkWVVHYVo5TjNVVnViYlFKbU44R3I?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. 베트남, 글로벌 관광 흐름 속 주목받는 관광지로 부상 - Thông tấn xã Việt Nam",
+      "source_url": "https://news.google.com/rss/articles/CBMigAZBVV95cUxPWHlKRFduNk9vUjlHY2hZWm5XWGlKekh1VWRkd2lJWHNDZmpqOERfTXItc1V4b1ZqVGwwUHctbFZuMFFWbjJWT0tJcEtGeFVxLThacVZ2NWh2Zml3R3dkcVIyblZCeXpHZFBGV2ZIcjhKQ3pQWWJvdE03cWNEQnQ0cnRLbjdUbGxFWEdldnBZYUdsLTR0NjdsbXphZjBUUG55b3pSdmdrN3ozRnlQQnRpU1Nvc1dhdXJwSTNFa0xzM2RIYjA0dnp4OGtJRzJfNzhvYjhZbURnQVl1ajR6NzVONTRHa1BITXB1VlhsX29SUWdKTzlWam9lMVNoN0sxaW9fYnJWVXJDb1g4bFAtU2x5bXE3V1lWQXdRd3RXam9OOFMtTjBhSHUxbVlWUHZidmNfR2hrT09pNVJkSEJMWVA1UkVqa2ZGUmlmdUNOVGc1aHpscXcwX3VuM2VUSEZMRVFoSk92OGNtVWR1eFZKM0Q0WlN5YURUUUhEQ2F4ZjNuMlRjVHdQUWRVQk5Tb2lKYVNqS01Qd0ZoSy1NU2RhVFIzRU1pc20wRkdBcFE1NkR4c0ZWWVc2WnZkdUk2dDFyME40cFNmay1MUWlOdzUtVjRtNFI1YUFzeTRNVEdnQkh4LW1kTTl3d0dnb1ZLOElERWJmS1JDbUZQcWp0alRSOGZzdEZMRGdON2RfbFc3NkNVdFFvb1dNT0kxS25jQzltLWJyaEplb053MUxtdngyeW9wRHlrLWlGdG5UUEJYZDQ5XzZIT0pvelJqSjV4emxTY3N2d0hPMXhGXzQ1UTdseUdRWExPVkRYd0NCc2trTFNiTDB5eV9JSS1aejJqNUN5VU4tUzZKZzR3SDdRc01LeDBsWFJwMFBubXZ1TWQ1V2dxdXdEczFkMjdNeGRWZTdiUWFmTWRMZlNGNm9uMG9RX25LNVJfUTEySV9BeVZnRUhEUFBKZURFYmd5TjFxVG5LYXllWjFCdTEwT3hYNjFSSkQxdWVzRVJaMXItTFpwbENWNVk?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
