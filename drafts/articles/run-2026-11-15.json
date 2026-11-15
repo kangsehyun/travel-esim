@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-15",
+  "updated_at": "2026-11-15T01:05:41.291488+00:00",
+  "status": "generated",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "selection_mode": "news",
+  "draft_file": "2026-11-15-web-summit-2026-korea-usimsa-superalink-esim-d651b678c125.md",
+  "review_file": "2026-11-15-web-summit-2026-korea-usimsa-superalink-esim-d651b678c125.review.json",
+  "verification_status": "insufficient_evidence",
+  "source_attempts": [
+    {
+      "title": "1. ‘World Theme Travel’ Goes Beyond Thailand’s Tourist Trail - 뉴스컬처",
+      "source_url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFA5SUlGNWZ0cjUwN2JhZnZiUFFnR21Vbzg1SVdGX1hjVW5STXppX3NUdHhraGpUa3Z2YlMwT2tsSU5fcHhJaWN3LTRIckhuNmJQaU9qYklYV21qbm03cmNnaXAyNFJGUQ?oc=5",
+      "source_count": 0,
+      "eligible_source_count": 0,
+      "error_count": 1
+    },
+    {
+      "title": "1. Gadget Korea Knocks on Europe's Door at Web Summit 2026 with USIMSA and Superalink, Travel App Platforms Integrated with eSIM - 에이빙",
+      "source_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9uNnppOHpZS1V2Nm1ydEV6azVOUEV4dEI4OHloRVF0dW1BZ3pPa2I5MHRBdm5zdmtOa3RCV0xZNjc4SnhvMnMzUHpTc1dJbEFRZW9iQXQtV1VNcmRpNkJkenJYZ05US1XSAWtBVV95cUxQWE5Qb01Xb19XOFdVZkI1TDVBazN3clJ5aW1tMmJXdktvODBQV1pvTEd5aGc2Nzd3azJMLUNIaXlaOVVhM29xMURNWDRXUFo1dHZ1azhTZW9wbU8yM2VEUkdIRTI3eU01WHpRTQ?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 1,
+      "error_count": 0
+    }
+  ]
+}
