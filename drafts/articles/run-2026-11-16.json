@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-16",
+  "updated_at": "2026-11-16T01:06:17.314329+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. 대만···이제 온천욕·트레킹·느린 여행 - 트래블데일리",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9UdC1uS0lZQUI3ZVhKMFljajgyY19Pd0wxNUNodmxmR0JsalJ4d21tT0kxTzhObkJsWHpkWVQ5cVprU2RiUi1OeUhQbDFIR01DMnVBcVZwdkpnSTVOa2k0SnRXcXktdXpMTHVvMUFHOTQ?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 20년 대만 외길, 직영 법인 넘어 FIT 시장까지 - 여행신문",
+      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTFA1ZENxYjFlU0YwS1NPUFBMaG5wZFZyQXVqU1dldWVqaXFXT3dBcGNudnF2NnBRRXhNdlBVcVlCYTdWczlva2FKZGNGMU0wRFg2Ml9qVnBsTndSN0VyenhEdmhybHFhR3lMM080UUM4dGZtdw?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. 환태평양 화산대의 선물, 대만 온천 미식 카니발로 떠나는 자연 속 웰빙 온천 여행 - 이트레블뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE5zQ0txZUU1MUJudTZLSE9JeGZfWVlYTHJNOVRjZy1DUGFPYUpSbUhGeG1oRGsyWUtQMjBQbkllRzFMX3dG?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
