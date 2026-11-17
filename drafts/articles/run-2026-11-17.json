@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-17",
+  "updated_at": "2026-11-17T03:57:52.420322+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. 대만 관광객 절반 이상이 ‘부산 N차 방문’ - 헤럴드경제",
+      "source_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE95NXo0TWpqT2swei1tZDRfWVJIS044dVhTbWw1Sy00cTBBcUplRVlnOHR6WFlPQ3A1MGhlMUFDN0ZnSEZBRXlTWjhOTUh5NWZoeGlya1hR?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 여기어때-대만관광청 맞손..대만 숙소·항공·투어 할인 - 브레이크뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBwYTk0QWFwRmtsclEwai03M01TT284Z1VqRFJYVy1HTFh3Q0VQVG9WWllHSjRnS0lEdk01MnFNMWFacXQ0ekZYMA?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. 제주 오는 대만 관광객 53% 급증 - 트래블데일리",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1rUUhTYnRSdEJjVWotQVlnMFdfNHBKclZGQndaaGt6Uy1IQm9ad3d2ZExTRGE3U196QTZKdFdvYUxzcUc2NUlrY01Ga19YMVZHeXBDRTJOclZvc0RqN3VGZ2NsVHZ6MHd1MlZLbVRvMVM?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
