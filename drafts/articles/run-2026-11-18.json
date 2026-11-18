@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-18",
+  "updated_at": "2026-11-18T02:56:39.270581+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. 일본인은 ‘맛’, 대만·홍콩은 ‘가성비’... 외국인 관광객이 꼽은 한국의 매력 - 퍼블릭뉴스통신",
+      "source_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1SYzdScFM2am1YOGpOYUFqNlNpV0VtVE9GWGw3VGxvR2RoeVU1MG52c3VZR2xmVTZLMWpwU0JzNWN1S0gtVTJwVmZjdlJNcnAzLS1CdkpwVlBHM21ZZkFKZks2SDMwOXNQMklr?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "1. 대만 관광객 절반 이상이 ‘부산 N차 방문’ - 헤럴드경제",
+      "source_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE95NXo0TWpqT2swei1tZDRfWVJIS044dVhTbWw1Sy00cTBBcUplRVlnOHR6WFlPQ3A1MGhlMUFDN0ZnSEZBRXlTWjhOTUh5NWZoeGlya1hR?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 모두투어, 첫 대만 파크골프 상품 출시… 해외 테마여행 확대 - 뉴스트래블",
+      "source_url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBYNjBudndYbVZ4RkFaNUxLczlaSVBwazZGYnlBZDhLUTF1dGI5eDk2cjNWWjRab0NHZzZ3bTlVVUpINWQtaDViZTdYMGFmUFVsRmJhMXZQdTViUlRQM3J6SkNyX0VOUQ?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
