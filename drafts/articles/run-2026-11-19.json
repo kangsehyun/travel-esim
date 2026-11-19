@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-19",
+  "updated_at": "2026-11-19T02:37:54.183645+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. 대만 관광객 절반 이상이 ‘부산 N차 방문’ - 헤럴드경제",
+      "source_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE95NXo0TWpqT2swei1tZDRfWVJIS044dVhTbWw1Sy00cTBBcUplRVlnOHR6WFlPQ3A1MGhlMUFDN0ZnSEZBRXlTWjhOTUh5NWZoeGlya1hR?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 환태평양 화산대의 선물, 대만 온천 미식 카니발로 떠나는 자연 속 웰빙 온천 여행 - 이트레블뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE5zQ0txZUU1MUJudTZLSE9JeGZfWVlYTHJNOVRjZy1DUGFPYUpSbUhGeG1oRGsyWUtQMjBQbkllRzFMX3dG?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. 여기어때-대만관광청 맞손..대만 숙소·항공·투어 할인 - 브레이크뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBwYTk0QWFwRmtsclEwai03M01TT284Z1VqRFJYVy1HTFh3Q0VQVG9WWllHSjRnS0lEdk01MnFNMWFacXQ0ekZYMA?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
