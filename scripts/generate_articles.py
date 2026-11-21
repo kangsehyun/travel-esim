@@ -226,6 +226,12 @@ source_id는 제공된 ID만, quote는 해당 excerpt의 연속된 원문 20~300
 - 태국: {SITE_URL}/thailand-esim.html
 - 미국: {SITE_URL}/usa-esim.html
 
+저장 단계에서 title을 H1으로 한 번 추가하고 excerpt를 바로 아래에 붙입니다.
+content에는 H1이나 excerpt를 반복하지 말고, 필요한 경우 H2부터 사용합니다.
+여행 국가와 이용일수가 주제 및 자료에서 확인되면 상품 비교 링크에 두 조건을
+모두 지정합니다(형식 예: {SITE_URL}/esim?country=JP&days=3).
+국가나 이용일수가 확인되지 않으면 예시 값을 사용하거나 추측하지 않습니다.
+
 아래 JSON 형식으로만 답변하세요. Markdown 코드 블록으로 감싸지 마세요.
 {{
   "title": "검색 의도가 분명한 한국어 제목",
