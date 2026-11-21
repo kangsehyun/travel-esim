@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-21",
+  "updated_at": "2026-11-21T02:25:36.666123+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. ’트리니티-태국관광청‘ 공동 프로모션 실시 - 트래블데일리",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5iWXZuRUJUaEZmekFwclRrSjhRWF9JcVV4VHdvanpoSW1fN2g2V3lHbXZVRmZUalFUNE5NOE1WdXZjMnpQOEMzVFZxdk9BbFJIUnZXVmxWYTNucEJoTE04ZkJrZmpGcmVrQXpaZGN4ZHI?oc=5",
+      "source_count": 0,
+      "eligible_source_count": 0,
+      "error_count": 1
+    },
+    {
+      "title": "2. 트리니티항공, 태국 방콕·치앙마이 특가 항공권 프로모션 - 브레이크뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE9XZW1fU25xNEp5YnQwaGlUYXBXaGhhRExZU1d6VlZYVDdSUS0xdzJBbGlnVnY0QllRR0oxQ2RJcHFiQQ?oc=5",
+      "source_count": 0,
+      "eligible_source_count": 0,
+      "error_count": 1
+    },
+    {
+      "title": "1. \"한국 찾는 대만 관광객 200만명\"…올마이투어, 호텔 공급 확대 - 머니투데이 - 머니투데이",
+      "source_url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBWU0hNTnpleTdTdEphcWYwaW9OWnpuOFR2Ty1zZ0h3dG1uU1VXYTJuUjhTcFA0NjYyR0FNSWptYXJnUm00YmwtdV9IamZLcnVQdUhhZE5NRm5Pa3g0RGNvVFkwUVptbVhDaDFwZUpTd9IBb0FVX3lxTFBWU0hNTnpleTdTdEphcWYwaW9OWnpuOFR2Ty1zZ0h3dG1uU1VXYTJuUjhTcFA0NjYyR0FNSWptYXJnUm00YmwtdV9IamZLcnVQdUhhZE5NRm5Pa3g0RGNvVFkwUVptbVhDaDFwZUpTdw?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
