@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-22",
+  "updated_at": "2026-11-22T01:24:04.668113+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. “방한 대만 관광객 200만 시대”···올마이투어, 타이베이 ITF 계기로 한국 호텔 판로 확대 - 스포츠경향",
+      "source_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFAwWldKdXhKaGZfVl9kZmJqN3NSeHZERkM5dFhBSkI4aGxOdVhoUl9mbFVxRFpkV1VlTGVQWXZ1VFY1QnlfdUx1d280bmZ6Y0lYeGdSWkF1UVlqOHRRTUHSAWNBVV95cUxOVWhsc1VxXzAzSUVyRktFVlBuY1l0ZWo1NjBmNF9JcVpMWHNfaDA2dHZQcjY2ZXN6X05sdWlYTUNhQnNaQkN3ZGw4OTRxd3lTZ1h3bms2cnBNMF8wVTVqcm5vOHc?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. \"한국 찾는 대만 관광객 200만명\"…올마이투어, 호텔 공급 확대 - 머니투데이 - 머니투데이",
+      "source_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5xd2ViSU9GaV9VUjFOR2FrNG5Uc0xRMHg2Mlcxbm5Na1MxWEFkaGpZVFFOQTF6OG95T3ZPX2sxaWR6dkRCd3BGaXJRVzBFdzVwN2NaQ2dFTU1zQXBzUFpsalR6SzJLTW1DS0N2bU02X0JmWGdKSElz0gF8QVVfeXFMUGJCenVLY2FHY1VtLUFlVVdxVlJzNHB3Vm5ybTEyLWpSLXNGQUdYLVNoQlE2TEg1cV9VWTZoemZCSERIZ3hFeU9jR0VaWWVGb3MyMk5oVmZpdmNYWUpQUFRQUFFKcTVzQ3J1OXVZWkZ0ZW9YV0UzNzJzNTJyRQ?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. 올마이투어, 대만 여행사 협력 강화… 방한 수요 선점 추진 - 퍼블릭뉴스통신",
+      "source_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE50ZTVsR2k5ZjFjNkNteDhWNHd2NEFqMGRXa0NyeU1GUHlZcXdEREY0eXkyVHFoVkxLQzhESGZ3M3ViTWVJMlUyc0VLanhZQzVsTW14ODN4MmNOQWRLMUctcV9LTVZYaUtWN3Zr?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
