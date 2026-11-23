@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-23",
+  "updated_at": "2026-11-23T01:48:05.173363+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. 「타이난 400주년」, 「2024 타이완등불축제 in 타이난」 해외 홍보, 타이난시 9/16~9/17 일본 최대 규모 타이완문화제 「TAIWAN PLUS 2023」 참가－타이난 관광여행 웹사이트 - 台南旅遊網",
+      "source_url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5FY3RmZG9lMUlud0pzWUw0NmgxOHVXZkhtZkYzd1EydGx1N1lPMVRORDhydHBmWEtHTXpibldfZklPM0lfLVdvRGEweEMwV0dKcmV4YkFKODd4VkZWdmdF?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "1. 서울관광재단, 대만 핵심여행사와 협업…서울 겨울축제 상품 홍보·판매 - 데일리안",
+      "source_url": "https://news.google.com/rss/articles/CBMirgJBVV95cUxOMzNjbFluX3c3a2RHOHZPelpuNTZNYXNtWTVmR19IZFFPUEJ2LVd3cUlVbkl3VDlKSDd0RkFxRFRiWGpEb19OQUdjOG0tWkF6cWVHZlpMVXhwREpUTU1BZUxZeENYN1pWUkVZQ3JLRThlbC1IREZrcGxwMDZfNUszR2pDRXRqVVZjWWNhLXo4MmpYT0psTGlsNkNsaWtwYzBCZzBldGVGd2YwbXQyRDdSREgtT1hpTXMxOE5sSXVFZWVJYnEwNzJrVnc4Tk1ZLWctNTRRYjBIdzBqdWxvc0N0X1BRdTRtR2s0ZDJ6WHNsank1TWJ0OXNDaGxsZjhpN3l4aGRlQ0RxamZESXgzOVhqUnJLbVBKeVdhdk1rR0hLbzhOSmhnUHk0SDRQcnFaQQ?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 서울관광재단, 대만서 겨울 관광상품 공동 마케팅, 448명 모객 성과 - 이뉴스투데이",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFA2LVVLQ1hVa3N3a3BCdW9uX2c5Y0N1bDZDVUJIN2NzOXdJN3NrSkY5ZGFzaTdVTTFzSXlqdnJxYkJJamwtMzhEZm5KX1gwdUQ2Tk9Ib3dzbDVJb2gxSjItN2Z2eDBjY2hqbXZLNUNCQ3LSAXRBVV95cUxPTnJmQ0xZMnlDa09XZU1TYVBXZHgwM1NLTHFZQ3pFOWxaX0JNNElseFFlcl9oOHZ5VjFNeGFseHU3cDFSWmhMWjBqZkZGNWQ0UW1EWDJxNDRYYU00bU1Yb0E3ZDBNXy1OSGZCUzRJWEJ5M0FQNw?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
