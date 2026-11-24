@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-24",
+  "updated_at": "2026-11-24T05:21:36.942256+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. QUIET TRAVEL ③ 일본 시코쿠 - 여성조선",
+      "source_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1LQlE2YzlVdWhhVW1pQmNqSDFYTmNvQWhwSjQwRnR0V1IxUlNyd3pjbmUxTjFGRGdueHRtYmhBVXQwZWRVTkdLVVFueUNZOTZIZDFJazdHYTJ1LW8xMU1rUkdpa3pHMktuY3Z30gFuQVVfeXFMT1U2aEtLUE0xTnJTS0ZDRGN1Y0tEeHp4Uk5UNndlTk0xM09lR2ZlUnM3QXMzaFcxMUhjc2FyMTY0eWVwd1IwSHJzeFFwM3JqMEpSM0VfejBtUXVUTXk0Z2VtNlRvWTNlcDFLMWNvTUE?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "1. Travel – 한국인은 정말 동남아를 떠났나 - 씬짜오베트남",
+      "source_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5sMC0wVmxRUzZsY0Q2c0x4X2pPZXhqcUItM1hWMS1sUmR1SzFpNnhncG1oallvY0VQbl80ZXVBWlJPNWt2ZU8zbA?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 베트남항공-ANA 공동사업 추진 - 트래블데일리",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5KUHdDTjdWbkpPNlhFcFJjSFg0Q3hheldNeklPSWkxQWtJYTFLQmVEekdTcjFyajlnMVk5dTRxUnRkZVJQUHhXZmVTd0lQQmR3aHBPRzFwaFNkZGdUWVR3RU5tODR5dWgxVXM5ZkdhUGI?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
