@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-25",
+  "updated_at": "2026-11-25T04:16:57.512294+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. “방한 대만 관광객 200만 시대”···올마이투어, 타이베이 ITF 계기로 한국 호텔 판로 확대 - 스포츠경향",
+      "source_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFAwWldKdXhKaGZfVl9kZmJqN3NSeHZERkM5dFhBSkI4aGxOdVhoUl9mbFVxRFpkV1VlTGVQWXZ1VFY1QnlfdUx1d280bmZ6Y0lYeGdSWkF1UVlqOHRRTUHSAWNBVV95cUxOVWhsc1VxXzAzSUVyRktFVlBuY1l0ZWo1NjBmNF9JcVpMWHNfaDA2dHZQcjY2ZXN6X05sdWlYTUNhQnNaQkN3ZGw4OTRxd3lTZ1h3bms2cnBNMF8wVTVqcm5vOHc?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 서울관광재단, 대만 ‘2026 ITF’서 현지 여행사와 겨울철 서울 단체 관광상품 공동 마케팅 진행 - 디스커버리뉴스(DISCOVERYNEWS)",
+      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTFA5SHBCME13QVpjNVNOR0RWUEZzd0dxYUY5Y05HTHVzT3BkNUk3TklHUW1oNXpFck05U0FZNkoxamdKekZndy0tZ2xmVjl0YXdmTXJrdVhTU21RQkpWS0dDOHA5N0RtMUdHLTVNbUdCZVBMUQ?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "3. 서울관광재단, 대만 ITF서 해외 핵심여행사와 손잡고 겨울철 서울 단체 여행 활성화 나서 - 서울시티",
+      "source_url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1zeERRZlNCRWpBWVBqUEtsTUFLY3UtajQxMjk3eGxVLUlVQ24tMDlueThhQVcwbnJDTlF2bE5Ucy1nZFVab0JRWG9tUUp1Q1hkTXlQR2ZxVkczMFJCRnhMUnBIQ2FodXFXQUk3RUYwbw?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
