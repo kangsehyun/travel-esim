@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-26",
+  "updated_at": "2026-11-26T03:37:57.698533+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. Travel – 한국인은 정말 동남아를 떠났나 - 씬짜오베트남",
+      "source_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5sMC0wVmxRUzZsY0Q2c0x4X2pPZXhqcUItM1hWMS1sUmR1SzFpNnhncG1oallvY0VQbl80ZXVBWlJPNWt2ZU8zbA?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 비엣젯항공, 블랙프라이데이 특가 프로모션…베트남행 편도 12만9000원부터 - 뉴스플릭스",
+      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5fSjdyOUJ3MmQ0RFVaYjFFOGFoUWpZYUtkVVltc3lTOXlTa2lQc2d6ZHJRdUFtLUpOTnlxQmxHVm1PZmF5dzVzNUppSzE2bFY1TU5wRjdfTXdFN1dDSkhlUUhBLUczNDZuRTVyVg?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "1. ’트리니티-태국관광청‘ 공동 프로모션 실시 - 트래블데일리",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5iWXZuRUJUaEZmekFwclRrSjhRWF9JcVV4VHdvanpoSW1fN2g2V3lHbXZVRmZUalFUNE5NOE1WdXZjMnpQOEMzVFZxdk9BbFJIUnZXVmxWYTNucEJoTE04ZkJrZmpGcmVrQXpaZGN4ZHI?oc=5",
+      "source_count": 0,
+      "eligible_source_count": 0,
+      "error_count": 1
+    }
+  ]
+}
