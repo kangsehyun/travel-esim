@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-27",
+  "updated_at": "2026-11-27T03:39:55.629655+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. ’트리니티-태국관광청‘ 공동 프로모션 실시 - 트래블데일리",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5iWXZuRUJUaEZmekFwclRrSjhRWF9JcVV4VHdvanpoSW1fN2g2V3lHbXZVRmZUalFUNE5NOE1WdXZjMnpQOEMzVFZxdk9BbFJIUnZXVmxWYTNucEJoTE04ZkJrZmpGcmVrQXpaZGN4ZHI?oc=5",
+      "source_count": 0,
+      "eligible_source_count": 0,
+      "error_count": 1
+    },
+    {
+      "title": "1. 홍콩 국제관광박람회 2027, 참가업체와 구매력 높은 대만구 바이어 및 여행객 연결한다 - 뉴시스",
+      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1kN3dFOG83VVZGMmJ3RmZqZVdNRlExcVgwNFdzbUdWMVV6NWxLMkRDcDFXNmItTWhleFhlX1VORkx2S204VmZBV2R5a1d6NmgwUGRIUmZ4TE13V2ZRcVlsdg?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. “방한 대만 관광객 200만 시대”···올마이투어, 타이베이 ITF 계기로 한국 호텔 판로 확대 - 스포츠경향",
+      "source_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFAwWldKdXhKaGZfVl9kZmJqN3NSeHZERkM5dFhBSkI4aGxOdVhoUl9mbFVxRFpkV1VlTGVQWXZ1VFY1QnlfdUx1d280bmZ6Y0lYeGdSWkF1UVlqOHRRTUHSAWNBVV95cUxOVWhsc1VxXzAzSUVyRktFVlBuY1l0ZWo1NjBmNF9JcVpMWHNfaDA2dHZQcjY2ZXN6X05sdWlYTUNhQnNaQkN3ZGw4OTRxd3lTZ1h3bms2cnBNMF8wVTVqcm5vOHc?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
