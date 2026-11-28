@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-28",
+  "updated_at": "2026-11-28T03:20:46.345960+00:00",
+  "status": "skipped_insufficient_evidence",
+  "publication_hold": true,
+  "fallback_revision": 1,
+  "source_attempts": [
+    {
+      "title": "1. QUIET TRAVEL ③ 일본 시코쿠 - 여성조선",
+      "source_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1LQlE2YzlVdWhhVW1pQmNqSDFYTmNvQWhwSjQwRnR0V1IxUlNyd3pjbmUxTjFGRGdueHRtYmhBVXQwZWRVTkdLVVFueUNZOTZIZDFJazdHYTJ1LW8xMU1rUkdpa3pHMktuY3Z30gFuQVVfeXFMT1U2aEtLUE0xTnJTS0ZDRGN1Y0tEeHp4Uk5UNndlTk0xM09lR2ZlUnM3QXMzaFcxMUhjc2FyMTY0eWVwd1IwSHJzeFFwM3JqMEpSM0VfejBtUXVUTXk0Z2VtNlRvWTNlcDFLMWNvTUE?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "2. 「타이난 400주년」, 「2024 타이완등불축제 in 타이난」 해외 홍보, 타이난시 9/16~9/17 일본 최대 규모 타이완문화제 「TAIWAN PLUS 2023」 참가－타이난 관광여행 웹사이트 - 台南旅遊網",
+      "source_url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5FY3RmZG9lMUlud0pzWUw0NmgxOHVXZkhtZkYzd1EydGx1N1lPMVRORDhydHBmWEtHTXpibldfZklPM0lfLVdvRGEweEMwV0dKcmV4YkFKODd4VkZWdmdF?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    },
+    {
+      "title": "1. [대만관광청] 일월담 국가풍경구관리처 관광자원 설명회로 본 일월담에서 하루 더 머물 이유 - 이로운뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBjbWQ2UzF6NWlERU5aQ0g5YmlhaF8tUG9DUWFmVkpueGJpMkktakltLWZuNTc4RVZ0ZjMtTTZiN2s1YmdDSzItTi1pM1dkVWtsWGF6QkhwR3FOR1E1NExCMC1UVHIxc3M?oc=5",
+      "source_count": 1,
+      "eligible_source_count": 0,
+      "error_count": 0
+    }
+  ]
+}
